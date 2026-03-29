@@ -1,0 +1,8 @@
+{
+  "name": "prompt-context",
+  "private": true,
+  "description": "Static site + optional Vercel API for shared prompt copy scores (Upstash Redis).",
+  "dependencies": {
+    "@upstash/redis": "^1.34.3"
+  }
+}

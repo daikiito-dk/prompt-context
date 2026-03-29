@@ -4,58 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prompts | P&amp;C</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
-<body class="sub-page sub-page--prompts">
+<body class="sub-page" data-prompt-score-api="https://prompt-context-zeta.vercel.app">
+<!-- ↑ 共有スコア API のオリジン（末尾スラッシュ不要） -->
     <nav class="site-nav" aria-label="Main">
-        <div class="site-nav-inner">
-            <a class="logo" href="../index.html">P&amp;C</a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="is-active">Prompts</a></li>
-                <li><a href="../contexts/index.html">Contexts</a></li>
-                <li><a href="../tools/index.html">Tools</a></li>
-            </ul>
-        </div>
+        <a class="logo" href="../index.html">P&amp;C</a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="is-active">Prompts</a></li>
+            <li><a href="../contexts/index.html">Contexts</a></li>
+            <li><a href="../tools/index.html">Tools</a></li>
+        </ul>
     </nav>
 
-    <main class="content-wrapper content-wrapper--prompts" id="main-content">
-        <header class="sub-header sub-header--prompts">
-            <span class="tag">Prompt Library</span>
-            <h1>Prompt Assets</h1>
-            <p class="sub-header-lead">P&amp;C 上級査定済みのテンプレート。一覧は <code class="inline-code">prompts-data.json</code> から生成されます。追記は JSON にエントリを足すだけです。</p>
+    <main class="content-wrapper">
+        <header class="sub-header">
+            <span class="tag">Library</span>
+            <h1>Prompt Engineering</h1>
+            <p>検証済みのプロンプトをそのまま利用。コピーして会話に貼り付けるだけです。</p>
         </header>
 
-        <div class="prompts-toolbar">
-            <div class="asset-search-wrap" role="search" aria-label="プロンプトを検索">
-                <label class="visually-hidden" for="asset-search">プロンプトを検索</label>
-                <span class="asset-search-icon" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
-                </span>
-                <input type="search" id="asset-search" class="asset-search-input" placeholder="タイトル・説明・本文・モデル名で検索…" autocomplete="off" enterkeyhint="search" />
-            </div>
-            <p class="prompts-stats" id="prompts-stats" aria-live="polite" hidden></p>
-        </div>
+        <p class="prompt-score-api-hint" id="prompt-score-api-hint">
+            共有スコアは、このページの <code class="inline-code">&lt;body data-prompt-score-api&gt;</code> にデプロイした API の URL を入れると有効になります。
+        </p>
 
-        <div id="prompt-catalog" class="prompt-catalog" aria-live="polite"></div>
+        <section class="prompt-item">
+            <div class="prompt-header">
+                <h3>深層思考・推論プロンプト</h3>
+                <div class="prompt-header-actions">
+                    <div class="prompt-copy-row">
+                        <span
+                            class="copy-score-global copy-score-global--loading"
+                            data-prompt-id="deep-reasoning"
+                            aria-label="みんなのコピー回数（サーバー集計）"
+                        >—</span>
+                        <button type="button" class="copy-btn" data-copy-target="deep-reasoning">Copy</button>
+                    </div>
+                </div>
+            </div>
+            <pre id="deep-reasoning" class="code-block">あなたは世界最高のエンジニアです。
+以下の制約条件に基づき、論理的な思考ステップを経て回答してください。
+
+# 制約条件:
+- 結論から述べること
+- 中間プロセスを簡潔に書くこと</pre>
+        </section>
+
+        <section class="prompt-item">
+            <div class="prompt-header">
+                <h3>要約・構造化プロンプト</h3>
+                <div class="prompt-header-actions">
+                    <div class="prompt-copy-row">
+                        <span
+                            class="copy-score-global copy-score-global--loading"
+                            data-prompt-id="summary_structured"
+                            aria-label="みんなのコピー回数（サーバー集計）"
+                        >—</span>
+                        <button type="button" class="copy-btn" data-copy-target="summary_structured">Copy</button>
+                    </div>
+                </div>
+            </div>
+            <pre id="summary_structured" class="code-block">以下の文章を、箇条書きで3点に要約してください。
+また、最も重要なキーワードを1つ抽出してください。</pre>
+        </section>
     </main>
 
     <footer class="site-footer">
-        <div class="site-footer-inner">
-            <div class="site-footer-row">
-                <a class="logo logo--footer" href="../index.html">P&amp;C</a>
-                <nav class="footer-nav" aria-label="Footer">
-                    <a href="index.html">Prompts</a>
-                    <a href="../contexts/index.html">Contexts</a>
-                    <a href="../tools/index.html">Tools</a>
-                </nav>
-            </div>
-            <p class="site-footer-legal">© 2026 P&amp;C Engineering. All rights reserved.</p>
-        </div>
+        <p>© 2026 P&amp;C Engineering. All rights reserved.</p>
     </footer>
 
-    <script src="prompts-catalog.js" defer></script>
+    <script src="prompt-score-sync.js" defer></script>
 </body>
 </html>
