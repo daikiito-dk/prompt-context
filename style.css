@@ -1,30 +1,86 @@
+:root {
+    --bg-color: #0b0e14;
+    --card-bg: #161b22;
+    --text-color: #ffffff;
+    --accent-color: #007aff; /* 青系 */
+    --highlight: #00ffcc; /* ネオン系 */
+    --muted: #8b949e;
+}
+
 body {
-    font-family: sans-serif;
-    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+}
+
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: 2px; }
+
+nav ul { display: flex; list-style: none; gap: 30px; }
+
+nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+nav a:hover { color: white; }
+
+/* Hero Section */
+.hero {
     text-align: center;
+    padding: 100px 20px;
+    background: radial-gradient(circle at center, #1a2332 0%, var(--bg-color) 70%);
 }
 
-header {
-    background-color: #24292e; /* GitHubっぽい色 */
-    color: white;
-    padding: 2rem 0;
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, #fff 40%, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-main {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
+/* Cards Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 5% 100px;
 }
 
-section {
-    margin-bottom: 40px;
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    transition: transform 0.3s, border-color 0.3s;
 }
 
-h2 {
-    border-bottom: 2px solid #24292e;
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.tag { font-size: 0.7rem; font-weight: bold; color: var(--accent-color); letter-spacing: 1px; }
+.tag.highlight { color: var(--highlight); }
+
+.link { color: var(--accent-color); text-decoration: none; font-weight: bold; margin-top: 20px; display: inline-block; }
+
+/* Buttons */
+.btn {
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 10px;
     display: inline-block;
-    padding-bottom: 5px;
 }
+
+.primary { background: white; color: black; }
+.secondary { border: 1px solid #30363d; color: white; }
