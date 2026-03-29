@@ -3,19 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tools &amp; Workflow — AI 開発環境 | P&amp;C</title>
-    <meta name="description" content="AI コーディング支援の変遷（ルーツ・時系列）、目的別整理、基盤モデル別サービス、IDE／データ層まで俯瞰。導入検討の参考として。">
+    <title>Tools &amp; Workflow | P&amp;C</title>
+    <meta name="description" content="AI コーディング支援など開発ツールを一覧表示。タップで概要を表示します（公式サイトへのリンク付き）。">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://prompt-context-zeta.vercel.app/tools/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="og:site_name" content="P&amp;C — Prompt &amp; Context Platform">
-    <meta property="og:title" content="Tools &amp; Workflow — AI 開発環境 | P&amp;C">
-    <meta property="og:description" content="ルーツと時系列、目的別タブ、モデル別のサービス群、開発環境・データ層までモダンに整理。">
+    <meta property="og:title" content="Tools &amp; Workflow | P&amp;C">
+    <meta property="og:description" content="開発ツールのシンプルなサービス一覧と詳細ポップアップ。">
     <meta property="og:url" content="https://prompt-context-zeta.vercel.app/tools/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Tools &amp; Workflow — AI 開発環境 | P&amp;C">
-    <meta name="twitter:description" content="AI 開発ツールのルーツ・時系列・目的別・モデル別の整理。">
     <meta name="theme-color" content="#0b0e14">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20fill%3D%27%230b0e14%27%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%278%27%2F%3E%3Cpath%20fill%3D%27%2338bdf8%27%20d%3D%27M9%2010h5.2c2.2%200%203.9%201.5%203.9%203.5S16.4%2017%2014.2%2017H12v5H9V10zm3%202.8h2c.9%200%201.5-.5%201.5-1.2s-.6-1.2-1.5-1.2H12v2.4z%27%2F%3E%3C%2Fsvg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,21 +24,9 @@
                 "@type": "WebPage",
                 "@id": "https://prompt-context-zeta.vercel.app/tools/#webpage",
                 "url": "https://prompt-context-zeta.vercel.app/tools/",
-                "name": "Tools & Workflow — AI 開発環境 | P&C",
-                "description": "AI コーディング支援ツールのルーツ・時系列・目的別・モデル別の整理。",
-                "inLanguage": "ja",
-                "isPartOf": {
-                    "@type": "WebSite",
-                    "name": "P&C — Prompt & Context Platform",
-                    "url": "https://prompt-context-zeta.vercel.app/"
-                }
-            },
-            {
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://prompt-context-zeta.vercel.app/"},
-                    {"@type": "ListItem", "position": 2, "name": "ツール", "item": "https://prompt-context-zeta.vercel.app/tools/"}
-                ]
+                "name": "Tools & Workflow | P&C",
+                "description": "AI コーディング支援ツール等の一覧と概要。",
+                "inLanguage": "ja"
             }
         ]
     }
@@ -63,290 +45,146 @@
         </div>
     </nav>
 
-    <main class="content-wrapper content-wrapper--tools tools-page__main" id="main-content">
-        <header class="sub-header sub-header--ruled">
+    <main class="content-wrapper content-wrapper--tools-app tools-page__main" id="main-content">
+        <header class="sub-header sub-header--ruled tools-app-header">
             <span class="tag tag--mint">Environment</span>
             <h1>Tools &amp; Workflow</h1>
-            <p class="tools-page__lead">主要な <strong>AI コーディング支援</strong>を、<strong>歴史の軸・目的・基盤モデル・開発スタック</strong>から俯瞰できるように整理しています。商用製品の推奨ではなく、社内説明や検討資料向けの<strong>構造化された概観</strong>です。</p>
+            <p class="tools-page__lead">よく参照される<strong>開発向けサービス</strong>を一覧しています。行をタップすると概要が開きます。特定製品の推奨ではありません。</p>
         </header>
 
-        <nav class="tools-page__toc tools-page__toc--wide" aria-label="このページのセクション">
-            <a href="#tools-evolution">ルーツ・時系列</a>
-            <a href="#tools-purpose-tabs">目的別（タブ）</a>
-            <a href="#tools-by-model">モデル別</a>
-            <a href="#tools-dev-stack">開発環境</a>
-            <a href="#tools-data-layer">データ層</a>
-            <a href="#pc-rails">運用の枠組み</a>
-            <a href="#governance-notes">導入観点</a>
-            <a href="#tools-coming-soon">Coming soon</a>
-        </nav>
+        <ul class="tools-app-list" aria-label="サービス一覧">
+            <li>
+                <button type="button" class="tools-app-row" data-tool="cursor" aria-haspopup="dialog" aria-controls="tools-sheet">
+                    <span class="tools-app-row__icon" style="--app-hue: 174" aria-hidden="true">C</span>
+                    <span class="tools-app-row__body">
+                        <span class="tools-app-row__name">Cursor</span>
+                        <span class="tools-app-row__tag">AI ネイティブ IDE</span>
+                    </span>
+                    <span class="tools-app-row__chevron" aria-hidden="true"></span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="tools-app-row" data-tool="windsurf" aria-haspopup="dialog" aria-controls="tools-sheet">
+                    <span class="tools-app-row__icon" style="--app-hue: 200" aria-hidden="true">W</span>
+                    <span class="tools-app-row__body">
+                        <span class="tools-app-row__name">Windsurf</span>
+                        <span class="tools-app-row__tag">IDE · Cascade / Flow</span>
+                    </span>
+                    <span class="tools-app-row__chevron" aria-hidden="true"></span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="tools-app-row" data-tool="copilot" aria-haspopup="dialog" aria-controls="tools-sheet">
+                    <span class="tools-app-row__icon" style="--app-hue: 142" aria-hidden="true">P</span>
+                    <span class="tools-app-row__body">
+                        <span class="tools-app-row__name">GitHub Copilot</span>
+                        <span class="tools-app-row__tag">IDE 拡張 · Chat</span>
+                    </span>
+                    <span class="tools-app-row__chevron" aria-hidden="true"></span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="tools-app-row" data-tool="claude" aria-haspopup="dialog" aria-controls="tools-sheet">
+                    <span class="tools-app-row__icon" style="--app-hue: 28" aria-hidden="true">A</span>
+                    <span class="tools-app-row__body">
+                        <span class="tools-app-row__name">Claude · Anthropic</span>
+                        <span class="tools-app-row__tag">モデル · API · アプリ</span>
+                    </span>
+                    <span class="tools-app-row__chevron" aria-hidden="true"></span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="tools-app-row" data-tool="claude-code" aria-haspopup="dialog" aria-controls="tools-sheet">
+                    <span class="tools-app-row__icon" style="--app-hue: 35" aria-hidden="true">&gt;</span>
+                    <span class="tools-app-row__body">
+                        <span class="tools-app-row__name">Claude Code</span>
+                        <span class="tools-app-row__tag">CLI エージェント</span>
+                    </span>
+                    <span class="tools-app-row__chevron" aria-hidden="true"></span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="tools-app-row" data-tool="openai" aria-haspopup="dialog" aria-controls="tools-sheet">
+                    <span class="tools-app-row__icon" style="--app-hue: 160" aria-hidden="true">O</span>
+                    <span class="tools-app-row__body">
+                        <span class="tools-app-row__name">OpenAI</span>
+                        <span class="tools-app-row__tag">ChatGPT · API · Agent</span>
+                    </span>
+                    <span class="tools-app-row__chevron" aria-hidden="true"></span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="tools-app-row" data-tool="gemini" aria-haspopup="dialog" aria-controls="tools-sheet">
+                    <span class="tools-app-row__icon" style="--app-hue: 217" aria-hidden="true">M</span>
+                    <span class="tools-app-row__body">
+                        <span class="tools-app-row__name">Google Gemini</span>
+                        <span class="tools-app-row__tag">モデル · AI Studio</span>
+                    </span>
+                    <span class="tools-app-row__chevron" aria-hidden="true"></span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="tools-app-row" data-tool="vscode" aria-haspopup="dialog" aria-controls="tools-sheet">
+                    <span class="tools-app-row__icon" style="--app-hue: 210" aria-hidden="true">V</span>
+                    <span class="tools-app-row__body">
+                        <span class="tools-app-row__name">Visual Studio Code</span>
+                        <span class="tools-app-row__tag">エディタ</span>
+                    </span>
+                    <span class="tools-app-row__chevron" aria-hidden="true"></span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="tools-app-row" data-tool="jetbrains" aria-haspopup="dialog" aria-controls="tools-sheet">
+                    <span class="tools-app-row__icon" style="--app-hue: 265" aria-hidden="true">J</span>
+                    <span class="tools-app-row__body">
+                        <span class="tools-app-row__name">JetBrains IDE</span>
+                        <span class="tools-app-row__tag">IntelliJ / PyCharm 等</span>
+                    </span>
+                    <span class="tools-app-row__chevron" aria-hidden="true"></span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="tools-app-row" data-tool="supabase" aria-haspopup="dialog" aria-controls="tools-sheet">
+                    <span class="tools-app-row__icon" style="--app-hue: 152" aria-hidden="true">S</span>
+                    <span class="tools-app-row__body">
+                        <span class="tools-app-row__name">Supabase</span>
+                        <span class="tools-app-row__tag">BaaS · DB · Auth</span>
+                    </span>
+                    <span class="tools-app-row__chevron" aria-hidden="true"></span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="tools-app-row" data-tool="devin" aria-haspopup="dialog" aria-controls="tools-sheet">
+                    <span class="tools-app-row__icon" style="--app-hue: 48" aria-hidden="true">D</span>
+                    <span class="tools-app-row__body">
+                        <span class="tools-app-row__name">Devin</span>
+                        <span class="tools-app-row__tag">自律エージェント（一例）</span>
+                    </span>
+                    <span class="tools-app-row__chevron" aria-hidden="true"></span>
+                </button>
+            </li>
+        </ul>
 
-        <!-- 1. ルーツ・樹形＋時系列 -->
-        <section id="tools-evolution" class="tools-page__section" aria-labelledby="tools-evolution-heading">
-            <h2 id="tools-evolution-heading" class="tools-section-title">ルーツと時系列 — どこから枝分かれしたか</h2>
-            <p class="tools-section-lead">大規模言語モデルの実用化を土台に、<strong>補完 → 対話 → エージェント</strong>へと能力が伝播してきた流れを、樹形と年表で示します（各項は代表的な傾向であり、厳密な年代認定ではありません）。</p>
-
-            <div class="tools-evolution-board">
-                <div class="tools-tree" aria-label="概念上の樹形図">
-                    <div class="tools-tree__root">
-                        <div class="tools-tree-node tools-tree-node--root">
-                            <span class="tools-tree-node__glyph" aria-hidden="true">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3c4.5 0 8 3.5 8 8 0 3.2-2.1 6-5 7.2V20h-6v-1.8C6.1 17 4 14.2 4 11c0-4.5 3.5-8 8-8Z" stroke="currentColor" stroke-width="1.5"/><path d="M10 11h4M12 9v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                            </span>
-                            <span class="tools-tree-node__label">ルーツ</span>
-                            <span class="tools-tree-node__meta">Transformer 以降の LLM · API 化 · OSS ウェイト</span>
-                        </div>
-                        <div class="tools-tree__connect" aria-hidden="true"></div>
-                        <div class="tools-tree__branches">
-                            <div class="tools-tree-node tools-tree-node--branch">
-                                <span class="tools-tree-node__glyph tools-tree-node__glyph--mint" aria-hidden="true">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 9h8v8H8z" stroke="currentColor" stroke-width="1.4"/><path d="M4 5h16v3H4z" stroke="currentColor" stroke-width="1.4"/></svg>
-                                </span>
-                                <span class="tools-tree-node__label">モデル API</span>
-                                <span class="tools-tree-node__meta">クラウド推論・トークン課金・マルチモーダル拡張</span>
-                            </div>
-                            <div class="tools-tree-node tools-tree-node--branch">
-                                <span class="tools-tree-node__glyph tools-tree-node__glyph--sky" aria-hidden="true">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 8l8-4 8 4v8l-8 4-8-4V8z" stroke="currentColor" stroke-width="1.3"/><path d="M4 8l8 4 8-4" stroke="currentColor" stroke-width="1.3"/></svg>
-                                </span>
-                                <span class="tools-tree-node__label">IDE 統合</span>
-                                <span class="tools-tree-node__meta">LSP 周辺 · 拡張機能 · ワークスペース文脈</span>
-                            </div>
-                            <div class="tools-tree-node tools-tree-node--branch">
-                                <span class="tools-tree-node__glyph tools-tree-node__glyph--violet" aria-hidden="true">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="12" r="2.5" stroke="currentColor" stroke-width="1.3"/><circle cx="15" cy="8" r="2" stroke="currentColor" stroke-width="1.3"/><circle cx="15" cy="16" r="2" stroke="currentColor" stroke-width="1.3"/><path d="M11 12h2M14 9l1 2M14 15l1-2" stroke="currentColor" stroke-width="1.2"/></svg>
-                                </span>
-                                <span class="tools-tree-node__label">エージェント層</span>
-                                <span class="tools-tree-node__meta">ツール呼出 · ターミナル · MCP・オーケストレーション</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <ol class="tools-timeline" aria-label="ざっくりした時系列">
-                    <li class="tools-timeline__item">
-                        <span class="tools-timeline__year">〜2022</span>
-                        <div class="tools-timeline__body">
-                            <strong class="tools-timeline__title">インライン補完・ペアプロ型</strong>
-                            <p class="tools-timeline__text">エディタ内での行単位提案。GitHub Copilot などが一般化。</p>
-                        </div>
-                    </li>
-                    <li class="tools-timeline__item">
-                        <span class="tools-timeline__year">2023 前後</span>
-                        <div class="tools-timeline__body">
-                            <strong class="tools-timeline__title">チャット UI の横行</strong>
-                            <p class="tools-timeline__text">IDE サイドバー・Web の対話からリファクタや説明を依頼する運用が定着。</p>
-                        </div>
-                    </li>
-                    <li class="tools-timeline__item">
-                        <span class="tools-timeline__year">2024〜</span>
-                        <div class="tools-timeline__body">
-                            <strong class="tools-timeline__title">マルチステップ・自律フロー</strong>
-                            <p class="tools-timeline__text">リポジトリ横断編集、CLI エージェント、MCP によるツール接続が製品化。</p>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- 2. 目的別タブ（4 章固定） -->
-        <section id="tools-purpose-tabs" class="tools-page__section" aria-labelledby="tools-purpose-heading">
-            <h2 id="tools-purpose-heading" class="tools-section-title">目的別 — 何を達成したいかで選ぶ（4 章）</h2>
-            <p class="tools-section-lead">同一のモデルでも<strong>プロダクト形態</strong>が異なります。下の 4 タブは「よくある検討軸」の切り口です。</p>
-
-            <div class="tools-tabs" data-tools-tabs>
-                <div class="tools-tabs__list" role="tablist" aria-label="目的別の章">
-                    <button type="button" class="tools-tabs__tab is-active" role="tab" id="tab-purpose-1" aria-selected="true" aria-controls="panel-purpose-1" data-tools-tab="1">1. 実装・生産性</button>
-                    <button type="button" class="tools-tabs__tab" role="tab" id="tab-purpose-2" aria-selected="false" aria-controls="panel-purpose-2" data-tools-tab="2">2. レビュー・品質</button>
-                    <button type="button" class="tools-tabs__tab" role="tab" id="tab-purpose-3" aria-selected="false" aria-controls="panel-purpose-3" data-tools-tab="3">3. 運用・デリバリー</button>
-                    <button type="button" class="tools-tabs__tab" role="tab" id="tab-purpose-4" aria-selected="false" aria-controls="panel-purpose-4" data-tools-tab="4">4. ガバナンス</button>
-                </div>
-
-                <div class="tools-tabs__panels">
-                    <div class="tools-tabs__panel is-active" role="tabpanel" id="panel-purpose-1" aria-labelledby="tab-purpose-1" tabindex="0">
-                        <h3 class="tools-tabs__panel-title">実装スピードとタスクの完遂</h3>
-                        <ul class="tools-tabs__links">
-                            <li><a href="https://cursor.com/" rel="noopener noreferrer">Cursor</a> — AI ネイティブ IDE、ルール・エージェント・MCP</li>
-                            <li><a href="https://windsurf.com/" rel="noopener noreferrer">Windsurf</a> — Flow / Cascade による広いコンテキスト編集</li>
-                            <li><a href="https://github.com/features/copilot" rel="noopener noreferrer">GitHub Copilot</a> — 主要 IDE への統合、チャット・エージェント機能</li>
-                            <li><a href="https://github.com/anthropics/claude-code" rel="noopener noreferrer">Claude Code</a> — CLI 起点のリポジトリ作業（Anthropic 系）</li>
-                        </ul>
-                    </div>
-                    <div class="tools-tabs__panel" role="tabpanel" id="panel-purpose-2" aria-labelledby="tab-purpose-2" hidden tabindex="0">
-                        <h3 class="tools-tabs__panel-title">可読性・安全側面のレビュー</h3>
-                        <ul class="tools-tabs__links">
-                            <li>IDE 内チャットによる<strong>差分説明・エッジケース洗い出し</strong></li>
-                            <li>静的解析・SAST と併用した<strong>PR コメント自動化</strong>（各種クラウドサービス）</li>
-                            <li>チームルールを <strong>Rules / AGENTS.md</strong> 等でモデルに渡す運用</li>
-                        </ul>
-                    </div>
-                    <div class="tools-tabs__panel" role="tabpanel" id="panel-purpose-3" aria-labelledby="tab-purpose-3" hidden tabindex="0">
-                        <h3 class="tools-tabs__panel-title">パイプラインと環境の再現性</h3>
-                        <ul class="tools-tabs__links">
-                            <li><strong>CI/CD</strong>（GitHub Actions 等）でのテスト・Lint 自動化との組み合わせ</li>
-                            <li><strong>Dev Containers</strong> / 環境 as Code で「同じ文脈」を共有</li>
-                            <li>リリースノート・変更履歴のドラフト生成に AI を利用する事例</li>
-                        </ul>
-                    </div>
-                    <div class="tools-tabs__panel" role="tabpanel" id="panel-purpose-4" aria-labelledby="tab-purpose-4" hidden tabindex="0">
-                        <h3 class="tools-tabs__panel-title">ポリシー・監査・データ境界</h3>
-                        <ul class="tools-tabs__links">
-                            <li>送信データの範囲（<strong>学習利用の可否・保持期間</strong>）の契約確認</li>
-                            <li>組織 SSO・<strong>リポジトリ単位の許可</strong>・ログ保全</li>
-                            <li>下の「導入・評価の観点」とあわせて社内チェックリスト化</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. 基盤モデル別 -->
-        <section id="tools-by-model" class="tools-page__section" aria-labelledby="tools-by-model-heading">
-            <h2 id="tools-by-model-heading" class="tools-section-title">基盤モデル別 — どの API／家族かで見る</h2>
-            <p class="tools-section-lead">フロントプロダクトは<strong>複数モデルを切り替え</strong>る場合もあるため、契約・レイテンシ・コンテキスト長の議論では「ベンダー／モデル系譜」が整理しやすいです。</p>
-            <div class="tools-provider-grid">
-                <article class="tools-provider-card">
-                    <h3 class="tools-provider-card__brand tools-provider-card__brand--openai">OpenAI 系</h3>
-                    <p class="tools-provider-card__lead">GPT ファミリ、推論 API、エージェント向けツール呼び出し。</p>
-                    <ul class="tools-provider-card__list">
-                        <li><a href="https://openai.com/" rel="noopener noreferrer">ChatGPT / API / Agentic 機能</a></li>
-                        <li>多数のサードパーティが OpenAI API を既定バックエンドに採用</li>
-                    </ul>
-                </article>
-                <article class="tools-provider-card">
-                    <h3 class="tools-provider-card__brand tools-provider-card__brand--anthropic">Anthropic 系</h3>
-                    <p class="tools-provider-card__lead">長文脈・指示追従の議論で参照されやすい Claude 系。</p>
-                    <ul class="tools-provider-card__list">
-                        <li><a href="https://www.anthropic.com/claude" rel="noopener noreferrer">Claude（Web / API）</a></li>
-                        <li><a href="https://github.com/anthropics/claude-code" rel="noopener noreferrer">Claude Code</a>（CLI）</li>
-                    </ul>
-                </article>
-                <article class="tools-provider-card">
-                    <h3 class="tools-provider-card__brand tools-provider-card__brand--google">Google 系</h3>
-                    <p class="tools-provider-card__lead">Gemini・Vertex 経由・Android Studio 等の開発者向け統合。</p>
-                    <ul class="tools-provider-card__list">
-                        <li><a href="https://deepmind.google/technologies/gemini/" rel="noopener noreferrer">Gemini</a></li>
-                        <li><a href="https://aistudio.google.com/" rel="noopener noreferrer">Google AI Studio</a></li>
-                    </ul>
-                </article>
-                <article class="tools-provider-card">
-                    <h3 class="tools-provider-card__brand tools-provider-card__brand--neutral">その他・オープンウエイト</h3>
-                    <p class="tools-provider-card__lead">オンプレ／VPC 内ホスティングや、複数バックエンドの抽象化レイヤ。</p>
-                    <ul class="tools-provider-card__list">
-                        <li>Mistral、Llama ファミリ等 — <strong>推論ホスティング</strong>はクラウド・自前 Build 双方</li>
-                        <li>ルーター・ゲートウェイ製品でモデルを動的スイッチ</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <!-- 4. 開発環境（VS Code など） -->
-        <section id="tools-dev-stack" class="tools-page__section" aria-labelledby="tools-dev-stack-heading">
-            <h2 id="tools-dev-stack-heading" class="tools-section-title">開発環境 — エディタとターミナル</h2>
-            <p class="tools-section-lead">AI 機能は<strong>拡張機能・公式統合・CLI</strong>としてここに接続されます。既存標準を変えずに載せるか、専用 IDE に移るかが主な二分法です。</p>
-            <div class="tools-stack-grid">
-                <article class="tools-stack-card">
-                    <h3 class="tools-stack-card__title"><a href="https://code.visualstudio.com/" rel="noopener noreferrer">Visual Studio Code</a></h3>
-                    <p>最も普及した拡張モデル。Copilot・各種チャット拡張・ローカルモデル連携の実例が多い。</p>
-                </article>
-                <article class="tools-stack-card">
-                    <h3 class="tools-stack-card__title"><a href="https://www.jetbrains.com/" rel="noopener noreferrer">JetBrains IDE</a></h3>
-                    <p>IntelliJ / PyCharm / WebStorm など。組み込み AI アシスタントやプラグインで統合。</p>
-                </article>
-                <article class="tools-stack-card">
-                    <h3 class="tools-stack-card__title"><a href="https://visualstudio.microsoft.com/" rel="noopener noreferrer">Visual Studio</a></h3>
-                    <p>.NET 中心の大規模ソリューション。マイクロソフト製エコシステムと連動。</p>
-                </article>
-                <article class="tools-stack-card">
-                    <h3 class="tools-stack-card__title">ターミナル / CLI</h3>
-                    <p>シェルスクリプト、Make、コンテナ内での <strong>エージェント CLI</strong> 実行。CI との親和性が高い。</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- 5. データ層 -->
-        <section id="tools-data-layer" class="tools-page__section" aria-labelledby="tools-data-layer-heading">
-            <h2 id="tools-data-layer-heading" class="tools-section-title">データ層 — アプリと RAG・状態管理</h2>
-            <p class="tools-section-lead">コード生成だけでなく、<strong>スキーマ・マイグレーション・ベクトル検索</strong>周りのツール選定が一体となります。</p>
-            <div class="tools-stack-grid">
-                <article class="tools-stack-card">
-                    <h3 class="tools-stack-card__title"><a href="https://www.postgresql.org/" rel="noopener noreferrer">PostgreSQL</a> · <a href="https://www.mysql.com/" rel="noopener noreferrer">MySQL</a></h3>
-                    <p>リレーショナル中心の業務データ。マイグレーション（Flyway / Alembic / Prisma 等）とのセットが一般的。</p>
-                </article>
-                <article class="tools-stack-card">
-                    <h3 class="tools-stack-card__title"><a href="https://redis.io/" rel="noopener noreferrer">Redis</a> · キャッシュ</h3>
-                    <p>セッション・レート制限・キュー。AI 機能の後段に載せることが多い。</p>
-                </article>
-                <article class="tools-stack-card">
-                    <h3 class="tools-stack-card__title">ベクトルストア</h3>
-                    <p>埋め込みによる RAG。Pinecone / Weaviate / pgvector 等、運用形態はクラウドからセルフホストまで幅あり。</p>
-                </article>
-                <article class="tools-stack-card">
-                    <h3 class="tools-stack-card__title"><a href="https://supabase.com/" rel="noopener noreferrer">Supabase</a> など BaaS</h3>
-                    <p>Auth・DB・Edge を束ね、プロトタイプから本番まで短時間で立ち上げる構成。</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="pc-rails" class="tools-page__section" aria-labelledby="pc-rails-heading">
-            <h2 id="pc-rails-heading" class="tools-section-title">P&amp;C が想定する運用の枠組み</h2>
-            <p class="tools-section-lead">ツールが変わっても再現しやすいよう、<a href="../contexts/index.html">Contexts</a> とプロンプト資産で前提を固定する考え方です。</p>
-            <div class="card-list">
-                <article class="sub-card">
-                    <h2>変更内容の共有フォーマット</h2>
-                    <p>差分、意図、既知のリスクを決まった書式で記載。</p>
-                </article>
-                <article class="sub-card">
-                    <h2>評価用データのスナップショット</h2>
-                    <p>入力と期待挙動をバージョン管理し、プロンプト改修の影響を追跡。</p>
-                </article>
-                <article class="sub-card">
-                    <h2>ガバナンス用メタデータ</h2>
-                    <p>機密度・PII・保管期間をタグ化し、利用境界を明文化。</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="governance-notes" class="tools-page__section tools-page__guidance" aria-labelledby="governance-notes-heading">
-            <h2 id="governance-notes-heading" class="tools-section-title">導入・評価の際の観点</h2>
-            <p class="tools-section-lead">AI 支援は<strong>情報の取り扱い・契約・監査</strong>に直結します。</p>
-            <ul class="tools-guidance-list">
-                <li><strong>データ取り扱い</strong> — 送信・学習・保持の条件を利用規約で確認。</li>
-                <li><strong>認証・権限</strong> — SSO、リポジトリ境界、アカウントの連係。</li>
-                <li><strong>利用ログ</strong> — 説明責任のためのトレーサビリティ。</li>
-                <li><strong>モデル更新</strong> — ベンダーポリシー変更の定期確認。</li>
-            </ul>
-            <p class="tools-guidance-footnote">一般的な整理であり、法的助言ではありません。ご組織の専門部署にご相談ください。</p>
-        </section>
-
-        <!-- Coming soon チラ見せ -->
-        <section id="tools-coming-soon" class="tools-page__section tools-coming-soon" aria-labelledby="tools-coming-soon-heading">
-            <h2 id="tools-coming-soon-heading" class="tools-section-title">Coming soon — 拡張予定の観点（チラ見せ）</h2>
-            <p class="tools-section-lead">サイト上での深掘り記事・比較表の追加を検討中のテーマです。グレースケールは<strong>未公開コンテンツのプレースホルダ</strong>を表します。</p>
-            <div class="tools-soon-grid">
-                <article class="tools-soon-card">
-                    <span class="tools-soon-card__badge">予定</span>
-                    <h3 class="tools-soon-card__title">トークン・コスト可視化</h3>
-                    <p>モデル／ツール横断の概算と、予算アラート設計のたたき台。</p>
-                </article>
-                <article class="tools-soon-card">
-                    <span class="tools-soon-card__badge">予定</span>
-                    <h3 class="tools-soon-card__title">マルチクラウド・ルーティング</h3>
-                    <p>フェイルオーバー、地域データレジデンシ、レイテンシ SLO の整理。</p>
-                </article>
-                <article class="tools-soon-card">
-                    <span class="tools-soon-card__badge">予定</span>
-                    <h3 class="tools-soon-card__title">社内モデルカタログ</h3>
-                    <p>承認済みエンドポイント、禁止ユースケース、参照 Must / Must not の一元化。</p>
-                </article>
-                <article class="tools-soon-card">
-                    <span class="tools-soon-card__badge">予定</span>
-                    <h3 class="tools-soon-card__title">インシデント時の Kill switch</h3>
-                    <p>一時停止手順、監査ログ退避、コミュニケーションプランの雛形。</p>
-                </article>
-            </div>
-        </section>
+        <p class="tools-app-footnote"><a href="../contexts/index.html">Contexts</a> で前提を構造化すると、ツールを替えても運用しやすくなります。</p>
     </main>
+
+    <dialog class="tools-sheet" id="tools-sheet" aria-labelledby="tools-sheet-title">
+        <div class="tools-sheet__panel">
+            <header class="tools-sheet__head">
+                <div class="tools-sheet__head-text">
+                    <h2 class="tools-sheet__title" id="tools-sheet-title"></h2>
+                    <p class="tools-sheet__tag" id="tools-sheet-tag"></p>
+                </div>
+                <button type="button" class="tools-sheet__close" id="tools-sheet-close" aria-label="閉じる">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </header>
+            <div class="tools-sheet__body" id="tools-sheet-body"></div>
+            <div class="tools-sheet__actions">
+                <a class="btn btn-primary tools-sheet__link" id="tools-sheet-link" href="#" rel="noopener noreferrer">公式サイトを開く</a>
+            </div>
+        </div>
+    </dialog>
 
     <footer class="site-footer">
         <div class="site-footer-inner">
@@ -361,6 +199,6 @@
             <p class="site-footer-legal">© 2026 P&amp;C Engineering. All rights reserved.</p>
         </div>
     </footer>
-    <script src="tools-tabs.js" defer></script>
+    <script src="tools-app.js" defer></script>
 </body>
 </html>
