@@ -21,19 +21,22 @@
         </div>
     </nav>
 
-    <main class="content-wrapper content-wrapper--prompts">
+    <main class="content-wrapper content-wrapper--prompts" id="main-content">
         <header class="sub-header sub-header--prompts">
             <span class="tag">Prompt Library</span>
             <h1>Prompt Assets</h1>
-            <p>P&amp;C 上級査定済みのテンプレート。一覧は <code class="inline-code">prompts-data.json</code> から生成されます。追記は JSON にエントリを足すだけです。</p>
+            <p class="sub-header-lead">P&amp;C 上級査定済みのテンプレート。一覧は <code class="inline-code">prompts-data.json</code> から生成されます。追記は JSON にエントリを足すだけです。</p>
         </header>
 
-        <div class="asset-search-wrap" role="search" aria-label="Asset search (preview)">
-            <label class="visually-hidden" for="asset-search">Search assets</label>
-            <span class="asset-search-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
-            </span>
-            <input type="search" id="asset-search" class="asset-search-input" placeholder="タイトル・説明・本文・モデル名で検索…" autocomplete="off" />
+        <div class="prompts-toolbar">
+            <div class="asset-search-wrap" role="search" aria-label="プロンプトを検索">
+                <label class="visually-hidden" for="asset-search">プロンプトを検索</label>
+                <span class="asset-search-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
+                </span>
+                <input type="search" id="asset-search" class="asset-search-input" placeholder="タイトル・説明・本文・モデル名で検索…" autocomplete="off" enterkeyhint="search" />
+            </div>
+            <p class="prompts-stats" id="prompts-stats" aria-live="polite" hidden></p>
         </div>
 
         <div id="prompt-catalog" class="prompt-catalog" aria-live="polite"></div>

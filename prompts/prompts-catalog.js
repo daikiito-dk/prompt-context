@@ -1,6 +1,7 @@
 (function () {
   var catalogEl = document.getElementById("prompt-catalog");
   var searchInput = document.getElementById("asset-search");
+  var statsEl = document.getElementById("prompts-stats");
   if (!catalogEl || !searchInput) return;
 
   var rawData = null;
@@ -58,6 +59,10 @@
     catalogEl.textContent = "";
 
     if (!rawData || !rawData.categories || !rawData.categories.length) {
+      if (statsEl) {
+        statsEl.hidden = true;
+        statsEl.textContent = "";
+      }
       var err = document.createElement("p");
       err.className = "prompt-catalog-message prompt-catalog-message--error";
       err.textContent = "データを読み込めませんでした。";
@@ -66,10 +71,14 @@
     }
 
     var anyShown = false;
+    var shownCategories = 0;
+    var shownPrompts = 0;
     rawData.categories.forEach(function (category) {
       var prompts = visiblePromptsForCategory(category, q);
       if (!prompts.length) return;
       anyShown = true;
+      shownCategories += 1;
+      shownPrompts += prompts.length;
 
       var details = document.createElement("details");
       details.className = "prompt-category";
@@ -77,6 +86,9 @@
 
       var summary = document.createElement("summary");
       summary.className = "prompt-category-summary";
+
+      var summaryText = document.createElement("div");
+      summaryText.className = "prompt-category-summary-text";
 
       var titleSpan = document.createElement("span");
       titleSpan.className = "prompt-category-title";
@@ -86,8 +98,16 @@
       hintSpan.className = "prompt-category-hint";
       hintSpan.textContent = category.hint || "";
 
-      summary.appendChild(titleSpan);
-      summary.appendChild(hintSpan);
+      summaryText.appendChild(titleSpan);
+      summaryText.appendChild(hintSpan);
+
+      var countBadge = document.createElement("span");
+      countBadge.className = "prompt-category-count";
+      countBadge.setAttribute("aria-label", "このカテゴリーのプロンプト数");
+      countBadge.textContent = String(prompts.length);
+
+      summary.appendChild(summaryText);
+      summary.appendChild(countBadge);
 
       var body = document.createElement("div");
       body.className = "prompt-category-body";
@@ -151,6 +171,18 @@
       details.appendChild(body);
       catalogEl.appendChild(details);
     });
+
+    if (statsEl) {
+      if (anyShown) {
+        statsEl.hidden = false;
+        statsEl.textContent = q.length
+          ? "検索結果: " + shownPrompts + " 件 · " + shownCategories + " カテゴリー"
+          : "全 " + shownPrompts + " プロンプト · " + shownCategories + " カテゴリー";
+      } else {
+        statsEl.hidden = true;
+        statsEl.textContent = "";
+      }
+    }
 
     if (!anyShown) {
       var empty = document.createElement("p");
