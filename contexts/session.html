@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SESSION.md — セッション前提 | P&amp;C Context</title>
+    <meta name="description" content="毎セッションの冒頭に貼る固定コンテキスト。プロダクト概要、今日のゴール、用語、禁止事項を一枚にまとめ、会話のドリフトを防ぎます。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prompt-context-zeta.vercel.app/contexts/session.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="P&amp;C — Prompt &amp; Context Platform">
+    <meta property="og:title" content="SESSION.md — セッション前提 | P&amp;C">
+    <meta property="og:description" content="毎セッションの冒頭に貼る固定コンテキスト。ゴール・用語・禁止事項を一枚にまとめます。">
+    <meta property="og:url" content="https://prompt-context-zeta.vercel.app/contexts/session.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#0b0e14">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20fill%3D%27%230b0e14%27%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%278%27%2F%3E%3Cpath%20fill%3D%27%2338bdf8%27%20d%3D%27M9%2010h5.2c2.2%200%203.9%201.5%203.9%203.5S16.4%2017%2014.2%2017H12v5H9V10zm3%202.8h2c.9%200%201.5-.5%201.5-1.2s-.6-1.2-1.5-1.2H12v2.4z%27%2F%3E%3C%2Fsvg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://prompt-context-zeta.vercel.app/contexts/session.html#webpage",
+                "url": "https://prompt-context-zeta.vercel.app/contexts/session.html",
+                "name": "SESSION.md — セッション前提",
+                "description": "毎セッションの冒頭に貼る固定コンテキストテンプレート。",
+                "inLanguage": "ja",
+                "isPartOf": { "@type": "WebSite", "name": "P&C", "url": "https://prompt-context-zeta.vercel.app/" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://prompt-context-zeta.vercel.app/" },
+                    { "@type": "ListItem", "position": 2, "name": "コンテキスト", "item": "https://prompt-context-zeta.vercel.app/contexts/" },
+                    { "@type": "ListItem", "position": 3, "name": "SESSION.md", "item": "https://prompt-context-zeta.vercel.app/contexts/session.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="sub-page">
+    <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
+    <nav class="site-nav" aria-label="Main">
+        <div class="site-nav-inner">
+            <a class="logo" href="../index.html">P&amp;C</a>
+            <ul class="nav-links">
+                <li><a href="../prompts/index.html">Prompts</a></li>
+                <li><a href="index.html" class="is-active" aria-current="page">Contexts</a></li>
+                <li><a href="../tools/index.html">Tools</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-wrapper" id="main-content">
+        <nav class="context-breadcrumb" aria-label="パンくず">
+            <a href="../index.html">ホーム</a>
+            <span aria-hidden="true">/</span>
+            <a href="index.html">Contexts</a>
+            <span aria-hidden="true">/</span>
+            <span>SESSION.md</span>
+        </nav>
+
+        <header class="sub-header sub-header--ruled">
+            <span class="tag">Context</span>
+            <h1>SESSION.md — セッション前提</h1>
+            <p>会話の最初に必ず載せる「地図」。あなたが省略した前提が、モデル側の手抜き解釈に直結します。</p>
+        </header>
+
+        <p class="context-section-title">こんなときに使う</p>
+        <ul class="context-prose">
+            <li>長いスレッドや、翌日に続きから再開するとき</li>
+            <li>複数リポジトリ・複数ロールが混ざる依頼のとき</li>
+            <li>「やらないこと」を先に宣言してコストを下げたいとき</li>
+        </ul>
+
+        <p class="context-section-title">運用のコツ</p>
+        <ul class="context-prose">
+            <li>「今日のゴール」は<strong>1文だけ</strong>。肢の開き方が曖昧なときは、ゴールを書き直す。</li>
+            <li>用語表は空でも枠だけ残すと、その後の対話で埋めやすい。</li>
+            <li>最終更新日を必ず触る。古い SESSION は信じない、というルールをチームで共有する。</li>
+        </ul>
+
+        <div class="context-template-wrap">
+            <div class="context-template-head">
+                <h2>テンプレート（Markdown）</h2>
+                <button type="button" class="copy-btn" data-copy-target="ctx-session-md">Copy</button>
+            </div>
+            <pre id="ctx-session-md" class="code-block"># SESSION — セッション前提
+
+&gt; このブロックを毎回の会話の**先頭**に貼る。ここに書いた事項をモデルは優先して解釈する。
+
+## メタ
+- **プロダクト / 取り組み**:
+- **今回のゴール（1文で）**:
+- **想定オーディエンス**: （例: 実装担当 / レビューア / PM / 非エンジニア）
+
+## 用語・前提
+| 用語 | 意味 |
+|------|------|
+|  |  |
+
+## いま効いている制約
+- **期限**:
+- **触ってはいけない範囲**（ファイル・契約・本番 など）:
+
+## 禁止・非目標（やらないこと）
+-
+
+## 参照リンク
+- 仕様・デザイン・チケット:
+
+---
+*SESSION 最終更新: YYYY-MM-DD*</pre>
+        </div>
+
+        <section class="context-related" aria-label="関連テンプレート">
+            <h2>ほかのコンテキスト</h2>
+            <div class="context-related-links">
+                <a href="spec.html" class="link-arrow">SPEC.md — 仕様・受け入れ基準 →</a>
+                <a href="learnings.html" class="link-arrow">LEARNINGS.md — 蓄積ナレッジ →</a>
+                <a href="index.html" class="link-arrow">Context Engineering 一覧へ戻る →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 P&amp;C Engineering. All rights reserved.</p>
+    </footer>
+
+    <script src="copy-pre.js" defer></script>
+</body>
+</html>

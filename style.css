@@ -642,6 +642,7 @@ summary:focus-visible {
     box-shadow: 0 0 40px -12px rgba(56, 189, 248, 0.35);
 }
 
+.sub-card h2,
 .sub-card h3 {
     margin: 0 0 0.5rem;
     font-size: 1.05rem;
@@ -652,6 +653,137 @@ summary:focus-visible {
     margin: 0;
     font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+.sub-card .link-arrow {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.sub-card h2 a,
+.sub-card h3 a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.sub-card h2 a:hover,
+.sub-card h3 a:hover {
+    color: var(--neon-bright);
+}
+
+/* Context Engineering child pages */
+.context-breadcrumb {
+    margin: 0 0 1.25rem;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.5rem;
+}
+
+.context-breadcrumb a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.context-breadcrumb a:hover {
+    color: var(--neon-bright);
+}
+
+.context-breadcrumb [aria-hidden="true"] {
+    opacity: 0.45;
+    user-select: none;
+}
+
+.context-prose {
+    margin: 0 0 1.5rem;
+    padding: 0;
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    max-width: 48rem;
+}
+
+.context-prose ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.15rem;
+}
+
+.context-prose li {
+    margin: 0.25rem 0;
+}
+
+.context-section-title {
+    margin: 2rem 0 0.65rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--neon-bright);
+}
+
+.context-section-title:first-of-type {
+    margin-top: 0;
+}
+
+.context-template-wrap {
+    margin: 1.25rem 0 2rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: rgba(22, 27, 34, 0.45);
+}
+
+.context-template-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.context-template-head h2 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.context-template-wrap pre.code-block {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    max-height: min(62vh, 28rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: rgba(56, 189, 248, 0.35) rgba(22, 27, 34, 0.5);
+    scrollbar-width: thin;
+}
+
+.context-related {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.context-related h2 {
+    margin: 0 0 0.85rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.context-related-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 /* Prompt library */
