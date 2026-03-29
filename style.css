@@ -786,6 +786,115 @@ summary:focus-visible {
     gap: 0.5rem;
 }
 
+.context-tier {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.context-tier--high {
+    color: #fca5a5;
+}
+
+.context-tier--mid {
+    color: #fcd34d;
+}
+
+.context-tier--low {
+    color: #94a3b8;
+}
+
+.context-md-library-intro {
+    margin: 0 0 2rem;
+    padding: 1rem 1.15rem;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: var(--radius-md);
+    background: rgba(56, 189, 248, 0.06);
+    max-width: 48rem;
+}
+
+.context-md-library-intro strong {
+    color: var(--text-primary);
+}
+
+.context-md-section-title {
+    margin: 0 0 1rem;
+    font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.context-md-library .context-md-section-title {
+    margin-bottom: 0.75rem;
+}
+
+#session-templates .context-md-section-title {
+    margin-top: 2.75rem;
+}
+
+.context-md-group-title {
+    margin: 2.25rem 0 1rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+
+.context-md-filename {
+    margin: 0.75rem 0 0;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+.context-md-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.35rem;
+    margin-top: 1rem;
+}
+
+.context-md-toolbar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem 1rem;
+}
+
+.btn-context-dl {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 1.05rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-primary);
+    border: 1px solid var(--border-subtle);
+    background: rgba(22, 27, 34, 0.75);
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-context-dl:hover {
+    border-color: rgba(56, 189, 248, 0.4);
+    color: var(--neon-bright);
+    box-shadow: 0 0 20px -6px var(--neon-dim);
+}
+
+.context-back-link {
+    margin: 1.5rem 0 0;
+}
+
 /* Prompt library */
 .prompt-item {
     background: linear-gradient(165deg, rgba(22, 27, 34, 0.98), rgba(22, 27, 34, 0.9));

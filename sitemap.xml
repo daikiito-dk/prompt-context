@@ -16,6 +16,56 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/01-product-core-concept.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/02-architecture-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/03-domain-dictionary.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/04-api-standards-and-models.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/05-ui-ux-design-system.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/06-coding-and-git-rules.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/07-known-issues-and-backlog.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/08-user-persona-and-user-journey.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://prompt-context-zeta.vercel.app/contexts/session.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -29,6 +79,46 @@
     <loc>https://prompt-context-zeta.vercel.app/contexts/learnings.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/01-product-core-concept.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/02-architecture-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/03-domain-dictionary.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/04-api-standards-and-models.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/05-ui-ux-design-system.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/06-coding-and-git-rules.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/07-known-issues-and-backlog.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/08-user-persona-and-user-journey.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://prompt-context-zeta.vercel.app/tools/</loc>
