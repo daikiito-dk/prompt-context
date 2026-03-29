@@ -559,6 +559,19 @@ a.card-glow--block-link .home-sample-pre--md {
     line-height: 1.6;
 }
 
+.home-landmark-quote-source {
+    margin: 0.75rem 0 0;
+    font-size: 0.82rem;
+    font-style: normal;
+    color: var(--text-muted);
+    opacity: 0.92;
+}
+
+.sub-header-lead-quote {
+    margin-bottom: 1.75rem;
+    max-width: 44rem;
+}
+
 .home-landmark-actions {
     margin: 0;
 }
