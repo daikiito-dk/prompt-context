@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
-<body class="sub-page">
+<body class="sub-page sub-page--prompts">
     <nav class="site-nav" aria-label="Main">
         <a class="logo" href="../index.html">P&amp;C</a>
         <ul class="nav-links">
@@ -19,34 +19,131 @@
         </ul>
     </nav>
 
-    <main class="content-wrapper">
-        <header class="sub-header">
-            <span class="tag">Library</span>
-            <h1>Prompt Engineering</h1>
-            <p>検証済みのプロンプトをそのまま利用。コピーして会話に貼り付けるだけです。</p>
+    <main class="content-wrapper content-wrapper--prompts">
+        <header class="sub-header sub-header--prompts">
+            <span class="tag">Prompt Library</span>
+            <h1>Prompt Assets</h1>
+            <p>P&amp;C 上級査定済みのテンプレート。カテゴリー別に整理し、推奨モデルタグでそのまま運用できます。</p>
         </header>
 
-        <section class="prompt-item">
-            <div class="prompt-header">
-                <h3>深層思考・推論プロンプト</h3>
-                <button type="button" class="copy-btn" data-copy-target="prompt1">Copy</button>
-            </div>
-            <pre id="prompt1" class="code-block">あなたは世界最高のエンジニアです。
-以下の制約条件に基づき、論理的な思考ステップを経て回答してください。
+        <div class="asset-search-wrap" role="search" aria-label="Asset search (preview)">
+            <label class="visually-hidden" for="asset-search">Search assets</label>
+            <span class="asset-search-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
+            </span>
+            <input type="search" id="asset-search" class="asset-search-input" placeholder="Search assets..." autocomplete="off" />
+        </div>
 
-# 制約条件:
-- 結論から述べること
-- 中間プロセスを簡潔に書くこと</pre>
-        </section>
+        <div class="prompt-catalog">
+            <details class="prompt-category" open>
+                <summary class="prompt-category-summary">
+                    <span class="prompt-category-title">Deep Reasoning</span>
+                    <span class="prompt-category-hint">推論・分析・複雑タスク</span>
+                </summary>
+                <div class="prompt-category-body">
+                    <section class="prompt-item">
+                        <div class="prompt-header">
+                            <div class="prompt-header-main">
+                                <h3 class="prompt-title">P&amp;C Standard Reasoning</h3>
+                                <p class="prompt-desc">思考プロセスを必ず明示させる構造化プロンプト。前提・推論・結論を分離し、途中の飛躍を減らします。</p>
+                                <div class="model-tags" aria-label="Recommended models">
+                                    <span class="model-tag">Claude 3.7 Sonnet</span>
+                                    <span class="model-tag">GPT-4o</span>
+                                </div>
+                            </div>
+                            <div class="prompt-header-actions">
+                                <button type="button" class="copy-btn" data-copy-target="prompt-standard-reasoning">Copy</button>
+                            </div>
+                        </div>
+                        <pre id="prompt-standard-reasoning" class="code-block code-block--asset">You are a rigorous reasoning partner. For every non-trivial request, respond using this exact structure:
 
-        <section class="prompt-item">
-            <div class="prompt-header">
-                <h3>要約・構造化プロンプト</h3>
-                <button type="button" class="copy-btn" data-copy-target="prompt2">Copy</button>
-            </div>
-            <pre id="prompt2" class="code-block">以下の文章を、箇条書きで3点に要約してください。
-また、最も重要なキーワードを1つ抽出してください。</pre>
-        </section>
+1. **Goal restatement** — One sentence: what the user is trying to achieve.
+2. **Assumptions &amp; gaps** — Bullet list of what you assume; flag missing info explicitly.
+3. **Reasoning trace** — Numbered steps from premises to conclusion. No skipped leaps; if you infer, label it as inference.
+4. **Direct answer** — Final output in the format the user asked for (or propose a format if unspecified).
+5. **Confidence** — One of: High / Medium / Low, plus a single-line justification.
+
+If critical information is missing for step 3, stop after step 2 and list only the clarifying questions needed.</pre>
+                    </section>
+                </div>
+            </details>
+
+            <details class="prompt-category" open>
+                <summary class="prompt-category-summary">
+                    <span class="prompt-category-title">Code Architecture</span>
+                    <span class="prompt-category-hint">コンテキスト連結・ドキュメント駆動</span>
+                </summary>
+                <div class="prompt-category-body">
+                    <section class="prompt-item">
+                        <div class="prompt-header">
+                            <div class="prompt-header-main">
+                                <h3 class="prompt-title">Context Bridge</h3>
+                                <p class="prompt-desc">.md などのファイルを貼り付けたときに、セッション全体へ文脈を橋渡しするプロンプト。ダイジェスト化と衝突検知を担当します。</p>
+                                <div class="model-tags" aria-label="Recommended models">
+                                    <span class="model-tag">Claude 3.7 Sonnet</span>
+                                    <span class="model-tag">GPT-4o</span>
+                                </div>
+                            </div>
+                            <div class="prompt-header-actions">
+                                <button type="button" class="copy-btn" data-copy-target="prompt-context-bridge">Copy</button>
+                            </div>
+                        </div>
+                        <pre id="prompt-context-bridge" class="code-block code-block--asset">I will paste one or more Markdown context files. Treat their factual claims as session ground truth unless I later override them.
+
+Your tasks:
+1. If multiple sections overlap, merge them; if two statements conflict, quote both and ask which source should win.
+2. Produce a **Context digest** (8–12 bullets): product / audience / hard constraints / glossary / open decisions / links or paths if mentioned.
+3. Until I provide new files, ground every answer in this digest. If a question is outside the digest, say so and answer hypothetically with clear "assumed:" labels.
+
+Paste files strictly between the delimiters:
+
+&lt;&lt;&lt;CONTEXT_START
+[paste .md content here]
+CONTEXT_END&gt;&gt;&gt;</pre>
+                    </section>
+                </div>
+            </details>
+
+            <details class="prompt-category" open>
+                <summary class="prompt-category-summary">
+                    <span class="prompt-category-title">Creative Writing</span>
+                    <span class="prompt-category-hint">GTM・コピー・ペルソナ</span>
+                </summary>
+                <div class="prompt-category-body">
+                    <section class="prompt-item">
+                        <div class="prompt-header">
+                            <div class="prompt-header-main">
+                                <h3 class="prompt-title">Strategic Marketing Agent</h3>
+                                <p class="prompt-desc">リード獲得を最大化するための B2B マーケ担当ペルソナ。フック・ランディング骨子・商談 qualification を一気通貫で出します。</p>
+                                <div class="model-tags" aria-label="Recommended models">
+                                    <span class="model-tag">GPT-4o</span>
+                                    <span class="model-tag">Claude 3.7 Sonnet</span>
+                                </div>
+                            </div>
+                            <div class="prompt-header-actions">
+                                <button type="button" class="copy-btn" data-copy-target="prompt-marketing-agent">Copy</button>
+                            </div>
+                        </div>
+                        <pre id="prompt-marketing-agent" class="code-block code-block--asset">You are **Strategic Marketing Agent**, a senior B2B growth strategist. Primary KPI: **qualified leads** without eroding brand trust.
+
+Operating rules:
+- Open with a 3-bullet **ICP snapshot**. If the user did not define ICP, propose a testable default and label every bullet "hypothesis".
+- No hollow hype. Prefer concrete nouns, numbers, and mechanisms over adjectives.
+- If the offer is structurally weak, say so first and suggest one sharper angle before producing assets.
+
+Output in this order:
+1. **Core message** — One sentence value prop (≤ 25 words).
+2. **Hooks** — Exactly 3 variants (LinkedIn or cold email), each ≤ 45 words, different angles.
+3. **Landing scaffold** — H1, H2, H3 outline only (no body copy).
+4. **Sales qualification** — 5 questions an SDR should ask to filter leads.
+5. **Weekly metric** — Single metric to watch + why it signals lead quality.
+
+User inputs (product/service, channel constraints, geography, compliance limits):
+</pre>
+                    </section>
+                </div>
+            </details>
+        </div>
     </main>
 
     <footer class="site-footer">
@@ -62,8 +159,10 @@
                 navigator.clipboard.writeText(el.innerText).then(function () {
                     var prev = btn.textContent;
                     btn.textContent = "Copied!";
+                    btn.classList.add("copy-btn--success");
                     setTimeout(function () {
                         btn.textContent = prev;
+                        btn.classList.remove("copy-btn--success");
                     }, 2000);
                 });
             });
