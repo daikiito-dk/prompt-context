@@ -327,7 +327,7 @@ summary:focus-visible {
     text-shadow: 0 0 18px var(--neon-dim);
 }
 
-/* Tools — Agentic AI hub & lead roadmap */
+/* Tools — AI development hub & governance notes */
 .tools-page__main .sub-header p.tools-page__lead {
     max-width: 46rem;
     line-height: 1.65;
@@ -466,66 +466,40 @@ summary:focus-visible {
     font-size: 0.8125rem !important;
 }
 
-.tools-lead-funnel {
-    margin-top: 3rem;
-    padding: 1.35rem 1.4rem 1.5rem;
+.tools-page__guidance {
+    margin-top: 0.25rem;
+    padding: 1.35rem 1.4rem 1.45rem;
     border-radius: var(--radius-md);
-    border: 1px solid rgba(94, 234, 212, 0.22);
-    background: linear-gradient(165deg, rgba(94, 234, 212, 0.09), rgba(22, 27, 34, 0.92));
+    border: 1px solid var(--border-subtle);
+    background: var(--card-bg);
 }
 
-.tools-lead-funnel > p {
-    margin: 0 0 1rem;
-    font-size: 0.9375rem;
-    line-height: 1.65;
-    color: var(--text-muted);
-    max-width: 44rem;
-}
-
-.tools-lead-funnel__list {
-    margin: 0 0 1.25rem;
+.tools-guidance-list {
+    margin: 0 0 1.15rem;
     padding-left: 1.15rem;
     color: var(--text-muted);
     font-size: 0.9rem;
-    line-height: 1.6;
-    max-width: 44rem;
+    line-height: 1.65;
+    max-width: 46rem;
 }
 
-.tools-lead-funnel__list li {
-    margin: 0.4rem 0;
+.tools-guidance-list li {
+    margin: 0.45rem 0;
 }
 
-.tools-lead-funnel__list strong {
+.tools-guidance-list strong {
     color: var(--text-primary);
+    font-weight: 650;
 }
 
-.tools-lead-funnel__cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
-    margin-bottom: 1rem;
-}
-
-.tools-cta-pill {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.4rem 0.9rem;
-    border-radius: 999px;
-    font-size: 0.75rem;
-    font-weight: 700;
-}
-
-.tools-cta-pill--muted {
-    color: var(--text-muted);
-    border: 1px dashed var(--border-subtle);
-    background: rgba(11, 14, 20, 0.45);
-}
-
-.tools-lead-funnel__note {
+.tools-guidance-footnote {
     margin: 0 !important;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border-subtle);
     font-size: 0.8125rem !important;
+    line-height: 1.55;
     color: var(--text-muted);
-    opacity: 0.95;
+    max-width: 46rem;
 }
 
 /* Footer */
@@ -1047,6 +1021,29 @@ summary:focus-visible {
 
 .context-axios-feature h2 {
     font-size: 1.15rem;
+}
+
+.context-fastapi-feature {
+    position: relative;
+    border-color: rgba(52, 211, 153, 0.4);
+    background: linear-gradient(155deg, rgba(52, 211, 153, 0.12) 0%, rgba(22, 27, 34, 0.96) 42%, rgba(22, 27, 34, 0.98) 100%);
+    box-shadow: 0 0 48px -20px rgba(52, 211, 153, 0.32);
+}
+
+.context-fastapi-feature .tag {
+    color: #6ee7b7;
+}
+
+.context-fastapi-feature h2 {
+    font-size: 1.15rem;
+}
+
+@media (min-width: 860px) {
+    .card-list--oss-pair {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
 }
 
 .context-md-templates-lite .sub-card {

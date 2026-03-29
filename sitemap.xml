@@ -26,6 +26,51 @@
     <priority>0.76</priority>
   </url>
   <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.74</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/01-product-core-concept.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/02-architecture-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/03-domain-dictionary.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/04-api-standards-and-models.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/05-extended-standards-and-operational-rules.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/06-development-workflow-and-testing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/07-maintenance-migration-and-ecosystem.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/08-user-persona-and-user-journey-deep-dive.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
     <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/01-product-core-concept.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>

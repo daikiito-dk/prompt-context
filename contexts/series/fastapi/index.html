@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI コンテキストシリーズ | P&amp;C</title>
+    <meta name="description" content="FastAPI（fastapi/fastapi）向けプロダクトコンテキスト。01–08 を公開（Axios シリーズと同型の 8 本構成）。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prompt-context-zeta.vercel.app/contexts/series/fastapi/">
+    <meta property="og:title" content="FastAPI コンテキストシリーズ | P&amp;C">
+    <meta property="og:url" content="https://prompt-context-zeta.vercel.app/contexts/series/fastapi/">
+    <meta name="theme-color" content="#0b0e14">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20fill%3D%27%230b0e14%27%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%278%27%2F%3E%3Cpath%20fill%3D%27%2338bdf8%27%20d%3D%27M9%2010h5.2c2.2%200%203.9%201.5%203.9%203.5S16.4%2017%2014.2%2017H12v5H9V10zm3%202.8h2c.9%200%201.5-.5%201.5-1.2s-.6-1.2-1.5-1.2H12v2.4z%27%2F%3E%3C%2Fsvg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body class="sub-page">
+    <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
+    <nav class="site-nav" aria-label="Main">
+        <div class="site-nav-inner">
+            <a class="logo" href="../../../index.html">P&amp;C</a>
+            <ul class="nav-links">
+                <li><a href="../../../prompts/index.html">Prompts</a></li>
+                <li><a href="../../index.html">Contexts</a></li>
+                <li><a href="../../../tools/index.html">Tools</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-wrapper" id="main-content">
+        <nav class="context-breadcrumb" aria-label="パンくず">
+            <a href="../../../index.html">ホーム</a><span aria-hidden="true">/</span>
+            <a href="../../index.html">Contexts</a><span aria-hidden="true">/</span>
+            <a href="../index.html">Series</a><span aria-hidden="true">/</span>
+            <span>FastAPI</span>
+        </nav>
+
+        <header class="sub-header sub-header--ruled">
+            <span class="tag">OSS Series</span>
+            <h1>FastAPI — プロダクトコンテキスト</h1>
+            <p>根拠リポジトリ: <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">https://github.com/fastapi/fastapi</a>。Python エコシステムのモダン API 枠として、<strong>型ヒントがバリデーション・シリアライズ・OpenAPI 生成に直結する</strong>ことを AI に固定させるシリーズです。<strong>01〜08 の 8 文書を公開</strong>しています。</p>
+        </header>
+
+        <h2 class="context-md-group-title">公開中</h2>
+        <div class="card-list">
+            <article class="sub-card">
+                <span class="context-tier context-tier--high">01</span>
+                <h2><a href="01-product-core-concept.html">Product Core Concept</a></h2>
+                <p>型駆動・非同期第一・標準準拠。Starlette / Pydantic / Uvicorn と競合比較、AI 向け実装ガイドライン。</p>
+                <p class="context-md-filename"><code class="inline-code">01_Product_Core_Concept.md</code></p>
+                <div class="context-md-actions context-md-actions--bar">
+                    <a href="md/01_Product_Core_Concept.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                    <a href="01-product-core-concept.html" class="btn-context-view">全文を開く</a>
+                </div>
+            </article>
+            <article class="sub-card">
+                <span class="context-tier context-tier--high">02</span>
+                <h2><a href="02-architecture-overview.html">Architecture Overview</a></h2>
+                <p>ASGI→Starlette→Pydantic→FastAPI の階層、リクエスト・ライフサイクル、DI、並行処理、OpenAPI、推奨ディレクトリ構成。</p>
+                <p class="context-md-filename"><code class="inline-code">02_Architecture_Overview.md</code></p>
+                <div class="context-md-actions context-md-actions--bar">
+                    <a href="md/02_Architecture_Overview.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                    <a href="02-architecture-overview.html" class="btn-context-view">全文を開く</a>
+                </div>
+            </article>
+            <article class="sub-card">
+                <span class="context-tier context-tier--high">03</span>
+                <h2><a href="03-domain-dictionary.html">Domain Dictionary</a></h2>
+                <p>Path Operation・Pydantic・Depends・APIRouter。パース／シリアライズ、ASGI、Security、自然言語エイリアス、辞書の強制運用。</p>
+                <p class="context-md-filename"><code class="inline-code">03_Domain_Dictionary.md</code></p>
+                <div class="context-md-actions context-md-actions--bar">
+                    <a href="md/03_Domain_Dictionary.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                    <a href="03-domain-dictionary.html" class="btn-context-view">全文を開く</a>
+                </div>
+            </article>
+            <article class="sub-card">
+                <span class="context-tier context-tier--high">04</span>
+                <h2><a href="04-api-standards-and-models.html">API Standards and Models</a></h2>
+                <p>Pydantic スキーマ命名、`get_db` / `get_current_user` / ページネーション DI、パス操作のシグネチャ、エラーとステータス、`response_model` と services 分離。</p>
+                <p class="context-md-filename"><code class="inline-code">04_API_Standards_and_Models.md</code></p>
+                <div class="context-md-actions context-md-actions--bar">
+                    <a href="md/04_API_Standards_and_Models.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                    <a href="04-api-standards-and-models.html" class="btn-context-view">全文を開く</a>
+                </div>
+            </article>
+            <article class="sub-card">
+                <span class="context-tier context-tier--mid">05</span>
+                <h2><a href="05-extended-standards-and-operational-rules.html">Extended Standards and Operational Rules</a></h2>
+                <p>並行性（async/sync/BackgroundTasks）、推奨ディレクトリ構成、CORS・ログ・例外ハンドラ、OAuth2/SQL安全/response_model、設定と本番ワーカー、循環参照と計測と OpenAPI 記述。</p>
+                <p class="context-md-filename"><code class="inline-code">05_Extended_Standards_and_Operational_Rules.md</code></p>
+                <div class="context-md-actions context-md-actions--bar">
+                    <a href="md/05_Extended_Standards_and_Operational_Rules.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                    <a href="05-extended-standards-and-operational-rules.html" class="btn-context-view">全文を開く</a>
+                </div>
+            </article>
+            <article class="sub-card">
+                <span class="context-tier context-tier--mid">06</span>
+                <h2><a href="06-development-workflow-and-testing.html">Development Workflow and Testing</a></h2>
+                <p>単体・統合・DB テスト、`TestClient` / `dependency_overrides`、OpenAPI の tags・例・メタデータ、`/docs` と計測、uvicorn reload と ruff/mypy、実装と pytest のセット提示。</p>
+                <p class="context-md-filename"><code class="inline-code">06_Development_Workflow_and_Testing.md</code></p>
+                <div class="context-md-actions context-md-actions--bar">
+                    <a href="md/06_Development_Workflow_and_Testing.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                    <a href="06-development-workflow-and-testing.html" class="btn-context-view">全文を開く</a>
+                </div>
+            </article>
+            <article class="sub-card">
+                <span class="context-tier context-tier--low">07</span>
+                <h2><a href="07-maintenance-migration-and-ecosystem.html">Maintenance Migration and Ecosystem</a></h2>
+                <p>Pydantic v2 / SQLAlchemy 2.0 移行、Alembic、SQLModel・HTTPX・Casbin、Docker・ヘルスチェック・Graceful Shutdown、型の厳格化・トレーシング・main 肥大化の分割。</p>
+                <p class="context-md-filename"><code class="inline-code">07_Maintenance_Migration_and_Ecosystem.md</code></p>
+                <div class="context-md-actions context-md-actions--bar">
+                    <a href="md/07_Maintenance_Migration_and_Ecosystem.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                    <a href="07-maintenance-migration-and-ecosystem.html" class="btn-context-view">全文を開く</a>
+                </div>
+            </article>
+            <article class="sub-card">
+                <span class="context-tier context-tier--low">08</span>
+                <h2><a href="08-user-persona-and-user-journey-deep-dive.html">User Persona and User Journey Deep Dive</a></h2>
+                <p>DS・フロント・アーキペルソナ、4 フェーズの開発ジャーニー、シナリオ表、エッジケース、`/docs` 誘導と response_model ・エコシステムの提案。</p>
+                <p class="context-md-filename"><code class="inline-code">08_User_Persona_and_User_Journey_Deep_Dive.md</code></p>
+                <div class="context-md-actions context-md-actions--bar">
+                    <a href="md/08_User_Persona_and_User_Journey_Deep_Dive.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                    <a href="08-user-persona-and-user-journey-deep-dive.html" class="btn-context-view">全文を開く</a>
+                </div>
+            </article>
+        </div>
+
+        <p class="context-back-link"><a href="../index.html" class="link-arrow">OSS シリーズ一覧へ戻る →</a></p>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 P&amp;C Engineering. All rights reserved.</p>
+    </footer>
+</body>
+</html>

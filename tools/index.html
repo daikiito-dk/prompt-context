@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Environment · Agentic AI ツール | P&amp;C — Tools &amp; Workflow</title>
-    <meta name="description" content="実務で使われている Agentic AI ツールを比較しやすく整理。IDE 統合・CLI・コーディングエージェントの選定の土台に。将来は個別お問い合わせと資料 DL の受け皿に拡張予定。">
+    <title>Tools &amp; Workflow — AI 開発環境 | P&amp;C</title>
+    <meta name="description" content="AI を組み込んだソフトウェア開発で参照されやすいツール群を用途別に整理。導入検討や社内説明資料のたたき台としてご利用ください。">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://prompt-context-zeta.vercel.app/tools/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:site_name" content="P&amp;C — Prompt &amp; Context Platform">
-    <meta property="og:title" content="Environment · Agentic AI ツール | P&amp;C">
-    <meta property="og:description" content="Agentic AI の現行ツールをキュレーション。導入比較と運用の型。将来的にリード獲得・資料 DL へ拡張。">
+    <meta property="og:title" content="Tools &amp; Workflow — AI 開発環境 | P&amp;C">
+    <meta property="og:description" content="AI コーディング支援ツールの概要と用途。プロンプト・コンテキスト設計とあわせた運用上の留意点。">
     <meta property="og:url" content="https://prompt-context-zeta.vercel.app/tools/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Environment · Agentic AI ツール | P&amp;C">
-    <meta name="twitter:description" content="Agentic AI ツールのキュレーション。将来はお問い合わせ・資料の受け皿に。">
+    <meta name="twitter:title" content="Tools &amp; Workflow — AI 開発環境 | P&amp;C">
+    <meta name="twitter:description" content="AI コーディング支援ツールの整理と運用の考え方。社内検討・教育用の参考情報として。">
     <meta name="theme-color" content="#0b0e14">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20fill%3D%27%230b0e14%27%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%278%27%2F%3E%3Cpath%20fill%3D%27%2338bdf8%27%20d%3D%27M9%2010h5.2c2.2%200%203.9%201.5%203.9%203.5S16.4%2017%2014.2%2017H12v5H9V10zm3%202.8h2c.9%200%201.5-.5%201.5-1.2s-.6-1.2-1.5-1.2H12v2.4z%27%2F%3E%3C%2Fsvg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,8 +30,8 @@
                 "@type": "WebPage",
                 "@id": "https://prompt-context-zeta.vercel.app/tools/#webpage",
                 "url": "https://prompt-context-zeta.vercel.app/tools/",
-                "name": "Environment · Tools & Workflow | P&C",
-                "description": "Agentic AI ツールのキュレーションと運用の型。将来的にリード獲得・資料入手の窓口。",
+                "name": "Tools & Workflow — AI 開発環境 | P&C",
+                "description": "AI コーディング支援ツールの概要整理と、プロンプト・コンテキストと組み合わせた運用上の枠組み。",
                 "inLanguage": "ja",
                 "isPartOf": {
                     "@type": "WebSite",
@@ -77,91 +77,88 @@
         <header class="sub-header sub-header--ruled">
             <span class="tag tag--mint">Environment</span>
             <h1>Tools &amp; Workflow</h1>
-            <p class="tools-page__lead"><strong>Agentic AI</strong>（自律的にステップを踏んでタスクを進める AI）のうち、いま実務で<strong>再現性高く使われているプロダクト</strong>を整理したページです。エディタ一体型から CLI・API 駆動まで、比較と選定の出発点にしてください。</p>
+            <p class="tools-page__lead">AI を活用したソフトウェア開発において、企業内外で参照頻度の高い<strong>コーディング支援・エージェント型ツール</strong>を用途ごとに整理しています。特定製品の推奨ではなく、情報収集と社内検討のための<strong>中立な概観</strong>としてご利用ください。各名称は公式サイトへリンクします。</p>
         </header>
 
         <nav class="tools-page__toc" aria-label="このページのセクション">
-            <a href="#agentic-tools">Agentic ツール</a>
-            <a href="#pc-rails">P&amp;C 運用の型</a>
-            <a href="#lead-roadmap">リード獲得（ロードマップ）</a>
+            <a href="#agentic-tools">主要ツール</a>
+            <a href="#pc-rails">運用の枠組み</a>
+            <a href="#governance-notes">導入・評価の観点</a>
         </nav>
 
         <section id="agentic-tools" class="tools-page__section" aria-labelledby="agentic-tools-heading">
-            <h2 id="agentic-tools-heading" class="tools-section-title">いま一番「行けている」Agentic AI ツール</h2>
-            <p class="tools-section-lead">掲載は特定ベンダー推奨ではなく、<strong>エージェント的なワークフロー</strong>（複数ファイル・コマンド・検証を跨ぐ）で採用例が多い現行プロダクトを中心にしています。各リンクは公式サイトに飛びます。</p>
+            <h2 id="agentic-tools-heading" class="tools-section-title">主要な AI コーディング支援ツール（概要）</h2>
+            <p class="tools-section-lead">リポジトリ横断の編集、ターミナル連携、複数ステップのタスク実行など、開発フローに組み込まれた事例が増えている製品を中心に掲載しています。最終的な選定は、利用規約・セキュリティ要件・既存の開発基盤との整合を踏まえて判断してください。</p>
 
             <div class="tools-tool-grid">
                 <article class="tools-tool-card">
                     <h3 class="tools-tool-card__name"><a href="https://cursor.com/" rel="noopener noreferrer">Cursor</a></h3>
-                    <p class="tools-tool-card__kind">AI ネイティブ IDE · Agent · MCP</p>
-                    <p>エディタ内でエージェントがリポジトリを横断編集。Rules / Skills で振る舞いを固定しやすく、チーム開発との相性が高い。</p>
-                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> 既存コードベースでの機能追加、リファクタ、レビュー前の下書き。</p>
+                    <p class="tools-tool-card__kind">AI ネイティブ IDE · エージェント · MCP</p>
+                    <p>統合開発環境内でコードベース全体を対象にした提案・編集が可能。チーム向けのルールやスキル定義により、出力の一貫性を保ちやすい構成です。</p>
+                    <p class="tools-tool-card__fit"><strong>想定用途:</strong> 既存製品への機能追加、設計変更に伴うリファクタリング、コードレビュー前のたたき台作成。</p>
                 </article>
                 <article class="tools-tool-card">
                     <h3 class="tools-tool-card__name"><a href="https://windsurf.com/" rel="noopener noreferrer">Windsurf</a></h3>
                     <p class="tools-tool-card__kind">IDE · Cascade / Flow</p>
-                    <p>コードベース全体をコンテキストにした編集フロー。ターミナルや複数ステップのタスクをエージェントに任せる使い方が定着しつつある。</p>
-                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> フルスタックの素早い試作、ボイラープレート削減。</p>
+                    <p>広いコンテキストを前提とした編集体験を提供。ターミナル操作や段階的な作業指示を通じて、開発タスクをまとめて進める用途に適します。</p>
+                    <p class="tools-tool-card__fit"><strong>想定用途:</strong> プロトタイピング、繰り返し発生する定型コードの削減。</p>
                 </article>
                 <article class="tools-tool-card">
                     <h3 class="tools-tool-card__name"><a href="https://github.com/features/copilot" rel="noopener noreferrer">GitHub Copilot</a></h3>
-                    <p class="tools-tool-card__kind">IDE 拡張 · Copilot Chat / agent 系機能</p>
-                    <p>VS Code / JetBrains 等に載るコーディング支援。エージェント的にワークスペースをまたぐ操作はプロダクトのアップデートとともに拡張中。</p>
-                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> すでに GitHub 中心の開発体制で、導入摩擦を小さくしたい場合。</p>
+                    <p class="tools-tool-card__kind">IDE 拡張 · Copilot Chat / エージェント機能</p>
+                    <p>Visual Studio Code や JetBrains 系 IDE など、既存エディタに組み込む形でコード提案と対話型支援を提供。GitHub を中心とした開発フローと併用しやすいことが多いです。</p>
+                    <p class="tools-tool-card__fit"><strong>想定用途:</strong> 既存 IDE 環境を維持したまま AI 支援を段階的に導入する場合。</p>
                 </article>
                 <article class="tools-tool-card">
                     <h3 class="tools-tool-card__name"><a href="https://www.anthropic.com/claude" rel="noopener noreferrer">Claude（Anthropic）</a></h3>
                     <p class="tools-tool-card__kind">モデル · Claude Code（CLI）等</p>
-                    <p>長いコンテキストと指示追従に強み。<a href="https://github.com/anthropics/claude-code" rel="noopener noreferrer">Claude Code</a> など、ターミナルからリポジトリを操作するエージェント利用が増えている。</p>
-                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> 仕様読み込み・大規模 diff・ドキュメント整備など、文脈量が大きい作業。</p>
+                    <p>長い文脈の保持と詳細な指示への追従に特色があります。<a href="https://github.com/anthropics/claude-code" rel="noopener noreferrer">Claude Code</a> など、CLI からリポジトリ操作まで一連のフローに組み込む利用が報告されています。</p>
+                    <p class="tools-tool-card__fit"><strong>想定用途:</strong> 仕様書・設計資料の読み込み、変更範囲の大きい差分の整理、技術文書の整備。</p>
                 </article>
                 <article class="tools-tool-card">
                     <h3 class="tools-tool-card__name"><a href="https://openai.com/" rel="noopener noreferrer">OpenAI（ChatGPT / API）</a></h3>
-                    <p class="tools-tool-card__kind">汎用エージェント · ツール呼び出し</p>
-                    <p>ブラウザ・デスクトップ・API 経由でツール使用やマルチステップ推論を組み合わせる構成が主流。自社アプリへの組み込みでは API のエージェント設計が鍵。</p>
-                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> 社内ワークフローのオーケストレーション、カスタムツール連携。</p>
+                    <p class="tools-tool-card__kind">汎用エージェント · ツール連携</p>
+                    <p>ブラウザ、デスクトップアプリ、API など複数の経路から利用できるモデル・プラットフォーム。社内システムや外部 API と接続する場合は、権限設計とログ保全を含めたアーキテクチャが重要になります。</p>
+                    <p class="tools-tool-card__fit"><strong>想定用途:</strong> 業務プロセスの支援、社内向けカスタムツールとの連携設計。</p>
                 </article>
                 <article class="tools-tool-card">
-                    <h3 class="tools-tool-card__name"><a href="https://devin.ai/" rel="noopener noreferrer">Devin（参考）</a></h3>
-                    <p class="tools-tool-card__kind">自律型ソフトウェアエージェント</p>
-                    <p>タスクを任せる「自律エージェント」カテゴリの代表例。利用形態や提供範囲は変化しやすいので、常に公式の最新情報を確認すること。</p>
-                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> 限定スコープのタスク委任や PoC（ポリシー・セキュリティ整備は必須）。</p>
+                    <h3 class="tools-tool-card__name"><a href="https://devin.ai/" rel="noopener noreferrer">Devin</a></h3>
+                    <p class="tools-tool-card__kind">自律型ソフトウェアエージェント（一例）</p>
+                    <p>開発タスクをエージェントに委ねる構成の一例です。サービス内容や提供地域は更新が早いため、契約・セキュリティ要件の確認は必ず公式情報に基づいて行ってください。</p>
+                    <p class="tools-tool-card__fit"><strong>想定用途:</strong> 限定的な範囲での試験導入や概念実証（事前の情報管理ポリシー策定を推奨）。</p>
                 </article>
             </div>
         </section>
 
         <section id="pc-rails" class="tools-page__section" aria-labelledby="pc-rails-heading">
-            <h2 id="pc-rails-heading" class="tools-section-title">P&amp;C 側の運用レール（プロンプト × コンテキスト）</h2>
-            <p class="tools-section-lead">ツールを替えても崩れないように、<a href="../contexts/index.html">Contexts</a> とセットで使うと効く型です。</p>
+            <h2 id="pc-rails-heading" class="tools-section-title">P&amp;C が想定する運用の枠組み</h2>
+            <p class="tools-section-lead">採用ツールが変わっても再現しやすいよう、プロンプト資産と併せて <a href="../contexts/index.html">Contexts</a> で前提条件を構造化する考え方です。社内標準や監査に耐える運用を目指す場合の参考としてください。</p>
             <div class="card-list">
                 <article class="sub-card">
-                    <h2>レビュー用 diff パック</h2>
-                    <p>変更点・意図・リスクを固定フォーマットで共有。人間レビューとモデルへの説明コストの両方を下げます。</p>
+                    <h2>変更内容の共有フォーマット</h2>
+                    <p>差分、意図、既知のリスクを決まった書式で記載。人によるレビューと、関係者への説明の両方で抜け漏れを減らします。</p>
                 </article>
                 <article class="sub-card">
-                    <h2>Eval スナップショット</h2>
-                    <p>入力セットと期待挙動をバージョン管理。プロンプトやエージェント手順の改修による回帰を可視化します。</p>
+                    <h2>評価用データのスナップショット</h2>
+                    <p>代表的な入力と期待する挙動をバージョン管理。プロンプトや手順を更新した際の品質変化を追跡しやすくなります。</p>
                 </article>
                 <article class="sub-card">
-                    <h2>ガバナンスタグ</h2>
-                    <p>PII・機密度・保存期間のメタデータ。どの会話・どのエージェント実行にどの文脈を載せるかをルール化できます。</p>
+                    <h2>ガバナンス用メタデータ</h2>
+                    <p>個人情報の有無、機密度、保管期間などをタグとして明示。どの文脈をどの範囲の業務で利用してよいかをルール化する際の足がかりになります。</p>
                 </article>
             </div>
         </section>
 
-        <section id="lead-roadmap" class="tools-lead-funnel" aria-labelledby="lead-roadmap-heading">
-            <h2 id="lead-roadmap-heading" class="tools-section-title">リード獲得の受け皿（ロードマップ）</h2>
-            <p>この Environment セクションを、<strong>個別ツールに紐づくお問い合わせ</strong>や<strong>比較資料・チェックリストのダウンロード</strong>の入口に育てていく予定です。企業の PoC・採用支援と接続できる「受け皿」として設計します。</p>
-            <ul class="tools-lead-funnel__list">
-                <li><strong>ツール別ランディング</strong> — 各プロダクトごとに導入チェック・費用感・セキュリティ観点を整理した個別ページ。</li>
-                <li><strong>お問い合わせフォーム</strong> — 課題・スタック・禁止事項を受け、最短の構成案を返すフロー。</li>
-                <li><strong>資料ダウンロード</strong> — Agentic AI 比較表、RFP 用の質問リスト、ガバナンス雛形など。</li>
+        <section id="governance-notes" class="tools-page__section tools-page__guidance" aria-labelledby="governance-notes-heading">
+            <h2 id="governance-notes-heading" class="tools-section-title">導入・評価の際の観点</h2>
+            <p class="tools-section-lead">AI 支援ツールの導入は、開発効率だけでなく<strong>情報の取り扱い・契約・監査</strong>に影響します。以下を社内チェックリストの項目例として検討してください。</p>
+            <ul class="tools-guidance-list">
+                <li><strong>データ取り扱い</strong> — ソースコードや顧客情報が外部に送信されるか、学習に利用されるかを利用規約で確認する。</li>
+                <li><strong>認証・権限</strong> — 組織アカウント、シングルサインオン、リポジトリ単位のアクセス制御との整合を取る。</li>
+                <li><strong>利用ログと説明責任</strong> — いつ、誰が、どの範囲の資産に対して AI を用いたかを追跡できるようにする。</li>
+                <li><strong>ベンダー・モデルの更新</strong> — 機能追加に伴いポリシーが変わる場合があるため、定期的な見直しをプロセスに含める。</li>
             </ul>
-            <div class="tools-lead-funnel__cta-row" aria-label="現在利用可能なアクション">
-                <span class="tools-cta-pill tools-cta-pill--muted">フォーム連携（準備中）</span>
-                <span class="tools-cta-pill tools-cta-pill--muted">資料 DL（準備中）</span>
-            </div>
-            <p class="tools-lead-funnel__note">公開のタイミングや優先ツールはサイト更新でお知らせします。まずは上記キュレーションを社内比較のたたき台にしてください。</p>
+            <p class="tools-guidance-footnote">本ページの内容は一般的な整理であり、特定の契約・法令上の助言ではありません。最終判断はご組織の法務・情報システム部門とご相談ください。</p>
         </section>
     </main>
 
