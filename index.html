@@ -136,7 +136,7 @@
                 <header class="home-landmark-header">
                     <span class="tag">Landmark Paper</span>
                     <h2 id="landmark-heading">名論文スポットライト</h2>
-                    <p class="home-landmark-dek">プロンプト設計がモデルの推論を変えた、記念碑的研究を<strong>三つ</strong>ご紹介します。</p>
+                    <p class="home-landmark-dek">プロンプト設計がモデルの推論を変えた、記念碑的研究や最新のエビデンスを<strong>四つ</strong>ご紹介します。</p>
                 </header>
 
                 <article class="home-landmark-card" aria-labelledby="landmark-cot-heading">
@@ -242,6 +242,44 @@
                             </blockquote>
                             <p class="home-landmark-actions">
                                 <a href="https://arxiv.org/abs/2308.09687" class="btn btn-secondary" rel="noopener noreferrer">arXiv で論文を開く</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="home-landmark-card home-landmark-card--next" aria-labelledby="landmark-psr2-heading">
+                    <div class="home-landmark-grid">
+                        <figure class="home-landmark-figure">
+                            <img
+                                src="assets/images/spotlight-lennart-meincke-psr2.png"
+                                width="512"
+                                height="512"
+                                alt="研究者を象徴するピクセルアート風のポートレート（装飾イメージ）"
+                                loading="lazy"
+                                decoding="async"
+                                class="home-landmark-img">
+                            <figcaption class="home-landmark-caption">イラストレーション（Lennart Meincke をイメージ）</figcaption>
+                        </figure>
+                        <div class="home-landmark-copy">
+                            <h3 class="home-landmark-paper-title" id="landmark-psr2-heading">Prompting Science Report 2: The Decreasing Value of Chain of Thought in Prompting</h3>
+                            <p class="home-landmark-paper-subtitle">（プロンプティング科学レポート2：思考の連鎖における価値の低下）</p>
+                            <p class="home-landmark-author"><span class="home-landmark-meta-label">著者</span> Lennart Meincke <span class="home-landmark-author-note">（ペンシルベニア大学ウォートン校 Wharton Generative AI Labs による研究。共同著者あり）</span></p>
+
+                            <h4 class="home-landmark-subhead">あらすじ</h4>
+                            <div class="home-landmark-prose">
+                                <p>2022 年に Jason Wei らが提唱して以来、「とりあえず『ステップバイステップで考えて』と書く」ことはプロンプトの黄金律とされてきました。しかし、本レポートは最新モデル（Reasoning Models）において、その効果が<strong>「もはや時間とコストに見合わない」</strong>レベルまで低下していることを明らかにしました。</p>
+                                <p><strong>コストの逆転:</strong> 明示的に CoT を求めると、回答時間が 20〜80% 増加し、トークン消費も増えますが、正答率の向上はわずか数パーセント、あるいは全く向上しないケースが目立ちます。</p>
+                                <p><strong>結論:</strong> 「CoT は万能薬ではない」。古いモデルや小規模モデルには依然として有効ですが、最新のインテリジェントなモデルに対しては、手法の指定（How）よりも、背景情報やゴールの定義（What / Context）に注力すべきであると結論付けています。</p>
+                            </div>
+
+                            <h4 class="home-landmark-subhead">この論文の名言（Key Takeaway）</h4>
+                            <blockquote class="home-landmark-quote" cite="https://arxiv.org/abs/2506.07142">
+                                <p lang="en" class="home-landmark-quote-en">&ldquo;For dedicated reasoning models, the added benefits of explicit CoT prompting appear negligible and may not justify the substantial increase in processing time.&rdquo;</p>
+                                <p class="home-landmark-quote-ja">（特化型の推論モデルにおいて、明示的な CoT プロンプトによる追加のメリットは無視できるほど小さく、大幅に増加する処理時間に見合うものではなくなっている。）</p>
+                            </blockquote>
+                            <p class="home-landmark-actions home-landmark-actions--split">
+                                <a href="https://arxiv.org/abs/2506.07142" class="btn btn-secondary" rel="noopener noreferrer">arXiv で開く</a>
+                                <a href="https://gail.wharton.upenn.edu/research-and-insights/tech-report-chain-of-thought/" class="link-arrow" rel="noopener noreferrer">Wharton GAIL 公式レポート</a>
                             </p>
                         </div>
                     </div>
