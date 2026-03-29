@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FastAPI コンテキストシリーズ | P&amp;C</title>
-    <meta name="description" content="FastAPI（fastapi/fastapi）向けプロダクトコンテキスト。01–08 を公開（Axios シリーズと同型の 8 本構成）。">
+    <meta name="description" content="FastAPI（fastapi/fastapi）向けに 8 種類のプロダクトコンテキスト MD を具体例として掲載。Axios シリーズと同様、閲覧ページと同型のレイアウトで一覧表示。">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://prompt-context-zeta.vercel.app/contexts/series/fastapi/">
     <meta property="og:title" content="FastAPI コンテキストシリーズ | P&amp;C">
@@ -29,7 +29,7 @@
         </div>
     </nav>
 
-    <main class="content-wrapper" id="main-content">
+    <main class="content-wrapper content-wrapper--series-index" id="main-content">
         <nav class="context-breadcrumb" aria-label="パンくず">
             <a href="../../../index.html">ホーム</a><span aria-hidden="true">/</span>
             <a href="../../index.html">Contexts</a><span aria-hidden="true">/</span>
@@ -39,93 +39,198 @@
 
         <header class="sub-header sub-header--ruled">
             <span class="tag">OSS Series</span>
-            <h1>FastAPI — プロダクトコンテキスト</h1>
-            <p>根拠リポジトリ: <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">https://github.com/fastapi/fastapi</a>。Python エコシステムのモダン API 枠として、<strong>型ヒントがバリデーション・シリアライズ・OpenAPI 生成に直結する</strong>ことを AI に固定させるシリーズです。<strong>01〜08 の 8 文書を公開</strong>しています。</p>
+            <h1>FastAPI — プロダクトコンテキスト（8 MD）</h1>
+            <p>根拠リポジトリ: <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">https://github.com/fastapi/fastapi</a>。各文書を<strong>個別閲覧ページと同じレイアウト</strong>（見出し + 本文パネル）で並べています。コピー・MD ダウンロード・全画面表示は各ブロックのツールバーから利用できます。</p>
         </header>
 
-        <h2 class="context-md-group-title">公開中</h2>
-        <div class="card-list">
-            <article class="sub-card">
-                <span class="context-tier context-tier--high">01</span>
-                <h2><a href="01-product-core-concept.html">Product Core Concept</a></h2>
-                <p>型駆動・非同期第一・標準準拠。Starlette / Pydantic / Uvicorn と競合比較、AI 向け実装ガイドライン。</p>
-                <p class="context-md-filename"><code class="inline-code">01_Product_Core_Concept.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/01_Product_Core_Concept.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="01-product-core-concept.html" class="btn-context-view">全文を開く</a>
+        <nav class="context-page-nav context-page-nav--wrap" aria-label="文書へジャンプ">
+            <a href="#fastapi-priority-high">重要度：高</a>
+            <a href="#fastapi-priority-mid">重要度：中</a>
+            <a href="#fastapi-priority-low">重要度：低</a>
+            <span class="context-page-nav-divider" aria-hidden="true">|</span>
+            <a href="#doc-01">01</a>
+            <a href="#doc-02">02</a>
+            <a href="#doc-03">03</a>
+            <a href="#doc-04">04</a>
+            <a href="#doc-05">05</a>
+            <a href="#doc-06">06</a>
+            <a href="#doc-07">07</a>
+            <a href="#doc-08">08</a>
+        </nav>
+
+        <h2 id="fastapi-priority-high" class="context-md-group-title">重要度：高 — AI の挙動と精度の土台</h2>
+
+        <section id="doc-01" class="series-md-block" data-md-block data-md-path="md/01_Product_Core_Concept.md" aria-labelledby="fastapi-h-01">
+            <header class="sub-header sub-header--ruled series-md-block__head">
+                <span class="context-tier context-tier--high">重要度：高</span>
+                <span class="tag">OSS Series · FastAPI</span>
+                <h2 id="fastapi-h-01"><a href="01-product-core-concept.html">FastAPI — 01_Product_Core_Concept.md</a></h2>
+                <p class="series-md-block__summary">型駆動・非同期第一・標準準拠。Starlette / Pydantic / Uvicorn と競合比較、AI 向け実装ガイドライン。</p>
+                <p><code class="inline-code">01_Product_Core_Concept.md</code> · 根拠: <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">fastapi/fastapi</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="fastapi-md-01">Copy</button>
+                        <a class="btn-context-dl" href="md/01_Product_Core_Concept.md" download>MD をダウンロード</a>
+                        <a href="01-product-core-concept.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--high">02</span>
-                <h2><a href="02-architecture-overview.html">Architecture Overview</a></h2>
-                <p>ASGI→Starlette→Pydantic→FastAPI の階層、リクエスト・ライフサイクル、DI、並行処理、OpenAPI、推奨ディレクトリ構成。</p>
-                <p class="context-md-filename"><code class="inline-code">02_Architecture_Overview.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/02_Architecture_Overview.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="02-architecture-overview.html" class="btn-context-view">全文を開く</a>
+                <pre id="fastapi-md-01" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <section id="doc-02" class="series-md-block" data-md-block data-md-path="md/02_Architecture_Overview.md" aria-labelledby="fastapi-h-02">
+            <header class="sub-header sub-header--ruled series-md-block__head">
+                <span class="context-tier context-tier--high">重要度：高</span>
+                <span class="tag">OSS Series · FastAPI</span>
+                <h2 id="fastapi-h-02"><a href="02-architecture-overview.html">FastAPI — 02_Architecture_Overview.md</a></h2>
+                <p class="series-md-block__summary">ASGI→Starlette→Pydantic→FastAPI の階層、リクエスト・ライフサイクル、DI、並行処理、OpenAPI、推奨ディレクトリ構成。</p>
+                <p><code class="inline-code">02_Architecture_Overview.md</code> · 根拠: <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">fastapi/fastapi</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="fastapi-md-02">Copy</button>
+                        <a class="btn-context-dl" href="md/02_Architecture_Overview.md" download>MD をダウンロード</a>
+                        <a href="02-architecture-overview.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--high">03</span>
-                <h2><a href="03-domain-dictionary.html">Domain Dictionary</a></h2>
-                <p>Path Operation・Pydantic・Depends・APIRouter。パース／シリアライズ、ASGI、Security、自然言語エイリアス、辞書の強制運用。</p>
-                <p class="context-md-filename"><code class="inline-code">03_Domain_Dictionary.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/03_Domain_Dictionary.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="03-domain-dictionary.html" class="btn-context-view">全文を開く</a>
+                <pre id="fastapi-md-02" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <section id="doc-03" class="series-md-block" data-md-block data-md-path="md/03_Domain_Dictionary.md" aria-labelledby="fastapi-h-03">
+            <header class="sub-header sub-header--ruled series-md-block__head">
+                <span class="context-tier context-tier--high">重要度：高（辞書）</span>
+                <span class="tag">OSS Series · FastAPI</span>
+                <h2 id="fastapi-h-03"><a href="03-domain-dictionary.html">FastAPI — 03_Domain_Dictionary.md</a></h2>
+                <p class="series-md-block__summary">Path Operation・Pydantic・Depends・APIRouter。パース／シリアライズ、ASGI、Security、自然言語エイリアス、辞書の強制運用。</p>
+                <p><code class="inline-code">03_Domain_Dictionary.md</code> · 根拠: <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">fastapi/fastapi</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="fastapi-md-03">Copy</button>
+                        <a class="btn-context-dl" href="md/03_Domain_Dictionary.md" download>MD をダウンロード</a>
+                        <a href="03-domain-dictionary.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--high">04</span>
-                <h2><a href="04-api-standards-and-models.html">API Standards and Models</a></h2>
-                <p>Pydantic スキーマ命名、`get_db` / `get_current_user` / ページネーション DI、パス操作のシグネチャ、エラーとステータス、`response_model` と services 分離。</p>
-                <p class="context-md-filename"><code class="inline-code">04_API_Standards_and_Models.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/04_API_Standards_and_Models.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="04-api-standards-and-models.html" class="btn-context-view">全文を開く</a>
+                <pre id="fastapi-md-03" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <section id="doc-04" class="series-md-block" data-md-block data-md-path="md/04_API_Standards_and_Models.md" aria-labelledby="fastapi-h-04">
+            <header class="sub-header sub-header--ruled series-md-block__head">
+                <span class="context-tier context-tier--high">重要度：高（技術仕様）</span>
+                <span class="tag">OSS Series · FastAPI</span>
+                <h2 id="fastapi-h-04"><a href="04-api-standards-and-models.html">FastAPI — 04_API_Standards_and_Models.md</a></h2>
+                <p class="series-md-block__summary">Pydantic スキーマ命名、get_db / get_current_user / ページネーション DI、パス操作のシグネチャ、エラーとステータス、response_model と services 分離。</p>
+                <p><code class="inline-code">04_API_Standards_and_Models.md</code> · 根拠: <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">fastapi/fastapi</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="fastapi-md-04">Copy</button>
+                        <a class="btn-context-dl" href="md/04_API_Standards_and_Models.md" download>MD をダウンロード</a>
+                        <a href="04-api-standards-and-models.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--mid">05</span>
-                <h2><a href="05-extended-standards-and-operational-rules.html">Extended Standards and Operational Rules</a></h2>
-                <p>並行性（async/sync/BackgroundTasks）、推奨ディレクトリ構成、CORS・ログ・例外ハンドラ、OAuth2/SQL安全/response_model、設定と本番ワーカー、循環参照と計測と OpenAPI 記述。</p>
-                <p class="context-md-filename"><code class="inline-code">05_Extended_Standards_and_Operational_Rules.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/05_Extended_Standards_and_Operational_Rules.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="05-extended-standards-and-operational-rules.html" class="btn-context-view">全文を開く</a>
+                <pre id="fastapi-md-04" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <h2 id="fastapi-priority-mid" class="context-md-group-title">重要度：中 — 実務レベルの精度</h2>
+
+        <section id="doc-05" class="series-md-block" data-md-block data-md-path="md/05_Extended_Standards_and_Operational_Rules.md" aria-labelledby="fastapi-h-05">
+            <header class="sub-header sub-header--ruled series-md-block__head">
+                <span class="context-tier context-tier--mid">重要度：中（運用ガイド）</span>
+                <span class="tag">OSS Series · FastAPI</span>
+                <h2 id="fastapi-h-05"><a href="05-extended-standards-and-operational-rules.html">FastAPI — 05_Extended_Standards_and_Operational_Rules.md</a></h2>
+                <p class="series-md-block__summary">並行性（async/sync/BackgroundTasks）、推奨ディレクトリ構成、CORS・ログ・例外ハンドラ、OAuth2/SQL安全/response_model、設定と本番ワーカー、循環参照と計測と OpenAPI 記述。</p>
+                <p><code class="inline-code">05_Extended_Standards_and_Operational_Rules.md</code> · 根拠: <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">fastapi/fastapi</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="fastapi-md-05">Copy</button>
+                        <a class="btn-context-dl" href="md/05_Extended_Standards_and_Operational_Rules.md" download>MD をダウンロード</a>
+                        <a href="05-extended-standards-and-operational-rules.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--mid">06</span>
-                <h2><a href="06-development-workflow-and-testing.html">Development Workflow and Testing</a></h2>
-                <p>単体・統合・DB テスト、`TestClient` / `dependency_overrides`、OpenAPI の tags・例・メタデータ、`/docs` と計測、uvicorn reload と ruff/mypy、実装と pytest のセット提示。</p>
-                <p class="context-md-filename"><code class="inline-code">06_Development_Workflow_and_Testing.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/06_Development_Workflow_and_Testing.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="06-development-workflow-and-testing.html" class="btn-context-view">全文を開く</a>
+                <pre id="fastapi-md-05" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <section id="doc-06" class="series-md-block" data-md-block data-md-path="md/06_Development_Workflow_and_Testing.md" aria-labelledby="fastapi-h-06">
+            <header class="sub-header sub-header--ruled series-md-block__head">
+                <span class="context-tier context-tier--mid">重要度：中（テスト・ワークフロー）</span>
+                <span class="tag">OSS Series · FastAPI</span>
+                <h2 id="fastapi-h-06"><a href="06-development-workflow-and-testing.html">FastAPI — 06_Development_Workflow_and_Testing.md</a></h2>
+                <p class="series-md-block__summary">単体・統合・DB テスト、TestClient / dependency_overrides、OpenAPI の tags・例・メタデータ、/docs と計測、uvicorn reload と ruff/mypy、実装と pytest のセット提示。</p>
+                <p><code class="inline-code">06_Development_Workflow_and_Testing.md</code> · 根拠: <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">fastapi/fastapi</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="fastapi-md-06">Copy</button>
+                        <a class="btn-context-dl" href="md/06_Development_Workflow_and_Testing.md" download>MD をダウンロード</a>
+                        <a href="06-development-workflow-and-testing.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--low">07</span>
-                <h2><a href="07-maintenance-migration-and-ecosystem.html">Maintenance Migration and Ecosystem</a></h2>
-                <p>Pydantic v2 / SQLAlchemy 2.0 移行、Alembic、SQLModel・HTTPX・Casbin、Docker・ヘルスチェック・Graceful Shutdown、型の厳格化・トレーシング・main 肥大化の分割。</p>
-                <p class="context-md-filename"><code class="inline-code">07_Maintenance_Migration_and_Ecosystem.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/07_Maintenance_Migration_and_Ecosystem.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="07-maintenance-migration-and-ecosystem.html" class="btn-context-view">全文を開く</a>
+                <pre id="fastapi-md-06" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <h2 id="fastapi-priority-low" class="context-md-group-title">重要度：低〜運用</h2>
+
+        <section id="doc-07" class="series-md-block" data-md-block data-md-path="md/07_Maintenance_Migration_and_Ecosystem.md" aria-labelledby="fastapi-h-07">
+            <header class="sub-header sub-header--ruled series-md-block__head">
+                <span class="context-tier context-tier--low">重要度：低（保守・移行）</span>
+                <span class="tag">OSS Series · FastAPI</span>
+                <h2 id="fastapi-h-07"><a href="07-maintenance-migration-and-ecosystem.html">FastAPI — 07_Maintenance_Migration_and_Ecosystem.md</a></h2>
+                <p class="series-md-block__summary">Pydantic v2 / SQLAlchemy 2.0 移行、Alembic、SQLModel・HTTPX・Casbin、Docker・ヘルスチェック・Graceful Shutdown、型の厳格化・トレーシング・main 肥大化の分割。</p>
+                <p><code class="inline-code">07_Maintenance_Migration_and_Ecosystem.md</code> · 根拠: <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">fastapi/fastapi</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="fastapi-md-07">Copy</button>
+                        <a class="btn-context-dl" href="md/07_Maintenance_Migration_and_Ecosystem.md" download>MD をダウンロード</a>
+                        <a href="07-maintenance-migration-and-ecosystem.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--low">08</span>
-                <h2><a href="08-user-persona-and-user-journey-deep-dive.html">User Persona and User Journey Deep Dive</a></h2>
-                <p>DS・フロント・アーキペルソナ、4 フェーズの開発ジャーニー、シナリオ表、エッジケース、`/docs` 誘導と response_model ・エコシステムの提案。</p>
-                <p class="context-md-filename"><code class="inline-code">08_User_Persona_and_User_Journey_Deep_Dive.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/08_User_Persona_and_User_Journey_Deep_Dive.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="08-user-persona-and-user-journey-deep-dive.html" class="btn-context-view">全文を開く</a>
+                <pre id="fastapi-md-07" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <section id="doc-08" class="series-md-block" data-md-block data-md-path="md/08_User_Persona_and_User_Journey_Deep_Dive.md" aria-labelledby="fastapi-h-08">
+            <header class="sub-header sub-header--ruled series-md-block__head">
+                <span class="context-tier context-tier--low">重要度：低（UX・シナリオ）</span>
+                <span class="tag">OSS Series · FastAPI</span>
+                <h2 id="fastapi-h-08"><a href="08-user-persona-and-user-journey-deep-dive.html">FastAPI — 08_User_Persona_and_User_Journey_Deep_Dive.md</a></h2>
+                <p class="series-md-block__summary">DS・フロント・アーキペルソナ、4 フェーズの開発ジャーニー、シナリオ表、エッジケース、/docs 誘導と response_model・エコシステムの提案。</p>
+                <p><code class="inline-code">08_User_Persona_and_User_Journey_Deep_Dive.md</code> · 根拠: <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">fastapi/fastapi</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="fastapi-md-08">Copy</button>
+                        <a class="btn-context-dl" href="md/08_User_Persona_and_User_Journey_Deep_Dive.md" download>MD をダウンロード</a>
+                        <a href="08-user-persona-and-user-journey-deep-dive.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-        </div>
+                <pre id="fastapi-md-08" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
 
         <p class="context-back-link"><a href="../index.html" class="link-arrow">OSS シリーズ一覧へ戻る →</a></p>
     </main>
@@ -133,5 +238,7 @@
     <footer class="site-footer">
         <p>© 2026 P&amp;C Engineering. All rights reserved.</p>
     </footer>
+    <script src="../../copy-pre.js" defer></script>
+    <script src="../../md-multi-loader.js" defer></script>
 </body>
 </html>

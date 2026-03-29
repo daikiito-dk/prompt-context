@@ -73,49 +73,54 @@
         </div>
     </nav>
 
-    <main class="content-wrapper" id="main-content">
+    <main class="content-wrapper content-wrapper--contexts-hub" id="main-content">
+        <nav class="context-breadcrumb" aria-label="パンくず">
+            <a href="../index.html">ホーム</a><span aria-hidden="true">/</span>
+            <span>Contexts</span>
+        </nav>
+
         <header class="sub-header sub-header--ruled">
             <span class="tag">Context</span>
             <h1>Context Engineering</h1>
-            <p><strong>根拠付きの参照実装</strong>として <a href="https://github.com/axios/axios" rel="noopener noreferrer">Axios</a>（8 文書）と <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">FastAPI</a>（8 文書）を載せています。自プロジェクト用の型は <code class="inline-code">contexts/md/</code> の<strong>汎用テンプレ</strong>をコピーして埋め、必要なものだけをセッションに貼ってください。</p>
+            <p><strong>GitHub 上の参照実装</strong>として <a href="https://github.com/axios/axios" rel="noopener noreferrer">Axios</a> と <a href="https://github.com/fastapi/fastapi" rel="noopener noreferrer">FastAPI</a> それぞれ <strong>8 本</strong>のコンテキスト MD を公開しています。自社向けには <code class="inline-code">contexts/md/</code> の<strong>汎用テンプレ</strong>を複製し、必要な章だけ会話や仕様書に貼り付けてください。</p>
         </header>
 
-        <nav class="context-page-nav" aria-label="このページのセクション">
-            <a href="#reference-oss">OSS 参照実装</a>
-            <a href="#md-library">汎用テンプレ</a>
-            <a href="#session-templates">会話テンプレ</a>
+        <nav class="context-page-nav context-page-nav--wrap" aria-label="このページのセクション">
+            <a href="#reference-oss">OSS シリーズ</a>
+            <a href="#md-library">汎用テンプレ 01–08</a>
+            <a href="#session-templates">SESSION / SPEC / LEARNINGS</a>
         </nav>
 
-        <section id="reference-oss" class="context-reference-axios" aria-labelledby="reference-oss-heading">
-            <h2 id="reference-oss-heading" class="context-md-section-title">根拠付き OSS コンテキスト（推奨）</h2>
-            <p class="context-prose">実コード・公式ドキュメントと照らしやすい<strong>参照実装</strong>です。<strong>Axios</strong> 一覧では各 MD の先頭プレビュー・ダウンロード・全文を一ページに集約。<strong>FastAPI</strong> も同様に <strong>8 本</strong>のコンテキストを公開しています。</p>
+        <section id="reference-oss" class="contexts-hub-section context-reference-axios" aria-labelledby="reference-oss-heading">
+            <h2 id="reference-oss-heading" class="context-md-section-title">根拠付き OSS コンテキスト</h2>
+            <p class="context-prose">各リポジトリの実装・公式ドキュメントと照合しやすいよう、同じ 8 区分で本文を執筆しています。<strong>シリーズ一覧ページ</strong>では単体閲覧ページと同じブロックレイアウトにより、<strong>8 本をこのサイト上で縦に閲覧</strong>できます（コピー・MD ダウンロード・全画面表示に対応）。</p>
             <div class="card-list card-list--oss-pair">
                 <article class="sub-card context-axios-feature">
                     <span class="tag">Referenced · axios/axios</span>
                     <h2><a href="series/axios/index.html">Axios（JavaScript）</a></h2>
-                    <p>HTTP クライアント。8 MD 完備。一覧は閲覧ページと同型のレイアウトで全文を縦に表示。</p>
+                    <p>ブラウザ・Node 向け HTTP クライアント。Promise / インターセプター中心の文脈を 8 文書で整理。</p>
                     <div class="context-md-actions context-md-actions--bar">
-                        <a href="series/axios/index.html" class="btn btn-primary">Axios シリーズ</a>
+                        <a href="series/axios/index.html" class="btn btn-primary">シリーズを開く</a>
                         <a href="series/index.html" class="btn btn-secondary">全シリーズ</a>
                     </div>
                 </article>
                 <article class="sub-card context-fastapi-feature">
                     <span class="tag">Referenced · fastapi/fastapi</span>
                     <h2><a href="series/fastapi/index.html">FastAPI（Python）</a></h2>
-                    <p>型ヒント駆動の ASGI API 枠。<strong>01–08</strong>（8 本）を公開。コンセプトから保守・移行・ペルソナ／ジャーニーまで。</p>
+                    <p>型ヒントと Pydantic に基づく ASGI API フレームワーク。コンセプトから運用・ペルソナまで 8 文書で整理。</p>
                     <div class="context-md-actions context-md-actions--bar">
-                        <a href="series/fastapi/index.html" class="btn btn-primary">FastAPI シリーズ</a>
+                        <a href="series/fastapi/index.html" class="btn btn-primary">シリーズを開く</a>
                         <a href="series/index.html" class="btn btn-secondary">全シリーズ</a>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="md-library" class="context-md-templates-lite" aria-labelledby="md-library-heading">
-            <h2 id="md-library-heading" class="context-md-section-title">汎用プロダクト MD（サンプル・テンプレ）</h2>
-            <p class="context-prose">OSS シリーズ（Axios / FastAPI）と同じ 8 区分の<strong>空テンプレ</strong>です。一覧ではプレビューは出しません（会話アセットに近い軽いカード）。各ページで Markdown 全文の表示・コピー・ダウンロードができます。</p>
+        <section id="md-library" class="contexts-hub-section context-md-templates-lite" aria-labelledby="md-library-heading">
+            <h2 id="md-library-heading" class="context-md-section-title">汎用プロダクト MD（01–08・空テンプレ）</h2>
+            <p class="context-prose">OSS シリーズと<strong>同じ区分番号</strong>の空テンプレです。プロダクト固有の中身を後から埋め、チームの共通言語として使えます。下のカードから各ページへ進み、Markdown の表示・コピー・ダウンロードができます。</p>
 
-            <div class="card-list">
+            <div class="card-list card-list--template-grid">
                 <article class="sub-card">
                     <h2><a href="01-product-core-concept.html">01 — 製品コンセプト・価値定義</a></h2>
                     <p>誰のための、何の課題を解決するか。競合・非ゴール・成功の定義。</p>
@@ -167,10 +172,10 @@
             </div>
         </section>
 
-        <section id="session-templates" aria-labelledby="session-templates-heading">
-            <h2 id="session-templates-heading" class="context-md-section-title">会話セッション用テンプレート（SESSION / SPEC / LEARNINGS）</h2>
-            <p class="context-prose">チャットの冒頭に貼る運用向けの短い型です。<strong>OSS 参照実装</strong>や<strong>汎用テンプレ</strong>と組み合わせて使うと効果的です。</p>
-            <div class="card-list">
+        <section id="session-templates" class="contexts-hub-section" aria-labelledby="session-templates-heading">
+            <h2 id="session-templates-heading" class="context-md-section-title">会話セッション用（SESSION / SPEC / LEARNINGS）</h2>
+            <p class="context-prose">チャットやレビュー依頼の<strong>冒頭に貼る短い型</strong>です。上記の OSS コンテキストや汎用 MD と組み合わせると、前提のブレを抑えやすくなります。</p>
+            <div class="card-list card-list--session-trio">
                 <article class="sub-card">
                     <h2><a href="session.html">SESSION.md</a> — セッション前提</h2>
                     <p>プロジェクト概要、用語、今回のゴール、禁止事項を冒頭に固定して会話のドリフトを防ぎます。</p>
