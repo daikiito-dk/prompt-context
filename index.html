@@ -8,6 +8,7 @@
     <meta name="robots" content="index, follow">
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="https://prompt-context-zeta.vercel.app/">
+    <link rel="alternate" type="text/plain" title="LLM / エージェント向けサイトインデックス" href="https://prompt-context-zeta.vercel.app/llms.txt">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:site_name" content="P&amp;C — Prompt &amp; Context Platform">
@@ -34,7 +35,37 @@
                 "url": "https://prompt-context-zeta.vercel.app/",
                 "description": "プロンプト・コンテキスト・ツールチェーンを体系化するプラットフォーム。再利用可能なテンプレートと運用の型を提供します。",
                 "inLanguage": "ja",
-                "publisher": { "@id": "https://prompt-context-zeta.vercel.app/#org" }
+                "publisher": { "@id": "https://prompt-context-zeta.vercel.app/#org" },
+                "mainEntity": { "@id": "https://prompt-context-zeta.vercel.app/#main-sections" }
+            },
+            {
+                "@type": "ItemList",
+                "@id": "https://prompt-context-zeta.vercel.app/#main-sections",
+                "name": "主要コンテンツ",
+                "numberOfItems": 3,
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "プロンプトライブラリ",
+                        "description": "査定済みプロンプトの検索・コピー。正本は prompts-data.json。",
+                        "item": "https://prompt-context-zeta.vercel.app/prompts/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "コンテキストエンジニアリング",
+                        "description": "MD テンプレートと Axios / FastAPI 根拠付きシリーズ。",
+                        "item": "https://prompt-context-zeta.vercel.app/contexts/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Tools & Workflow",
+                        "description": "開発向けサービスの参照一覧。",
+                        "item": "https://prompt-context-zeta.vercel.app/tools/"
+                    }
+                ]
             },
             {
                 "@type": "Organization",

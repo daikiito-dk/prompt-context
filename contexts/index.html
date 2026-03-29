@@ -27,7 +27,7 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "WebPage",
+                "@type": ["WebPage", "CollectionPage"],
                 "@id": "https://prompt-context-zeta.vercel.app/contexts/#webpage",
                 "url": "https://prompt-context-zeta.vercel.app/contexts/",
                 "name": "コンテキストエンジニアリング | P&C",
@@ -37,7 +37,41 @@
                     "@type": "WebSite",
                     "name": "P&C — Prompt & Context Platform",
                     "url": "https://prompt-context-zeta.vercel.app/"
-                }
+                },
+                "mainEntity": { "@id": "https://prompt-context-zeta.vercel.app/contexts/#hub-list" }
+            },
+            {
+                "@type": "ItemList",
+                "@id": "https://prompt-context-zeta.vercel.app/contexts/#hub-list",
+                "name": "コンテキスト主要ハブ",
+                "numberOfItems": 4,
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "OSS シリーズ一覧",
+                        "description": "Axios / FastAPI などシリーズの入口",
+                        "item": "https://prompt-context-zeta.vercel.app/contexts/series/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Axios（JavaScript）コンテキスト 8 本",
+                        "item": "https://prompt-context-zeta.vercel.app/contexts/series/axios/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "FastAPI（Python）コンテキスト 8 本",
+                        "item": "https://prompt-context-zeta.vercel.app/contexts/series/fastapi/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "name": "このハブ（汎用テンプレ・SESSION 等）",
+                        "item": "https://prompt-context-zeta.vercel.app/contexts/"
+                    }
+                ]
             },
             {
                 "@type": "BreadcrumbList",

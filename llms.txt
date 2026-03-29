@@ -1,0 +1,32 @@
+# P&C (Prompt & Context Platform)
+
+言語モデル向け作業用に、このサイトの役割と主要リソースを短くまとめたインデックスです（閲覧用 HTML と、機械可読な一次ソースの区別を含む）。
+
+## サイトの目的
+
+- 再利用可能な**プロンプト**資産の公開とコピー支援
+- **コンテキスト**（MD）テンプレートと OSS 根拠付きシリーズ（Axios / FastAPI）
+- **開発向けツール・ワークフロー**の参照一覧（推奨ではないサービス紹介）
+
+ベース URL: https://prompt-context-zeta.vercel.app/
+
+## 主要ページ（人間向け HTML）
+
+- トップ: https://prompt-context-zeta.vercel.app/
+- プロンプトライブラリ: https://prompt-context-zeta.vercel.app/prompts/
+- コンテキストハブ: https://prompt-context-zeta.vercel.app/contexts/
+- OSS シリーズ一覧: https://prompt-context-zeta.vercel.app/contexts/series/
+- Axios シリーズ: https://prompt-context-zeta.vercel.app/contexts/series/axios/
+- FastAPI シリーズ: https://prompt-context-zeta.vercel.app/contexts/series/fastapi/
+- Tools & Workflow: https://prompt-context-zeta.vercel.app/tools/
+
+## 機械可読な一次ソース（優先して取得する場合）
+
+- プロンプトカタログ全文（JSON）: https://prompt-context-zeta.vercel.app/prompts/prompts-data.json  
+  - ページ上の一覧はこのファイルから生成される。**プロンプト本文の正本はこちら**。
+- サイトマップ（URL 列挙）: https://prompt-context-zeta.vercel.app/sitemap.xml
+
+## 利用上の注意
+
+- コンテンツのライセンス・引用・学習利用はサイト運用者の方針に従ってください。
+- HTML は装飾・ナビを含むため、要約や RAG 用途では JSON や sitemap と併用すると取りこぼしが減ります。
