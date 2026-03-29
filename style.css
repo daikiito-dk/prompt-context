@@ -823,6 +823,43 @@ summary:focus-visible {
     color: var(--text-primary);
 }
 
+.context-reference-axios {
+    margin-bottom: 0.5rem;
+}
+
+.context-reference-axios > .context-prose:first-of-type {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    max-width: 48rem;
+}
+
+.context-axios-feature {
+    position: relative;
+    border-color: rgba(56, 189, 248, 0.42);
+    background: linear-gradient(155deg, rgba(56, 189, 248, 0.14) 0%, rgba(22, 27, 34, 0.96) 42%, rgba(22, 27, 34, 0.98) 100%);
+    box-shadow: 0 0 56px -18px rgba(56, 189, 248, 0.38);
+}
+
+.context-axios-feature .tag {
+    margin-bottom: 0.65rem;
+}
+
+.context-axios-feature h2 {
+    font-size: 1.15rem;
+}
+
+.context-md-templates-lite .sub-card {
+    padding: 1.15rem 1.3rem;
+}
+
+.context-md-templates-lite .context-md-section-title {
+    margin-top: 2.5rem;
+}
+
+.context-md-templates-lite .context-prose {
+    margin-bottom: 1.25rem;
+}
+
 .context-md-section-title {
     margin: 0 0 1rem;
     font-size: clamp(1.05rem, 2.2vw, 1.28rem);
