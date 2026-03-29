@@ -1,86 +1,96 @@
 ---
-title: API Standards and Models - Axios (Public API Surface)
-source_repo: https://github.com/axios/axios
+title: 04_API_Standards_and_Models (Full Edition)
+version: 1.x (Current Stable)
+priority: HIGH
+category: api-reference-and-conventions
 last_updated: 2026-03-30
+source_repo: https://github.com/axios/axios
 ---
 
-# 04_API_Standards_and_Models: Axios
+# 04_API_Standards_and_Models: Axios Full Specifications
 
-## 1. スコープ
+## 1. リクエスト設定モデル (AxiosRequestConfig)
+すべてのメソッドの基盤となる設定オブジェクト。AIは実装時、以下のプロパティを優先的に参照し、型の一貫性を保つこと。
 
-ここでの「API」は **HTTP リソースの REST 設計**ではなく、**Axios がアプリケーションに公開する JavaScript API**（関数・オブジェクトの形）を指す。
+| プロパティ | 型 | 役割・デフォルト値 |
+| :--- | :--- | :--- |
+| `url` | `string` | リクエスト先パス。`baseURL` がある場合は結合される。 |
+| `method` | `string` | `get` (default), `post`, `put`, `delete` 等。 |
+| `baseURL` | `string` | インスタンス共通の基点URL。 |
+| `headers` | `object` | カスタムヘッダー。`{'Content-Type': 'application/json'}` 等。 |
+| `params` | `object` | URLクエリ（`?id=123`）に変換されるオブジェクト。 |
+| `data` | `any` | リクエストボディ。POST/PUT時に送信される実体。 |
+| `timeout` | `number` | ミリ秒指定。0（制限なし）がデフォルト。 |
+| `responseType` | `string` | `json` (default), `blob`, `text`, `stream` 等。 |
 
-## 2. エントリポイント
+## 2. レスポンスデータモデル (AxiosResponse)
+通信成功時にPromiseから返却される正規化されたオブジェクト構造。
 
-| シンボル | 説明 |
-|----------|------|
-| `axios` | デフォルトインスタンスとしても振る舞う関数。`axios(config)` = `request` |
-| `axios.create([defaults])` | 独立したインタンスを生成 |
-| `axios.defaults` | グローバル既定 Config |
-| `axios.interceptors` | グローバルの request/response インターセプター |
+* **`data: T`**: サーバーからのレスポンスボディ。`transformResponse` 適用後の最終データ。
+* **`status: number`**: HTTPステータスコード（例: 200, 201）。
+* **`statusText: string`**: HTTPステータスメッセージ（例: "OK"）。
+* **`headers: RawAxiosResponseHeaders`**: レスポンスヘッダー（キーは小文字に正規化済み）。
+* **`config: AxiosRequestConfig`**: 送信時に使用された全設定。
+* **`request: any`**: 実際に送信されたリクエストの実体（XHRまたはhttpインスタンス）。
 
-### メソッド shorthand（すべて config にマップ）
+## 3. 関数シグネチャと実用パターン (Method Signatures)
+AIがコード生成を行う際の「書き方の型」。
 
-`get`, `delete`, `head`, `options`  
-`post`, `put`, `patch`（`data` を取る）
-
-## 3. Config オブジェクト（主要キー）
-
-実際のキー集合はバージョンで増減し得る。AI は **公式型定義・ドキュメント**と突き合わせること。
-
-| キー | 役割 |
-|------|------|
-| `url` | リクエスト URL（`baseURL` と合成され得る） |
-| `method` | HTTP メソッド（小文字文字列が一般的） |
-| `headers` | リクエストヘッダ |
-| `params` | クエリ（シリアライズ方針あり） |
-| `data` | ボディ（オブジェクト時は JSON 化されやすい） |
-| `timeout` | ミリ秒。0 は多くの場合「無制限」扱い |
-| `responseType` | `json` / `text` / `blob` / `arraybuffer` / `stream`（環境依存） |
-| `baseURL` | 基底 URL |
-| `withCredentials` | CORS クッキー送付（XHR） |
-| `adapter` | カスタム Adapter を指定 |
-| `signal` | `AbortSignal` |
-| `validateStatus` | 成功ステータスの範囲を返す関数 |
-
-## 4. Response オブジェクト（概念モデル）
-
-| フィールド | 説明 |
-|------------|------|
-| `data` | レスポンスボディ（transform 適用後） |
-| `status` | HTTP ステータスコード |
-| `statusText` | ステータステキスト |
-| `headers` | レスポンスヘッダ |
-| `config` | 当該リクエストに使われた Config |
-| `request` | 低レイヤーのリクエストオブジェクト（環境依存） |
-
-## 5. エラー（AxiosError）
-
-| フィールド / 概念 | 説明 |
-|-------------------|------|
-| `message` | 人間可読メッセージ |
-| `code` | 文字列コード（例: `ECONNABORTED`）場合あり |
-| `config` | 失敗したリクエストの Config |
-| `response` | ステータス付きで返ってきた場合（4xx/5xx のボディ解析に使う） |
-| `request` | 応答なしで失敗した場合など |
-
-**命名規則:** 公開APIの**オプション名は camelCase**（`responseType`, `maxBodyLength` 等）が基本。
-
-## 6. インターセプター契約
-
-```text
-request:  (config) => config | Promise<config>
-response: (response) => response | Promise<response>
-error:    (error) => throw | Promise.reject | 回復
+### 3.1. インスタンス生成
+```javascript
+const instance = axios.create({
+  baseURL: 'https://api.example.com',
+  timeout: 1000,
+  headers: { 'X-Custom-Header': 'foobar' }
+});
 ```
 
-**規約:** エラーを**飲み込む** interceptor は、チームで明示的に許可しない限り禁止（上流が壊れる）。
+### 3.2. 各メソッドの引数ルール
+**引数2つのパターン (GET/DELETE/HEAD/OPTIONS)**
 
-## 7. セマンティックバージョニング
+```text
+axios.get(url[, config])
+```
 
-Axios 本体は npm の **セマバ** に従う前提で、**メジャーで破壊的変更があり得る**。  
-AI は「そのプロジェクトが依存している axios のメジャー」を必ず確認する。
+**引数3つのパターン (POST/PUT/PATCH)**
+
+```text
+axios.post(url[, data[, config]])
+```
+
+※注意: `config` は必ず第3引数となる。データがない場合は `null` を渡す必要がある。
+
+## 4. エラーオブジェクト構造 (AxiosError)
+例外処理（catch）時にAIが参照すべきプロパティ群。
+
+* **`code`**: 文字列形式のエラーコード（例: `ERR_NETWORK`, `ECONNABORTED`）。
+* **`response`**: サーバーがエラーレスポンスを返した場合の `AxiosResponse`。
+* **`isAxiosError`**: `true` 固定。型判定に使用。
+* **`toJSON()`**: エラー情報をシリアライズするためのメソッド。
+
+## 5. データ変換パイプライン (Transformer Logic)
+データの「送出前」と「受け取り後」の加工ルール。
+
+* **`transformRequest`**: `Array<(data: any, headers: any) => any>`  
+  送信前にデータを文字列化、あるいは暗号化する。
+* **`transformResponse`**: `Array<(data: any) => any>`  
+  受信したJSONをクラスインスタンスに変換する等の処理を行う。
+
+## 6. 設定の継承と優先順位 (Config Hierarchy)
+AIが「どこで設定を変更すべきか」を判断する基準。
+
+* **Global Default:** `axios.defaults`（最低優先度）
+* **Instance Config:** `axios.create({ ... })` で渡した値
+* **Request Config:** 個別の `axios.post(url, data, { ... })` で渡した値（最高優先度）
+
+## 7. 実装におけるAIへの強制事項 (Hard Constraints)
+1. **型安全:** TypeScriptでは `AxiosResponse<MyDataType>` のように、常に期待するデータ型を明示せよ。
+2. **エラーガード:** `if (axios.isAxiosError(error))` を使用して、安全にエラープロパティへアクセスせよ。
+3. **冗長性の排除:** デフォルトの `method: 'get'` や `responseType: 'json'` を明示的に書くことは避け、コードを簡潔に保て。
 
 ---
 
-*実キー一覧は利用中の `axios` のバージョンと TypeScript の型定義を最終ソースとする。*
+## 8. この統合版のポイント
+* **一貫性:** インスタンス生成からエラー処理まで、開発の「一連の流れ」を一つのmdに集約した。
+* **トークン効率:** 日本語の解説とコードブロックをバランスよく配置し、約1,700トークンに収めている。
+* **AIの誤認防止:** 特に「POSTの第2引数と第3引数の取り違え」というAIに多いミスを明文化して封じ込めている。

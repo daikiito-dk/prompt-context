@@ -80,6 +80,12 @@
             <p>Markdown で「AI と開発が同じ前提を共有する」ための型。プロダクトの<strong>土台</strong>は <code class="inline-code">contexts/md/</code> のファイルをプロジェクトに合わせて埋め、必要なものだけをセッションに貼ってください。</p>
         </header>
 
+        <nav class="context-page-nav" aria-label="このページのセクション">
+            <a href="#oss-series">OSS シリーズ</a>
+            <a href="#md-library">MD ライブラリ</a>
+            <a href="#session-templates">会話テンプレ</a>
+        </nav>
+
         <section id="oss-series" class="context-oss-series" aria-labelledby="oss-series-heading">
             <h2 id="oss-series-heading" class="context-md-section-title">OSS コンテキストシリーズ（実例）</h2>
             <p class="context-md-library-intro">
@@ -100,7 +106,7 @@
         <section id="md-library" class="context-md-library" aria-labelledby="md-library-heading">
             <h2 id="md-library-heading" class="context-md-section-title">プロダクトコンテキスト MD（閲覧・ダウンロード）</h2>
             <p class="context-md-library-intro">
-                <strong>重要度：高</strong>の文書がないと、AI は「何を作るための、どういう仕組みのソフトか」を根本から誤解しやすくなります。<strong>用語集（03）</strong>はハルシネーション抑制に特に効きます。各カードから <strong>閲覧</strong>（ブラウザで全文）か <strong>MD をダウンロード</strong>（ファイル取得）を選べます。
+                <strong>重要度：高</strong>の文書がないと、AI は「何を作るための、どういう仕組みのソフトか」を根本から誤解しやすくなります。<strong>用語集（03）</strong>はハルシネーション抑制に特に効きます。各カード内に<strong>Markdown の先頭プレビュー</strong>を表示します（一覧のまま内容を確認可能）。<strong>ダウンロード</strong>で .md を取得するか、<strong>全文を開く</strong>でコピー用の閲覧ページへ進んでください。
             </p>
 
             <h3 class="context-md-group-title">重要度：高（AI の挙動と精度の土台）</h3>
@@ -110,9 +116,9 @@
                     <h2><a href="01-product-core-concept.html">製品コンセプト・価値定義</a></h2>
                     <p>誰のための、何の課題を解決するか。競合・非ゴール・成功の定義。</p>
                     <p class="context-md-filename"><code class="inline-code">01_Product_Core_Concept.md</code></p>
-                    <div class="context-md-actions">
-                        <a href="01-product-core-concept.html" class="link-arrow">閲覧</a>
-                        <a href="md/01_Product_Core_Concept.md" download class="btn-context-dl">MD をダウンロード</a>
+                    <div class="context-md-actions context-md-actions--bar">
+                        <a href="md/01_Product_Core_Concept.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                        <a href="01-product-core-concept.html" class="btn-context-view">全文を開く</a>
                     </div>
                 </article>
                 <article class="sub-card">
@@ -120,9 +126,9 @@
                     <h2><a href="02-architecture-overview.html">全体アーキテクチャ</a></h2>
                     <p>フロント／バック／DB／外部 API のつながりと技術スタック（バージョン表記）。</p>
                     <p class="context-md-filename"><code class="inline-code">02_Architecture_Overview.md</code></p>
-                    <div class="context-md-actions">
-                        <a href="02-architecture-overview.html" class="link-arrow">閲覧</a>
-                        <a href="md/02_Architecture_Overview.md" download class="btn-context-dl">MD をダウンロード</a>
+                    <div class="context-md-actions context-md-actions--bar">
+                        <a href="md/02_Architecture_Overview.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                        <a href="02-architecture-overview.html" class="btn-context-view">全文を開く</a>
                     </div>
                 </article>
                 <article class="sub-card">
@@ -130,9 +136,9 @@
                     <h2><a href="03-domain-dictionary.html">ドメイン用語集</a></h2>
                     <p>プロダクト内の正式呼称と禁止語。用語のすり替えによる誤推論を抑えます。</p>
                     <p class="context-md-filename"><code class="inline-code">03_Domain_Dictionary.md</code></p>
-                    <div class="context-md-actions">
-                        <a href="03-domain-dictionary.html" class="link-arrow">閲覧</a>
-                        <a href="md/03_Domain_Dictionary.md" download class="btn-context-dl">MD をダウンロード</a>
+                    <div class="context-md-actions context-md-actions--bar">
+                        <a href="md/03_Domain_Dictionary.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                        <a href="03-domain-dictionary.html" class="btn-context-view">全文を開く</a>
                     </div>
                 </article>
             </div>
@@ -144,9 +150,9 @@
                     <h2><a href="04-api-standards-and-models.html">データモデルと API 規格</a></h2>
                     <p>エンティティ、命名、共通エラーレスポンス、バージョニング方針。</p>
                     <p class="context-md-filename"><code class="inline-code">04_API_Standards_and_Models.md</code></p>
-                    <div class="context-md-actions">
-                        <a href="04-api-standards-and-models.html" class="link-arrow">閲覧</a>
-                        <a href="md/04_API_Standards_and_Models.md" download class="btn-context-dl">MD をダウンロード</a>
+                    <div class="context-md-actions context-md-actions--bar">
+                        <a href="md/04_API_Standards_and_Models.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                        <a href="04-api-standards-and-models.html" class="btn-context-view">全文を開く</a>
                     </div>
                 </article>
                 <article class="sub-card">
@@ -154,9 +160,9 @@
                     <h2><a href="05-ui-ux-design-system.html">UI / UX デザインシステム</a></h2>
                     <p>コンポーネント意図、色・タイポ、ナビの論理、アクセシビリティ。</p>
                     <p class="context-md-filename"><code class="inline-code">05_UI_UX_Design_System.md</code></p>
-                    <div class="context-md-actions">
-                        <a href="05-ui-ux-design-system.html" class="link-arrow">閲覧</a>
-                        <a href="md/05_UI_UX_Design_System.md" download class="btn-context-dl">MD をダウンロード</a>
+                    <div class="context-md-actions context-md-actions--bar">
+                        <a href="md/05_UI_UX_Design_System.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                        <a href="05-ui-ux-design-system.html" class="btn-context-view">全文を開く</a>
                     </div>
                 </article>
                 <article class="sub-card">
@@ -164,9 +170,9 @@
                     <h2><a href="06-coding-and-git-rules.html">開発規約（コーディング &amp; Git）</a></h2>
                     <p>命名、ブランチ、コミット、テスト、Lint/CI、機密の扱い。</p>
                     <p class="context-md-filename"><code class="inline-code">06_Coding_and_Git_Rules.md</code></p>
-                    <div class="context-md-actions">
-                        <a href="06-coding-and-git-rules.html" class="link-arrow">閲覧</a>
-                        <a href="md/06_Coding_and_Git_Rules.md" download class="btn-context-dl">MD をダウンロード</a>
+                    <div class="context-md-actions context-md-actions--bar">
+                        <a href="md/06_Coding_and_Git_Rules.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                        <a href="06-coding-and-git-rules.html" class="btn-context-view">全文を開く</a>
                     </div>
                 </article>
             </div>
@@ -178,9 +184,9 @@
                     <h2><a href="07-known-issues-and-backlog.html">既知の課題とバックログ</a></h2>
                     <p>バグ、制限事項、負債、将来アイデア。誤った「できる／できない」前提を防ぐ。</p>
                     <p class="context-md-filename"><code class="inline-code">07_Known_Issues_and_Backlog.md</code></p>
-                    <div class="context-md-actions">
-                        <a href="07-known-issues-and-backlog.html" class="link-arrow">閲覧</a>
-                        <a href="md/07_Known_Issues_and_Backlog.md" download class="btn-context-dl">MD をダウンロード</a>
+                    <div class="context-md-actions context-md-actions--bar">
+                        <a href="md/07_Known_Issues_and_Backlog.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                        <a href="07-known-issues-and-backlog.html" class="btn-context-view">全文を開く</a>
                     </div>
                 </article>
                 <article class="sub-card">
@@ -188,9 +194,9 @@
                     <h2><a href="08-user-persona-and-user-journey.html">ペルソナとユーザージャーニー</a></h2>
                     <p>典型的なユーザー像と操作フロー。UX 相談や改善議論の前提づくり。</p>
                     <p class="context-md-filename"><code class="inline-code">08_User_Persona_and_User_Journey.md</code></p>
-                    <div class="context-md-actions">
-                        <a href="08-user-persona-and-user-journey.html" class="link-arrow">閲覧</a>
-                        <a href="md/08_User_Persona_and_User_Journey.md" download class="btn-context-dl">MD をダウンロード</a>
+                    <div class="context-md-actions context-md-actions--bar">
+                        <a href="md/08_User_Persona_and_User_Journey.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
+                        <a href="08-user-persona-and-user-journey.html" class="btn-context-view">全文を開く</a>
                     </div>
                 </article>
             </div>
@@ -222,5 +228,6 @@
     <footer class="site-footer">
         <p>© 2026 P&amp;C Engineering. All rights reserved.</p>
     </footer>
+    <script src="md-card-preview.js" defer></script>
 </body>
 </html>

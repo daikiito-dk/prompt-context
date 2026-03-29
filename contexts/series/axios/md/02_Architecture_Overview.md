@@ -1,77 +1,73 @@
 ---
-title: Architecture Overview - Axios
-version: 1.x
+title: Architecture Overview - Axios Internal Flow
+version: 1.x (Current Stable)
 priority: HIGH
-category: architecture
-source_repo: https://github.com/axios/axios
+category: technical-architecture
 last_updated: 2026-03-30
+source_repo: https://github.com/axios/axios
 ---
 
-# 02_Architecture_Overview: Axios
+# 02_Architecture_Overview: Axios Internal Mechanics
 
-## 1. システム境界（なにを含み、なにを含まないか）
+## 1. アーキテクチャの全体像 (System Landscape)
+Axiosの設計は、**「リクエストの構築 → 変換 → 送出 → 応答の変換」**という一連のパイプライン処理である。
+最大の特徴は、ユーザーが触れる `axios.get()` などのインターフェースの下に、実行環境（Browser/Node.js）を抽象化する「Adapterレイヤー」が存在することである。
 
-Axios は **HTTP クライアントライブラリ**である。DNS・TCP・TLS そのものは OS / ランタイムに委譲し、**リクエストの組み立て・送信・レスポンスの解釈・設定の合成**を担当する。
+## 2. リクエスト・ライフサイクル (The Request Lifecycle)
+一つのHTTPリクエストが完了するまでの論理的なステップは以下の通り。
 
-- **含む:** 設定（config）のマージ、インターセプター、`transformRequest` / `transformResponse`、環境別 Adapter、エラー型の正規化、Promise ベースの API。
-- **含まない:** ルーティング、認証 IdP、REST のリソース設計そのもの、GraphQL クライアントとしての完全な役割（HTTP の上に乗るだけ）。
+1.  **Entry Point:** `axios(config)` または `axios.get(url, config)` の呼び出し。
+2.  **Request Interceptors:** `dispatchRequest` が呼ばれる前に、登録されたリクエストインターセプターを**登録の逆順**で実行する。
+3.  **Data Transformation (Request):** `transformRequest` 関数群により、JavaScriptオブジェクトをJSON文字列等にシリアライズする。
+4.  **Dispatch Request:** 実際の通信処理へ移行。
+5.  **Adapter Selection:** * ブラウザ環境なら `XMLHttpRequest` アダプターを選択。
+    * Node.js環境なら `http` / `https` モジュールアダプターを選択。
+6.  **Data Transformation (Response):** サーバーからの生データを `transformResponse` 関数群でパース（JSON.parse等）。
+7.  **Response Interceptors:** `then/catch` に渡る前に、レスポンスインターセプターを**登録順**で実行する。
+8.  **Settlement:** Promiseが `resolve` または `reject` される。
 
-## 2. 実行時構成（文字によるブロック図）
+## 3. 主要コンポーネントの役割 (Core Components)
 
-```
-[ユーザーコード]
-    │
-    ▼
-axios(config) ──▶ dispatchRequest ──▶ Adapter ──▶ [XHR | Node http/https | fetch* ]
-    │                    │                │
-    │                    └─ Interceptors (req chain → adapter → res chain)
-    │
-    └─ axios.create() により独立した defaults / interceptors を保持
-```
+### 3.1. Axios Class (`lib/core/Axios.js`)
+* すべてのリクエストメソッド（get, post等）を保持するコアクラス。
+* `interceptors` 管理オブジェクトをメンバとして持ち、リクエストの「鎖（Chain）」を構築する司令塔。
 
-*一部環境・ビルドでは fetch 系の選択肢やカスタム Adapter があり得る。公式実装の中心は **ブラウザ = XHR / Node = http(s)**。
+### 3.2. Interceptor Manager (`lib/core/InterceptorManager.js`)
+* インターセプターの登録（use）と削除（eject）を管理する。
+* スタック形式で保存し、実行時に実行キューへ流し込む。
 
-## 3. 主要モジュール（典型的な責務）
+### 3.3. Dispatch Request (`lib/core/dispatchRequest.js`)
+* インターセプターとアダプターの中間に位置するブリッジ。
+* リクエストデータの最終的な加工と、アダプターからのレスポンスの正規化を担当する。
 
-| 領域 | おもな役割 | 参照イメージ（リポジトリ内） |
-|------|------------|-------------------------------|
-| **core / Axios.js** | インスタンス生成、`request` のエントリ、デフォルトの合成 | ライブラリの心臓 |
-| **defaults** | グローバル既定値（headers, transform, adapter, timeout 等） | |
-| **adapters** | 環境ごとの「実送信」実装 | `xhr`, `http` |
-| **core/dispatchRequest** | インターセプター適用後に Adapter を呼ぶ | |
-| **interceptors** | 双方向チェーン | Fulfill / Reject で連鎖 |
-| **cancel** | `AbortController` / signal 連携 | |
-| **helpers** | URL 結合、validator、環境検出など | |
+### 3.4. Adapters (`lib/adapters/`)
+* **xhr.js:** ブラウザ用。標準のXHR APIを使用し、進捗（onDownloadProgress）なども制御。
+* **http.js:** Node.js用。ストリーム処理やプロキシ設定などをサポート。
+* **Custom Adapter:** ユーザーがテスト用（Mock）や独自のプロトコル用にアダプターを差し替えることが可能。
 
-※ ディレクトリ名はバージョンで多少変わり得る。**「Adapter で環境差を吸収する」**という軸は不変とみなす。
+## 4. データの流れと変換 (Data Flow & Transformation)
+Axiosは、`config.transformRequest` と `config.transformResponse` という配列形式の変換パイプラインを持つ。
 
-## 4. 技術スタック（典型）
+* **デフォルトの動作:** * 送信時は `Content-Type` を見て自動的に文字列化。
+    * 受信時は `application/json` であれば自動的にオブジェクト化。
+* **拡張性:** ユーザーはこれに独自の関数を追加することで、暗号化/復号化や特定のデータ形式（Protocol Buffers等）への変換を差し込める。
 
-| レイヤー | 技術 |
-|----------|------|
-| 言語 | JavaScript（配布はビルド済み CommonJS / ESM / UMD 等） |
-| ブラウザ送信 | `XMLHttpRequest` ベース |
-| Node 送信 | `http` / `https` |
-| 非同期 | Promise（`async/await` と相性よし） |
-| テスト | Mocha 等（リポジトリの CI に準拠） |
-| 品質 | ESLint / 型（TypeScript 型定義は別パッケージや同梱の扱いに注意） |
+## 5. エラーハンドリングの構造 (Error Handling)
+エラーは単なる文字列ではなく、`AxiosError` オブジェクトとしてカプセル化される。
 
-## 5. 設定のマージ順（概念）
+* **code:** `ERR_NETWORK`, `ECONNABORTED` 等の定数。
+* **config:** 失敗したリクエストの設定。
+* **request/response:** 失敗時の生データ。
+* **isAxiosError:** Axios特有のエラーであるかを判定するフラグ。
 
-defaults（グローバル） < インスタンス既定 < **リクエスト単位の config**。  
-AI は「どの階層で `headers` や `baseURL` を足したか」を説明できるようにする。
+## 6. ディレクトリ構造の意図 (Source Map)
+AIがソースコードを参照する際のガイドライン。
 
-## 6. ビルド成果物と利用形態
-
-- **npm パッケージ**としてアプリから import / require。
-- **CDN / bundle** によるブラウザ直読み込みのパターンも残存（利用は減トレンド）。
-
-## 7. 拡張ポイント
-
-- **カスタム Adapter**（テスト用モック、外部クライアントへの橋渡し）
-- **インターセプター**（認証、ロギング、リトライポリシー）
-- **transformRequest / transformResponse**（正規化・暗号化のフック）
+* `/lib/core/`: 基本ロジック（Axiosの心臓部）。
+* `/lib/adapters/`: 環境ごとの通信実装（最も低レイヤー）。
+* `/lib/helpers/`: URLの構築、クッキー管理、ヘッダーの正規化などの汎用ユーティリティ。
+* `/lib/cancel/`: キャンセル（Abort）ロジックの実装。
 
 ---
-
-*この文書は https://github.com/axios/axios の公開構造に基づく概観であり、細部はタグ・ブランチで追うこと。*
+## 7. AIへのコンテキスト指示
+コードのデバッグや機能追加を依頼された際、AIは「どのレイヤー（インターセプターなのか、アダプターなのか、それともヘルパーなのか）」に手を加えるべきかを、この構造図に基づいて判断すること。
