@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ツールとワークフロー | P&amp;C — 運用レール</title>
-    <meta name="description" content="プロンプトとコンテキストを運用に載せるための型。レビュー用 diff パック、Eval スナップショット、ガバナンスタグなどチームで再利用できる単位を整理します。">
+    <title>Environment · Agentic AI ツール | P&amp;C — Tools &amp; Workflow</title>
+    <meta name="description" content="実務で使われている Agentic AI ツールを比較しやすく整理。IDE 統合・CLI・コーディングエージェントの選定の土台に。将来は個別お問い合わせと資料 DL の受け皿に拡張予定。">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://prompt-context-zeta.vercel.app/tools/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:site_name" content="P&amp;C — Prompt &amp; Context Platform">
-    <meta property="og:title" content="ツールとワークフロー | P&amp;C">
-    <meta property="og:description" content="プロンプトとコンテキストを運用に載せるための型。diff パック、Eval、ガバナンスタグでチーム運用を整えます。">
+    <meta property="og:title" content="Environment · Agentic AI ツール | P&amp;C">
+    <meta property="og:description" content="Agentic AI の現行ツールをキュレーション。導入比較と運用の型。将来的にリード獲得・資料 DL へ拡張。">
     <meta property="og:url" content="https://prompt-context-zeta.vercel.app/tools/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="ツールとワークフロー | P&amp;C">
-    <meta name="twitter:description" content="diff パック、Eval スナップショット、ガバナンスタグなど運用のレール。">
+    <meta name="twitter:title" content="Environment · Agentic AI ツール | P&amp;C">
+    <meta name="twitter:description" content="Agentic AI ツールのキュレーション。将来はお問い合わせ・資料の受け皿に。">
     <meta name="theme-color" content="#0b0e14">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20fill%3D%27%230b0e14%27%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%278%27%2F%3E%3Cpath%20fill%3D%27%2338bdf8%27%20d%3D%27M9%2010h5.2c2.2%200%203.9%201.5%203.9%203.5S16.4%2017%2014.2%2017H12v5H9V10zm3%202.8h2c.9%200%201.5-.5%201.5-1.2s-.6-1.2-1.5-1.2H12v2.4z%27%2F%3E%3C%2Fsvg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,8 +30,8 @@
                 "@type": "WebPage",
                 "@id": "https://prompt-context-zeta.vercel.app/tools/#webpage",
                 "url": "https://prompt-context-zeta.vercel.app/tools/",
-                "name": "ツールとワークフロー | P&C",
-                "description": "プロンプトとコンテキストを運用に載せるためのレールと型を整理します。",
+                "name": "Environment · Tools & Workflow | P&C",
+                "description": "Agentic AI ツールのキュレーションと運用の型。将来的にリード獲得・資料入手の窓口。",
                 "inLanguage": "ja",
                 "isPartOf": {
                     "@type": "WebSite",
@@ -60,7 +60,7 @@
     }
     </script>
 </head>
-<body class="sub-page">
+<body class="sub-page tools-page">
     <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
     <nav class="site-nav" aria-label="Main">
         <div class="site-nav-inner">
@@ -73,27 +73,96 @@
         </div>
     </nav>
 
-    <main class="content-wrapper" id="main-content">
+    <main class="content-wrapper tools-page__main" id="main-content">
         <header class="sub-header sub-header--ruled">
             <span class="tag tag--mint">Environment</span>
             <h1>Tools &amp; Workflow</h1>
-            <p>プロンプトとコンテキストを運用に載せるためのレール。チームで再利用できる形に整えます。</p>
+            <p class="tools-page__lead"><strong>Agentic AI</strong>（自律的にステップを踏んでタスクを進める AI）のうち、いま実務で<strong>再現性高く使われているプロダクト</strong>を整理したページです。エディタ一体型から CLI・API 駆動まで、比較と選定の出発点にしてください。</p>
         </header>
 
-        <div class="card-list">
-            <article class="sub-card">
-                <h2>レビュー用 diff パック</h2>
-                <p>変更点・意図・リスクを固定フォーマットで共有。モデルへの説明コストを下げます。</p>
-            </article>
-            <article class="sub-card">
-                <h2>Eval スナップショット</h2>
-                <p>入力セットと期待挙動をバージョン管理。プロンプト改修の回帰（regressions）を可視化します。</p>
-            </article>
-            <article class="sub-card">
-                <h2>ガバナンスタグ</h2>
-                <p>PII・機密度・保存期間のメタデータ。どの会話にどの文脈を載せるかをルール化できます。</p>
-            </article>
-        </div>
+        <nav class="tools-page__toc" aria-label="このページのセクション">
+            <a href="#agentic-tools">Agentic ツール</a>
+            <a href="#pc-rails">P&amp;C 運用の型</a>
+            <a href="#lead-roadmap">リード獲得（ロードマップ）</a>
+        </nav>
+
+        <section id="agentic-tools" class="tools-page__section" aria-labelledby="agentic-tools-heading">
+            <h2 id="agentic-tools-heading" class="tools-section-title">いま一番「行けている」Agentic AI ツール</h2>
+            <p class="tools-section-lead">掲載は特定ベンダー推奨ではなく、<strong>エージェント的なワークフロー</strong>（複数ファイル・コマンド・検証を跨ぐ）で採用例が多い現行プロダクトを中心にしています。各リンクは公式サイトに飛びます。</p>
+
+            <div class="tools-tool-grid">
+                <article class="tools-tool-card">
+                    <h3 class="tools-tool-card__name"><a href="https://cursor.com/" rel="noopener noreferrer">Cursor</a></h3>
+                    <p class="tools-tool-card__kind">AI ネイティブ IDE · Agent · MCP</p>
+                    <p>エディタ内でエージェントがリポジトリを横断編集。Rules / Skills で振る舞いを固定しやすく、チーム開発との相性が高い。</p>
+                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> 既存コードベースでの機能追加、リファクタ、レビュー前の下書き。</p>
+                </article>
+                <article class="tools-tool-card">
+                    <h3 class="tools-tool-card__name"><a href="https://windsurf.com/" rel="noopener noreferrer">Windsurf</a></h3>
+                    <p class="tools-tool-card__kind">IDE · Cascade / Flow</p>
+                    <p>コードベース全体をコンテキストにした編集フロー。ターミナルや複数ステップのタスクをエージェントに任せる使い方が定着しつつある。</p>
+                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> フルスタックの素早い試作、ボイラープレート削減。</p>
+                </article>
+                <article class="tools-tool-card">
+                    <h3 class="tools-tool-card__name"><a href="https://github.com/features/copilot" rel="noopener noreferrer">GitHub Copilot</a></h3>
+                    <p class="tools-tool-card__kind">IDE 拡張 · Copilot Chat / agent 系機能</p>
+                    <p>VS Code / JetBrains 等に載るコーディング支援。エージェント的にワークスペースをまたぐ操作はプロダクトのアップデートとともに拡張中。</p>
+                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> すでに GitHub 中心の開発体制で、導入摩擦を小さくしたい場合。</p>
+                </article>
+                <article class="tools-tool-card">
+                    <h3 class="tools-tool-card__name"><a href="https://www.anthropic.com/claude" rel="noopener noreferrer">Claude（Anthropic）</a></h3>
+                    <p class="tools-tool-card__kind">モデル · Claude Code（CLI）等</p>
+                    <p>長いコンテキストと指示追従に強み。<a href="https://github.com/anthropics/claude-code" rel="noopener noreferrer">Claude Code</a> など、ターミナルからリポジトリを操作するエージェント利用が増えている。</p>
+                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> 仕様読み込み・大規模 diff・ドキュメント整備など、文脈量が大きい作業。</p>
+                </article>
+                <article class="tools-tool-card">
+                    <h3 class="tools-tool-card__name"><a href="https://openai.com/" rel="noopener noreferrer">OpenAI（ChatGPT / API）</a></h3>
+                    <p class="tools-tool-card__kind">汎用エージェント · ツール呼び出し</p>
+                    <p>ブラウザ・デスクトップ・API 経由でツール使用やマルチステップ推論を組み合わせる構成が主流。自社アプリへの組み込みでは API のエージェント設計が鍵。</p>
+                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> 社内ワークフローのオーケストレーション、カスタムツール連携。</p>
+                </article>
+                <article class="tools-tool-card">
+                    <h3 class="tools-tool-card__name"><a href="https://devin.ai/" rel="noopener noreferrer">Devin（参考）</a></h3>
+                    <p class="tools-tool-card__kind">自律型ソフトウェアエージェント</p>
+                    <p>タスクを任せる「自律エージェント」カテゴリの代表例。利用形態や提供範囲は変化しやすいので、常に公式の最新情報を確認すること。</p>
+                    <p class="tools-tool-card__fit"><strong>向く場面:</strong> 限定スコープのタスク委任や PoC（ポリシー・セキュリティ整備は必須）。</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="pc-rails" class="tools-page__section" aria-labelledby="pc-rails-heading">
+            <h2 id="pc-rails-heading" class="tools-section-title">P&amp;C 側の運用レール（プロンプト × コンテキスト）</h2>
+            <p class="tools-section-lead">ツールを替えても崩れないように、<a href="../contexts/index.html">Contexts</a> とセットで使うと効く型です。</p>
+            <div class="card-list">
+                <article class="sub-card">
+                    <h2>レビュー用 diff パック</h2>
+                    <p>変更点・意図・リスクを固定フォーマットで共有。人間レビューとモデルへの説明コストの両方を下げます。</p>
+                </article>
+                <article class="sub-card">
+                    <h2>Eval スナップショット</h2>
+                    <p>入力セットと期待挙動をバージョン管理。プロンプトやエージェント手順の改修による回帰を可視化します。</p>
+                </article>
+                <article class="sub-card">
+                    <h2>ガバナンスタグ</h2>
+                    <p>PII・機密度・保存期間のメタデータ。どの会話・どのエージェント実行にどの文脈を載せるかをルール化できます。</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="lead-roadmap" class="tools-lead-funnel" aria-labelledby="lead-roadmap-heading">
+            <h2 id="lead-roadmap-heading" class="tools-section-title">リード獲得の受け皿（ロードマップ）</h2>
+            <p>この Environment セクションを、<strong>個別ツールに紐づくお問い合わせ</strong>や<strong>比較資料・チェックリストのダウンロード</strong>の入口に育てていく予定です。企業の PoC・採用支援と接続できる「受け皿」として設計します。</p>
+            <ul class="tools-lead-funnel__list">
+                <li><strong>ツール別ランディング</strong> — 各プロダクトごとに導入チェック・費用感・セキュリティ観点を整理した個別ページ。</li>
+                <li><strong>お問い合わせフォーム</strong> — 課題・スタック・禁止事項を受け、最短の構成案を返すフロー。</li>
+                <li><strong>資料ダウンロード</strong> — Agentic AI 比較表、RFP 用の質問リスト、ガバナンス雛形など。</li>
+            </ul>
+            <div class="tools-lead-funnel__cta-row" aria-label="現在利用可能なアクション">
+                <span class="tools-cta-pill tools-cta-pill--muted">フォーム連携（準備中）</span>
+                <span class="tools-cta-pill tools-cta-pill--muted">資料 DL（準備中）</span>
+            </div>
+            <p class="tools-lead-funnel__note">公開のタイミングや優先ツールはサイト更新でお知らせします。まずは上記キュレーションを社内比較のたたき台にしてください。</p>
+        </section>
     </main>
 
     <footer class="site-footer">
