@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tools &amp; Environment | P&amp;C</title>
+    <title>Contexts | P&amp;C</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,30 +14,30 @@
         <a class="logo" href="../index.html">P&amp;C</a>
         <ul class="nav-links">
             <li><a href="../prompts/index.html">Prompts</a></li>
-            <li><a href="../contexts/index.html">Contexts</a></li>
-            <li><a href="index.html" class="is-active">Tools</a></li>
+            <li><a href="index.html" class="is-active">Contexts</a></li>
+            <li><a href="../tools/index.html">Tools</a></li>
         </ul>
     </nav>
 
     <main class="content-wrapper">
         <header class="sub-header">
-            <span class="tag tag--mint">Environment</span>
-            <h1>Tools &amp; Workflow</h1>
-            <p>プロンプトとコンテキストを運用に載せるためのレール。チームで再利用できる形に整えます。</p>
+            <span class="tag">Context</span>
+            <h1>Context Engineering</h1>
+            <p>Markdown を軸に、役割・制約・出力形式を一枚にまとめるテンプレート群です。</p>
         </header>
 
         <div class="card-list">
             <article class="sub-card">
-                <h3>レビュー用 diff パック</h3>
-                <p>変更点・意図・リスクを固定フォーマットで共有。モデルへの説明コストを下げます。</p>
+                <h3>SESSION.md — セッション前提</h3>
+                <p>プロジェクト概要、用語、今回のゴール、禁止事項を冒頭に固定して会話のドリフトを防ぎます。</p>
             </article>
             <article class="sub-card">
-                <h3>Eval スナップショット</h3>
-                <p>入力セットと期待挙動をバージョン管理。プロンプト改修の回 regressions を可視化します。</p>
+                <h3>SPEC.md — 仕様・受け入れ基準</h3>
+                <p>入出力、エッジケース、完了の定義を箇条書き。実装依頼やレビュー依頼の共通文脈に使えます。</p>
             </article>
             <article class="sub-card">
-                <h3>ガバナンスタグ</h3>
-                <p>PII・機密度・保存期間のメタデータ。どの会話にどの文脈を載せるかをルール化できます。</p>
+                <h3>LEARNINGS.md — 蓄積ナレッジ</h3>
+                <p>過去の失敗と回避策を短く記録。長いスレッドでも「いま効く教訓」だけを毎回注入できます。</p>
             </article>
         </div>
     </main>

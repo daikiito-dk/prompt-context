@@ -3,53 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P&C | Prompt & Context Engineering</title>
+    <title>P&C | Prompt & Context Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">P&C</div>
-        <ul>
-            <li><a href="#prompts">Prompts</a></li>
-            <li><a href="#contexts">Contexts</a></li>
-            <li><a href="#tools">Tools</a></li>
+    <nav class="site-nav" aria-label="Main">
+        <a class="logo" href="index.html">P&C</a>
+        <ul class="nav-links">
+            <li><a href="prompts/index.html">Prompts</a></li>
+            <li><a href="contexts/index.html">Contexts</a></li>
+            <li><a href="tools/index.html">Tools</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>Accelerating AI Efficiency</h1>
-        <p>プロンプト・コンテキスト・環境。AIの真価を引き出すエンジニアリング・アセット。</p>
+        <span class="hero-eyebrow">Prompt &amp; Context</span>
+        <h1>
+            <span class="hero-title-line">人とAIのあいだを</span>
+            <span class="hero-title-line hero-accent">設計する。</span>
+        </h1>
+        <p class="hero-lead">プロンプト、コンテキスト、実行環境。Scale がデータで現実世界を動かすように、P&amp;C は言語モデルのための土台を整えます。</p>
         <div class="cta-group">
-            <a href="#prompts" class="btn primary">Get Started</a>
-            <a href="#tools" class="btn secondary">View Tools</a>
+            <a href="prompts/index.html" class="btn btn-primary">Get Started</a>
+            <a href="tools/index.html" class="btn btn-secondary">View Tools</a>
         </div>
     </header>
 
     <main class="grid-container">
-        <section id="prompts" class="card">
-            <span class="tag">PROMPT</span>
-            <h2>Prompt Engineering</h2>
-            <p>厳選されたコピペ用プロンプト・アセットライブラリ。</p>
-            <a href="prompts/index.html" class="link">Browse Prompts →</a>
+        <section id="prompt" class="card-glow">
+            <span class="tag">Prompt</span>
+            <h2>Prompt</h2>
+            <p>再利用可能なプロンプト資産。コピー一行でモデルの振る舞いを整定します。</p>
+            <a href="prompts/index.html" class="link-arrow">Browse Prompts →</a>
         </section>
 
-        <section id="contexts" class="card">
-            <span class="tag">CONTEXT</span>
-            <h2>Context Engineering</h2>
-            <p>AIの思考を構造化する.mdファイルテンプレート集。</p>
-            <a href="contexts/index.html" class="link">Download Assets →</a>
+        <section id="context" class="card-glow">
+            <span class="tag">Context</span>
+            <h2>Context</h2>
+            <p>会話の前提を構造化するテンプレート。長期タスクでも文脈がぶれません。</p>
+            <a href="contexts/index.html" class="link-arrow">Open Contexts →</a>
         </section>
 
-        <section id="tools" class="card">
-            <span class="tag highlight">ENVIRONMENT</span>
-            <h2>Paid Tools</h2>
-            <p>エンジニアリング効率を最大化する独占的ツール群。</p>
-            <a href="tools/index.html" class="link">Learn More →</a>
+        <section id="environment" class="card-glow">
+            <span class="tag tag--mint">Environment</span>
+            <h2>Environment</h2>
+            <p>ワークフローとツールチェーン。エンジニアリングの速度を一段引き上げます。</p>
+            <a href="tools/index.html" class="link-arrow">Explore Tools →</a>
         </section>
     </main>
 
-    <footer>
-        <p>© 2026 P&C Engineering. All rights reserved.</p>
+    <footer class="site-footer">
+        <p>© 2026 P&amp;C Engineering. All rights reserved.</p>
     </footer>
 </body>
 </html>

@@ -1,16 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompts Library | P&C</title>
-    <link rel="stylesheet" href="../style.css"> </head>
+    <title>Prompts | P&amp;C</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
 <body class="sub-page">
-    <nav>
-        <div class="logo"><a href="../index.html" style="color:white; text-decoration:none;">P&C</a></div>
-        <ul>
-            <li><a href="index.html">Prompts</a></li>
+    <nav class="site-nav" aria-label="Main">
+        <a class="logo" href="../index.html">P&amp;C</a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="is-active">Prompts</a></li>
             <li><a href="../contexts/index.html">Contexts</a></li>
             <li><a href="../tools/index.html">Tools</a></li>
         </ul>
@@ -18,50 +21,53 @@
 
     <main class="content-wrapper">
         <header class="sub-header">
-            <span class="tag">LIBRARY</span>
-            <h1>Prompt Engineering Assets</h1>
-            <p>高品質なプロンプトをワンクリックでコピー。</p>
+            <span class="tag">Library</span>
+            <h1>Prompt Engineering</h1>
+            <p>検証済みのプロンプトをそのまま利用。コピーして会話に貼り付けるだけです。</p>
         </header>
 
         <section class="prompt-item">
             <div class="prompt-header">
                 <h3>深層思考・推論プロンプト</h3>
-                <button class="copy-btn" onclick="copyPrompt('prompt1')">Copy</button>
+                <button type="button" class="copy-btn" data-copy-target="prompt1">Copy</button>
             </div>
-            <pre id="prompt1" class="code-block">
-あなたは世界最高のエンジニアです。
+            <pre id="prompt1" class="code-block">あなたは世界最高のエンジニアです。
 以下の制約条件に基づき、論理的な思考ステップを経て回答してください。
+
 # 制約条件:
 - 結論から述べること
-- 中間プロセスを簡潔に書くこと...
-            </pre>
+- 中間プロセスを簡潔に書くこと</pre>
         </section>
 
         <section class="prompt-item">
             <div class="prompt-header">
                 <h3>要約・構造化プロンプト</h3>
-                <button class="copy-btn" onclick="copyPrompt('prompt2')">Copy</button>
+                <button type="button" class="copy-btn" data-copy-target="prompt2">Copy</button>
             </div>
-            <pre id="prompt2" class="code-block">
-以下の文章を、箇条書きで3点に要約してください。
-また、最も重要なキーワードを1つ抽出してください。
-            </pre>
+            <pre id="prompt2" class="code-block">以下の文章を、箇条書きで3点に要約してください。
+また、最も重要なキーワードを1つ抽出してください。</pre>
         </section>
     </main>
 
+    <footer class="site-footer">
+        <p>© 2026 P&amp;C Engineering. All rights reserved.</p>
+    </footer>
+
     <script>
-        function copyPrompt(id) {
-            const text = document.getElementById(id).innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                const btn = event.target;
-                btn.innerText = 'Copied!';
-                btn.style.background = '#00ffcc';
-                setTimeout(() => {
-                    btn.innerText = 'Copy';
-                    btn.style.background = '';
-                }, 2000);
+        document.querySelectorAll(".copy-btn").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                var id = btn.getAttribute("data-copy-target");
+                var el = document.getElementById(id);
+                if (!el) return;
+                navigator.clipboard.writeText(el.innerText).then(function () {
+                    var prev = btn.textContent;
+                    btn.textContent = "Copied!";
+                    setTimeout(function () {
+                        btn.textContent = prev;
+                    }, 2000);
+                });
             });
-        }
+        });
     </script>
 </body>
 </html>
