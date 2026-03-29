@@ -24,6 +24,28 @@ html {
     color-scheme: dark;
 }
 
+.skip-link {
+    position: absolute;
+    top: -120px;
+    left: 1rem;
+    z-index: 10000;
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+    color: #0b0e14;
+    background: linear-gradient(135deg, var(--neon) 0%, #0ea5e9 100%);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    transition: top 0.18s ease, box-shadow 0.18s ease;
+}
+
+.skip-link:focus {
+    top: 1rem;
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
@@ -461,7 +483,10 @@ summary:focus-visible {
 }
 
 .prompt-catalog-message {
-    margin: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 42rem;
+    box-sizing: border-box;
     padding: 1.35rem 1.25rem;
     text-align: center;
     font-size: 0.9rem;
@@ -596,25 +621,6 @@ summary:focus-visible {
     flex-direction: column;
     gap: 1rem;
     padding: 0 1.15rem 1.25rem;
-}
-
-.model-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-}
-
-.model-tag {
-    font-size: 0.625rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding: 0.28rem 0.55rem;
-    border-radius: 6px;
-    border: 1px solid rgba(56, 189, 248, 0.35);
-    color: var(--neon-bright);
-    background: rgba(56, 189, 248, 0.08);
-    box-shadow: 0 0 20px -6px rgba(56, 189, 248, 0.35);
 }
 
 .sub-page .card-list {
@@ -795,6 +801,52 @@ summary:focus-visible {
 
 .prompt-item .code-block--asset::-webkit-scrollbar-thumb:hover {
     background: rgba(56, 189, 248, 0.45);
+}
+
+/* Prompt body: lightweight symbol highlighting (see prompts-catalog.js) */
+.prompt-item .code-block--syntax .ph-hash {
+    color: #ffa657;
+    font-weight: 700;
+}
+
+.prompt-item .code-block--syntax .ph-ol {
+    color: #79c0ff;
+    font-weight: 600;
+}
+
+.prompt-item .code-block--syntax .ph-ul {
+    color: #7ee787;
+    font-weight: 600;
+}
+
+.prompt-item .code-block--syntax .ph-em {
+    color: #e6edf3;
+    font-weight: 600;
+}
+
+.prompt-item .code-block--syntax .ph-em-mark {
+    color: #ff7b72;
+    font-weight: 700;
+}
+
+.prompt-item .code-block--syntax .ph-jp {
+    color: #d2a8ff;
+    font-weight: 500;
+}
+
+.prompt-item .code-block--syntax .ph-slot {
+    color: #7dd3fc;
+    font-weight: 500;
+}
+
+.prompt-item .code-block--syntax .ph-fence {
+    color: #ffa657;
+    font-weight: 600;
+}
+
+.prompt-item .code-block--syntax .ph-rule {
+    color: #8b949e;
+    letter-spacing: 0.04em;
 }
 
 .copy-btn {

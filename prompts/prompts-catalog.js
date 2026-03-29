@@ -6,6 +6,7 @@
 
   var rawData = null;
   var scoresMap = {};
+  var copyBodies = Object.create(null);
 
   function apiBase() {
     var b = document.body && document.body.getAttribute("data-prompt-score-api");
@@ -96,9 +97,7 @@
 
   function promptMatches(prompt, q) {
     if (!q) return true;
-    var hay = normalize(
-      [prompt.title, prompt.description, prompt.body, (prompt.models || []).join(" ")].join(" ")
-    );
+    var hay = normalize([prompt.title, prompt.description, prompt.body].join(" "));
     return hay.indexOf(q) !== -1;
   }
 
@@ -116,6 +115,63 @@
     });
   }
 
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function highlightInlines(s) {
+    s = s.replace(/\*\*([^*]+)\*\*/g, function (_, inner) {
+      return (
+        '<span class="ph-em">' +
+        '<span class="ph-em-mark">**</span>' +
+        inner +
+        '<span class="ph-em-mark">**</span>' +
+        "</span>"
+      );
+    });
+    s = s.replace(/【([^】]*)】/g, '<span class="ph-jp">【$1】</span>');
+    s = s.replace(/\[([^\]]+)\]/g, '<span class="ph-slot">[$1]</span>');
+    return s;
+  }
+
+  function highlightLine(line) {
+    var t = String(line);
+    if (/^<{3}/.test(t) || /^CONTEXT_END>>>/.test(t)) {
+      return '<span class="ph-fence">' + escapeHtml(t) + "</span>";
+    }
+    if (/^-{3,}\s*$/.test(t)) {
+      return '<span class="ph-rule">' + escapeHtml(t) + "</span>";
+    }
+    var m;
+    if ((m = t.match(/^(#{1,6})(\s*)(.*)$/))) {
+      return (
+        '<span class="ph-hash">' +
+        escapeHtml(m[1] + m[2]) +
+        "</span>" +
+        highlightInlines(escapeHtml(m[3]))
+      );
+    }
+    if ((m = t.match(/^(\d+\.\s)(.*)$/))) {
+      return (
+        '<span class="ph-ol">' + escapeHtml(m[1]) + "</span>" + highlightInlines(escapeHtml(m[2]))
+      );
+    }
+    if ((m = t.match(/^(-\s)(.*)$/))) {
+      return (
+        '<span class="ph-ul">' + escapeHtml(m[1]) + "</span>" + highlightInlines(escapeHtml(m[2]))
+      );
+    }
+    return highlightInlines(escapeHtml(t));
+  }
+
+  function highlightPromptBodyHtml(text) {
+    var lines = (text || "").split(/\n/);
+    return lines.map(highlightLine).join("<br>");
+  }
+
   function attachCopyHandlers(root) {
     root.addEventListener("click", function (ev) {
       var btn = ev.target.closest(".copy-btn");
@@ -123,7 +179,9 @@
       var id = btn.getAttribute("data-copy-target");
       var el = id ? document.getElementById(id) : null;
       if (!el) return;
-      navigator.clipboard.writeText(el.textContent || "").then(function () {
+      var raw =
+        id && Object.prototype.hasOwnProperty.call(copyBodies, id) ? copyBodies[id] : el.textContent || "";
+      navigator.clipboard.writeText(raw).then(function () {
         var prev = btn.textContent;
         btn.textContent = "Copied!";
         btn.classList.add("copy-btn--success");
@@ -149,6 +207,7 @@
   function render() {
     var q = normalize(searchInput.value);
     catalogEl.textContent = "";
+    copyBodies = Object.create(null);
 
     if (!rawData || !rawData.categories || !rawData.categories.length) {
       if (statsEl) {
@@ -224,20 +283,8 @@
         desc.className = "prompt-desc";
         desc.textContent = p.description || "";
 
-        var tags = document.createElement("div");
-        tags.className = "model-tags";
-        tags.setAttribute("aria-label", "Recommended models");
-
-        (p.models || []).forEach(function (m) {
-          var span = document.createElement("span");
-          span.className = "model-tag";
-          span.textContent = m;
-          tags.appendChild(span);
-        });
-
         main.appendChild(h3);
         main.appendChild(desc);
-        main.appendChild(tags);
 
         var actions = document.createElement("div");
         actions.className = "prompt-header-actions";
@@ -267,8 +314,10 @@
 
         var pre = document.createElement("pre");
         pre.id = p.id;
-        pre.className = "code-block code-block--asset";
-        pre.textContent = p.body || "";
+        pre.className = "code-block code-block--asset code-block--syntax";
+        var bodyText = p.body || "";
+        copyBodies[p.id] = bodyText;
+        pre.innerHTML = highlightPromptBodyHtml(bodyText);
 
         section.appendChild(header);
         section.appendChild(pre);

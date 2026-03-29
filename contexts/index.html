@@ -3,23 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contexts | P&amp;C</title>
+    <title>コンテキストエンジニアリング | P&amp;C — Markdown テンプレート</title>
+    <meta name="description" content="SESSION.md・SPEC.md・LEARNINGS.md など、会話の前提を一枚にまとめるコンテキストテンプレート。長期タスクでも文脈のぶれを抑えます。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prompt-context-zeta.vercel.app/contexts/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="P&amp;C — Prompt &amp; Context Platform">
+    <meta property="og:title" content="コンテキストエンジニアリング | P&amp;C">
+    <meta property="og:description" content="SESSION.md・SPEC.md・LEARNINGS.md など、会話の前提を一枚にまとめるコンテキストテンプレート。">
+    <meta property="og:url" content="https://prompt-context-zeta.vercel.app/contexts/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="コンテキストエンジニアリング | P&amp;C">
+    <meta name="twitter:description" content="SESSION.md・SPEC.md など、前提を構造化するテンプレート群。">
+    <meta name="theme-color" content="#0b0e14">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20fill%3D%27%230b0e14%27%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%278%27%2F%3E%3Cpath%20fill%3D%27%2338bdf8%27%20d%3D%27M9%2010h5.2c2.2%200%203.9%201.5%203.9%203.5S16.4%2017%2014.2%2017H12v5H9V10zm3%202.8h2c.9%200%201.5-.5%201.5-1.2s-.6-1.2-1.5-1.2H12v2.4z%27%2F%3E%3C%2Fsvg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://prompt-context-zeta.vercel.app/contexts/#webpage",
+                "url": "https://prompt-context-zeta.vercel.app/contexts/",
+                "name": "コンテキストエンジニアリング | P&C",
+                "description": "Markdown を軸に役割・制約・出力形式をまとめるテンプレート群です。",
+                "inLanguage": "ja",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "P&C — Prompt & Context Platform",
+                    "url": "https://prompt-context-zeta.vercel.app/"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "ホーム",
+                        "item": "https://prompt-context-zeta.vercel.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "コンテキスト",
+                        "item": "https://prompt-context-zeta.vercel.app/contexts/"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="sub-page">
+    <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
     <nav class="site-nav" aria-label="Main">
-        <a class="logo" href="../index.html">P&amp;C</a>
-        <ul class="nav-links">
-            <li><a href="../prompts/index.html">Prompts</a></li>
-            <li><a href="index.html" class="is-active">Contexts</a></li>
-            <li><a href="../tools/index.html">Tools</a></li>
-        </ul>
+        <div class="site-nav-inner">
+            <a class="logo" href="../index.html">P&amp;C</a>
+            <ul class="nav-links">
+                <li><a href="../prompts/index.html">Prompts</a></li>
+                <li><a href="index.html" class="is-active" aria-current="page">Contexts</a></li>
+                <li><a href="../tools/index.html">Tools</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main class="content-wrapper">
+    <main class="content-wrapper" id="main-content">
         <header class="sub-header">
             <span class="tag">Context</span>
             <h1>Context Engineering</h1>
@@ -28,15 +82,15 @@
 
         <div class="card-list">
             <article class="sub-card">
-                <h3>SESSION.md — セッション前提</h3>
+                <h2>SESSION.md — セッション前提</h2>
                 <p>プロジェクト概要、用語、今回のゴール、禁止事項を冒頭に固定して会話のドリフトを防ぎます。</p>
             </article>
             <article class="sub-card">
-                <h3>SPEC.md — 仕様・受け入れ基準</h3>
+                <h2>SPEC.md — 仕様・受け入れ基準</h2>
                 <p>入出力、エッジケース、完了の定義を箇条書き。実装依頼やレビュー依頼の共通文脈に使えます。</p>
             </article>
             <article class="sub-card">
-                <h3>LEARNINGS.md — 蓄積ナレッジ</h3>
+                <h2>LEARNINGS.md — 蓄積ナレッジ</h2>
                 <p>過去の失敗と回避策を短く記録。長いスレッドでも「いま効く教訓」だけを毎回注入できます。</p>
             </article>
         </div>

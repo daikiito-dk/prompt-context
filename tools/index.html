@@ -3,25 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tools &amp; Environment | P&amp;C</title>
+    <title>ツールとワークフロー | P&amp;C — 運用レール</title>
+    <meta name="description" content="プロンプトとコンテキストを運用に載せるための型。レビュー用 diff パック、Eval スナップショット、ガバナンスタグなどチームで再利用できる単位を整理します。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prompt-context-zeta.vercel.app/tools/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="P&amp;C — Prompt &amp; Context Platform">
+    <meta property="og:title" content="ツールとワークフロー | P&amp;C">
+    <meta property="og:description" content="プロンプトとコンテキストを運用に載せるための型。diff パック、Eval、ガバナンスタグでチーム運用を整えます。">
+    <meta property="og:url" content="https://prompt-context-zeta.vercel.app/tools/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ツールとワークフロー | P&amp;C">
+    <meta name="twitter:description" content="diff パック、Eval スナップショット、ガバナンスタグなど運用のレール。">
+    <meta name="theme-color" content="#0b0e14">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20fill%3D%27%230b0e14%27%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%278%27%2F%3E%3Cpath%20fill%3D%27%2338bdf8%27%20d%3D%27M9%2010h5.2c2.2%200%203.9%201.5%203.9%203.5S16.4%2017%2014.2%2017H12v5H9V10zm3%202.8h2c.9%200%201.5-.5%201.5-1.2s-.6-1.2-1.5-1.2H12v2.4z%27%2F%3E%3C%2Fsvg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://prompt-context-zeta.vercel.app/tools/#webpage",
+                "url": "https://prompt-context-zeta.vercel.app/tools/",
+                "name": "ツールとワークフロー | P&C",
+                "description": "プロンプトとコンテキストを運用に載せるためのレールと型を整理します。",
+                "inLanguage": "ja",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "P&C — Prompt & Context Platform",
+                    "url": "https://prompt-context-zeta.vercel.app/"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "ホーム",
+                        "item": "https://prompt-context-zeta.vercel.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "ツール",
+                        "item": "https://prompt-context-zeta.vercel.app/tools/"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="sub-page">
+    <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
     <nav class="site-nav" aria-label="Main">
         <div class="site-nav-inner">
             <a class="logo" href="../index.html">P&amp;C</a>
             <ul class="nav-links">
                 <li><a href="../prompts/index.html">Prompts</a></li>
                 <li><a href="../contexts/index.html">Contexts</a></li>
-                <li><a href="index.html" class="is-active">Tools</a></li>
+                <li><a href="index.html" class="is-active" aria-current="page">Tools</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="content-wrapper">
+    <main class="content-wrapper" id="main-content">
         <header class="sub-header sub-header--ruled">
             <span class="tag tag--mint">Environment</span>
             <h1>Tools &amp; Workflow</h1>
@@ -30,15 +82,15 @@
 
         <div class="card-list">
             <article class="sub-card">
-                <h3>レビュー用 diff パック</h3>
+                <h2>レビュー用 diff パック</h2>
                 <p>変更点・意図・リスクを固定フォーマットで共有。モデルへの説明コストを下げます。</p>
             </article>
             <article class="sub-card">
-                <h3>Eval スナップショット</h3>
+                <h2>Eval スナップショット</h2>
                 <p>入力セットと期待挙動をバージョン管理。プロンプト改修の回帰（regressions）を可視化します。</p>
             </article>
             <article class="sub-card">
-                <h3>ガバナンスタグ</h3>
+                <h2>ガバナンスタグ</h2>
                 <p>PII・機密度・保存期間のメタデータ。どの会話にどの文脈を載せるかをルール化できます。</p>
             </article>
         </div>
