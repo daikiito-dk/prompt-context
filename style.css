@@ -563,6 +563,13 @@ a.card-glow--block-link .home-sample-pre--md {
     margin: 0;
 }
 
+.home-landmark-actions--split {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem 1.25rem;
+}
+
 @media (max-width: 820px) {
     .home-landmark-grid {
         grid-template-columns: 1fr;
