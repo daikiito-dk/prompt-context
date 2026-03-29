@@ -235,7 +235,7 @@
 
       var details = document.createElement("details");
       details.className = "prompt-category";
-      details.open = q ? true : Boolean(category.open);
+      details.open = Boolean(q);
 
       var summary = document.createElement("summary");
       summary.className = "prompt-category-summary";

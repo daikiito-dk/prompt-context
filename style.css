@@ -633,10 +633,13 @@ summary:focus-visible {
 
 .content-wrapper--prompts {
     max-width: 1040px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .sub-page--prompts {
     --prompts-sticky-offset: 3.5rem;
+    scrollbar-gutter: stable;
 }
 
 .sub-header--prompts {
@@ -727,6 +730,8 @@ summary:focus-visible {
     flex-direction: column;
     gap: 1.25rem;
     min-height: 4rem;
+    width: 100%;
+    min-width: 0;
 }
 
 .prompt-catalog-message {
@@ -768,6 +773,9 @@ summary:focus-visible {
     background: rgba(22, 27, 34, 0.45);
     overflow: hidden;
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .prompt-category:hover {
@@ -868,6 +876,7 @@ summary:focus-visible {
     flex-direction: column;
     gap: 1rem;
     padding: 0 1.15rem 1.25rem;
+    min-width: 0;
 }
 
 .sub-page .card-list {
@@ -1566,6 +1575,7 @@ summary:focus-visible {
     margin-bottom: 1.5rem;
     overflow: hidden;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    min-width: 0;
 }
 
 .prompt-category-body .prompt-item {
@@ -1683,7 +1693,9 @@ summary:focus-visible {
         0 0 40px -16px rgba(56, 189, 248, 0.35);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    max-width: 100%;
     max-height: min(65vh, 26rem);
+    overflow-x: auto;
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-color: rgba(56, 189, 248, 0.35) rgba(22, 27, 34, 0.5);

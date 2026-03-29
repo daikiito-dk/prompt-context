@@ -7,7 +7,6 @@
       "slug": "deep-reasoning",
       "title": "Deep Reasoning",
       "hint": "推論・分析・複雑タスク",
-      "open": true,
       "prompts": [
         {
           "id": "standard-reasoning",
@@ -63,7 +62,6 @@
       "slug": "code-architecture",
       "title": "Code Architecture",
       "hint": "コンテキスト連結・ドキュメント駆動",
-      "open": true,
       "prompts": [
         {
           "id": "context-bridge",
@@ -77,7 +75,6 @@
       "slug": "creative-writing",
       "title": "Creative Writing",
       "hint": "GTM・コピー・ペルソナ",
-      "open": true,
       "prompts": [
         {
           "id": "strategic-marketing-agent",
@@ -295,7 +292,6 @@
       "slug": "business-strategy",
       "title": "Business & Strategy",
       "hint": "事業企画・戦略・提案整理",
-      "open": true,
       "prompts": [
         {
           "id": "business-planning-consultant-proposals",
@@ -441,7 +437,6 @@
       "slug": "sales-b2b",
       "title": "Sales & B2B",
       "hint": "法人営業・提案・クロージング",
-      "open": true,
       "prompts": [
         {
           "id": "strategic-sales-pitch-deck-outline",
@@ -533,7 +528,6 @@
       "slug": "hr-talent",
       "title": "HR & Talent",
       "hint": "採用・人事・育成",
-      "open": true,
       "prompts": [
         {
           "id": "strategic-engineer-interview-guide",
@@ -613,7 +607,6 @@
       "slug": "cs-cx",
       "title": "Customer Support & CX",
       "hint": "カスタマーサポート・体験設計",
-      "open": true,
       "prompts": [
         {
           "id": "customer-support-faq-architect",
@@ -687,7 +680,6 @@
       "slug": "finance-general-affairs",
       "title": "Finance & General Affairs",
       "hint": "経理・総務・バックオフィス",
-      "open": true,
       "prompts": [
         {
           "id": "courteous-invoice-submission-email",
