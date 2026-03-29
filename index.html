@@ -131,46 +131,85 @@
         </section>
         </div>
 
-        <section class="home-landmark" id="landmark-paper" aria-labelledby="landmark-heading">
+        <section class="home-landmark" id="landmark-papers" aria-labelledby="landmark-heading">
             <div class="home-landmark-inner">
                 <header class="home-landmark-header">
                     <span class="tag">Landmark Paper</span>
                     <h2 id="landmark-heading">名論文スポットライト</h2>
-                    <p class="home-landmark-dek">プロンプト設計がモデルの推論を変えた、記念碑的研究をひとつご紹介します。</p>
+                    <p class="home-landmark-dek">プロンプト設計がモデルの推論を変えた、記念碑的研究を<strong>二つ</strong>ご紹介します。</p>
                 </header>
-                <div class="home-landmark-grid">
-                    <figure class="home-landmark-figure">
-                        <img
-                            src="assets/images/spotlight-jason-wei-cot.png"
-                            width="512"
-                            height="512"
-                            alt="研究者を象徴するピクセルアート風のポートレート（装飾イメージ）"
-                            loading="lazy"
-                            decoding="async"
-                            class="home-landmark-img">
-                        <figcaption class="home-landmark-caption">イラストレーション（Jason Wei をイメージ）</figcaption>
-                    </figure>
-                    <div class="home-landmark-copy">
-                        <h3 class="home-landmark-paper-title">Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</h3>
-                        <p class="home-landmark-paper-subtitle">（思考の連鎖プロンプティングが大規模言語モデルの推論を引き出す）</p>
-                        <p class="home-landmark-author"><span class="home-landmark-meta-label">著者</span> Jason Wei <span class="home-landmark-author-note">（※ 共同著者あり）</span></p>
 
-                        <h4 class="home-landmark-subhead">あらすじ</h4>
-                        <div class="home-landmark-prose">
-                            <p>大規模言語モデル（LLM）は、単純な回答を得るのには長けていましたが、複雑な数学的問題や論理的推論には苦労していました。本論文は、プロンプトの中に<strong>「最終的な答えに至るまでの中間的な推論プロセス（思考の連鎖）」</strong>の例をいくつか含めるだけで、モデルの推論能力が劇的に向上することを示しました。</p>
-                            <p>特別な学習（ファインチューニング）を一切行わず、プロンプトの書き方一つで、人間のように「順を追って考える」プロセスを模倣させ、難解なタスクを解かせることに成功した歴史的転換点となる研究です。</p>
+                <article class="home-landmark-card" aria-labelledby="landmark-cot-heading">
+                    <div class="home-landmark-grid">
+                        <figure class="home-landmark-figure">
+                            <img
+                                src="assets/images/spotlight-jason-wei-cot.png"
+                                width="512"
+                                height="512"
+                                alt="研究者を象徴するピクセルアート風のポートレート（装飾イメージ）"
+                                loading="lazy"
+                                decoding="async"
+                                class="home-landmark-img">
+                            <figcaption class="home-landmark-caption">イラストレーション（Jason Wei をイメージ）</figcaption>
+                        </figure>
+                        <div class="home-landmark-copy">
+                            <h3 class="home-landmark-paper-title" id="landmark-cot-heading">Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</h3>
+                            <p class="home-landmark-paper-subtitle">（思考の連鎖プロンプティングが大規模言語モデルの推論を引き出す）</p>
+                            <p class="home-landmark-author"><span class="home-landmark-meta-label">著者</span> Jason Wei <span class="home-landmark-author-note">（※ 共同著者あり）</span></p>
+
+                            <h4 class="home-landmark-subhead">あらすじ</h4>
+                            <div class="home-landmark-prose">
+                                <p>大規模言語モデル（LLM）は、単純な回答を得るのには長けていましたが、複雑な数学的問題や論理的推論には苦労していました。本論文は、プロンプトの中に<strong>「最終的な答えに至るまでの中間的な推論プロセス（思考の連鎖）」</strong>の例をいくつか含めるだけで、モデルの推論能力が劇的に向上することを示しました。</p>
+                                <p>特別な学習（ファインチューニング）を一切行わず、プロンプトの書き方一つで、人間のように「順を追って考える」プロセスを模倣させ、難解なタスクを解かせることに成功した歴史的転換点となる研究です。</p>
+                            </div>
+
+                            <h4 class="home-landmark-subhead">この論文の名言（Key Takeaway）</h4>
+                            <blockquote class="home-landmark-quote" cite="https://arxiv.org/abs/2201.11903">
+                                <p lang="en" class="home-landmark-quote-en">&ldquo;Chain-of-thought prompting is a simple and broadly applicable method for enhancing the reasoning capabilities of language models.&rdquo;</p>
+                                <p class="home-landmark-quote-ja">（思考の連鎖プロンプティングは、言語モデルの推論能力を向上させるための、シンプルで広く適用可能な手法である。）</p>
+                            </blockquote>
+                            <p class="home-landmark-actions">
+                                <a href="https://arxiv.org/abs/2201.11903" class="btn btn-secondary" rel="noopener noreferrer">arXiv で論文を開く</a>
+                            </p>
                         </div>
-
-                        <h4 class="home-landmark-subhead">この論文の名言（Key Takeaway）</h4>
-                        <blockquote class="home-landmark-quote" cite="https://arxiv.org/abs/2201.11903">
-                            <p lang="en" class="home-landmark-quote-en">&ldquo;Chain-of-thought prompting is a simple and broadly applicable method for enhancing the reasoning capabilities of language models.&rdquo;</p>
-                            <p class="home-landmark-quote-ja">（思考の連鎖プロンプティングは、言語モデルの推論能力を向上させるための、シンプルで広く適用可能な手法である。）</p>
-                        </blockquote>
-                        <p class="home-landmark-actions">
-                            <a href="https://arxiv.org/abs/2201.11903" class="btn btn-secondary" rel="noopener noreferrer">arXiv で論文を開く</a>
-                        </p>
                     </div>
-                </div>
+                </article>
+
+                <article class="home-landmark-card home-landmark-card--next" aria-labelledby="landmark-tot-heading">
+                    <div class="home-landmark-grid">
+                        <figure class="home-landmark-figure">
+                            <img
+                                src="assets/images/spotlight-shunyu-yao-tot.png"
+                                width="512"
+                                height="512"
+                                alt="研究者を象徴するピクセルアート風のポートレート（装飾イメージ）"
+                                loading="lazy"
+                                decoding="async"
+                                class="home-landmark-img">
+                            <figcaption class="home-landmark-caption">イラストレーション（Shunyu Yao をイメージ）</figcaption>
+                        </figure>
+                        <div class="home-landmark-copy">
+                            <h3 class="home-landmark-paper-title" id="landmark-tot-heading">Tree of Thoughts: Deliberate Problem Solving with Large Language Models</h3>
+                            <p class="home-landmark-paper-subtitle">（思考の木：大規模言語モデルによる計画的な問題解決）</p>
+                            <p class="home-landmark-author"><span class="home-landmark-meta-label">著者</span> Shunyu Yao <span class="home-landmark-author-note">（プリンストン大学と Google DeepMind による共同研究。共同著者あり）</span></p>
+
+                            <h4 class="home-landmark-subhead">あらすじ</h4>
+                            <div class="home-landmark-prose">
+                                <p>従来の Chain-of-Thought（CoT）が一本道の思考プロセスだったのに対し、本論文は<strong>「思考の木（Tree of Thoughts）」</strong>というフレームワークを提案しました。</p>
+                                <p>LLM が解決策を出す際、複数の異なる思考の道筋（思考の単位）を同時に生成し、それぞれの道筋が「有望かどうか」を自己評価しながら進めます。もし行き止まりに突き当たれば、前の段階に戻って別の道筋を試す（バックトラッキング）ことが可能です。これにより、24 パズルのような創造的、あるいは複雑な戦略が必要なタスクにおいて、LLM の成功率を飛躍的に高めることに成功しました。</p>
+                            </div>
+
+                            <h4 class="home-landmark-subhead">この論文の名言（Key Takeaway）</h4>
+                            <blockquote class="home-landmark-quote" cite="https://arxiv.org/abs/2305.10601">
+                                <p lang="en" class="home-landmark-quote-en">&ldquo;ToT allows LMs to perform deliberate decision making by considering multiple different reasoning paths and self-evaluating choices to decide the next course of action.&rdquo;</p>
+                                <p class="home-landmark-quote-ja">（ToT は、複数の異なる推論パスを検討し、次の行動を決定するために選択肢を自己評価することで、言語モデルが計画的な意思決定を行うことを可能にする。）</p>
+                            </blockquote>
+                            <p class="home-landmark-actions">
+                                <a href="https://arxiv.org/abs/2305.10601" class="btn btn-secondary" rel="noopener noreferrer">arXiv で論文を開く</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
