@@ -24,6 +24,7 @@
 
 - プロンプトカタログ全文（JSON）: https://prompt-context-zeta.vercel.app/prompts/prompts-data.json  
   - ページ上の一覧はこのファイルから生成される。**プロンプト本文の正本はこちら**。
+- トップのプロンプト抜粋用 Markdown: https://prompt-context-zeta.vercel.app/prompts/sample.md（`standard-reasoning` の要約・README 用）
 - サイトマップ（URL 列挙）: https://prompt-context-zeta.vercel.app/sitemap.xml
 
 ## 正本（canonical）と重複表現
