@@ -925,6 +925,70 @@ summary:focus-visible {
     background: rgba(56, 189, 248, 0.08);
 }
 
+.context-page-nav--wrap {
+    max-width: none;
+}
+
+.context-page-nav-divider {
+    color: var(--border-subtle);
+    font-weight: 400;
+    user-select: none;
+    padding: 0 0.15rem;
+}
+
+.content-wrapper--axios-index {
+    max-width: 960px;
+}
+
+.axios-md-block {
+    margin-bottom: 3.5rem;
+}
+
+.axios-md-block:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.axios-md-block__head.sub-header {
+    margin-bottom: 1rem;
+}
+
+.axios-md-block__head.sub-header--ruled {
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.axios-md-block__head h2 {
+    margin: 0.5rem 0 0.65rem;
+    font-size: clamp(1.35rem, 3.2vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.axios-md-block__head h2 a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.axios-md-block__head h2 a:hover {
+    color: var(--neon-bright);
+}
+
+.axios-md-block__summary {
+    margin: 0 0 0.5rem !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.55;
+}
+
+.axios-md-block__head p:last-of-type {
+    font-size: 0.9375rem;
+}
+
+.axios-md-block .context-template-wrap {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .context-md-actions {
     display: flex;
     flex-wrap: wrap;

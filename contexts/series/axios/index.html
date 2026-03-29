@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axios コンテキストシリーズ | P&amp;C</title>
-    <meta name="description" content="Axios（axios/axios）向けに 8 種類のプロダクトコンテキスト MD を具体例として掲載。製品コンセプトから API 規格、開発者ジャーニーまで。">
+    <meta name="description" content="Axios（axios/axios）向けに 8 種類のプロダクトコンテキスト MD を具体例として掲載。閲覧ページと同じレイアウトで一覧表示。">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://prompt-context-zeta.vercel.app/contexts/series/axios/">
     <meta property="og:title" content="Axios コンテキストシリーズ | P&amp;C">
@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../style.css">
 </head>
-<body class="sub-page">
+<body class="sub-page axios-index-page">
     <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
     <nav class="site-nav" aria-label="Main">
         <div class="site-nav-inner">
@@ -29,7 +29,7 @@
         </div>
     </nav>
 
-    <main class="content-wrapper" id="main-content">
+    <main class="content-wrapper content-wrapper--axios-index" id="main-content">
         <nav class="context-breadcrumb" aria-label="パンくず">
             <a href="../../../index.html">ホーム</a><span aria-hidden="true">/</span>
             <a href="../../index.html">Contexts</a><span aria-hidden="true">/</span>
@@ -40,106 +40,197 @@
         <header class="sub-header sub-header--ruled">
             <span class="tag">OSS Series</span>
             <h1>Axios — プロダクトコンテキスト（8 MD）</h1>
-            <p>根拠リポジトリ: <a href="https://github.com/axios/axios" rel="noopener noreferrer">https://github.com/axios/axios</a>。各カードに<strong>Markdown 先頭プレビュー</strong>を表示します。<strong>ダウンロード</strong>で .md を取得するか、<strong>全文を開く</strong>でコピー用ページへ進めます。</p>
+            <p>根拠リポジトリ: <a href="https://github.com/axios/axios" rel="noopener noreferrer">https://github.com/axios/axios</a>。各文書を<strong>個別閲覧ページと同じレイアウト</strong>（見出し + 本文パネル）で並べています。コピー・MD ダウンロード・全画面表示は各ブロックのツールバーから利用できます。</p>
         </header>
 
-        <nav class="context-page-nav" aria-label="このページのセクション">
+        <nav class="context-page-nav context-page-nav--wrap" aria-label="文書へジャンプ">
             <a href="#axios-priority-high">重要度：高</a>
             <a href="#axios-priority-mid">重要度：中</a>
             <a href="#axios-priority-low">重要度：低</a>
+            <span class="context-page-nav-divider" aria-hidden="true">|</span>
+            <a href="#doc-01">01</a>
+            <a href="#doc-02">02</a>
+            <a href="#doc-03">03</a>
+            <a href="#doc-04">04</a>
+            <a href="#doc-05">05</a>
+            <a href="#doc-06">06</a>
+            <a href="#doc-07">07</a>
+            <a href="#doc-08">08</a>
         </nav>
 
         <h2 id="axios-priority-high" class="context-md-group-title">重要度：高 — AI の挙動と精度の土台</h2>
-        <div class="card-list">
-            <article class="sub-card">
-                <span class="context-tier context-tier--high">01</span>
-                <h2><a href="01-product-core-concept.html">Product Core Concept</a></h2>
-                <p>製品価値、イソモーフィック性、インターセプター思想、競合比較（Deep Dive）。</p>
-                <p class="context-md-filename"><code class="inline-code">01_Product_Core_Concept.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/01_Product_Core_Concept.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="01-product-core-concept.html" class="btn-context-view">全文を開く</a>
+
+        <section id="doc-01" class="axios-md-block" data-md-block data-md-path="md/01_Product_Core_Concept.md" aria-labelledby="axios-h-01">
+            <header class="sub-header sub-header--ruled axios-md-block__head">
+                <span class="context-tier context-tier--high">重要度：高</span>
+                <span class="tag">OSS Series · Axios</span>
+                <h2 id="axios-h-01"><a href="01-product-core-concept.html">Axios — 01_Product_Core_Concept.md</a></h2>
+                <p class="axios-md-block__summary">製品価値、イソモーフィック性、インターセプター思想、競合比較（Deep Dive）。</p>
+                <p><code class="inline-code">01_Product_Core_Concept.md</code> · 根拠: <a href="https://github.com/axios/axios" rel="noopener noreferrer">axios/axios</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="axios-md-01">Copy</button>
+                        <a class="btn-context-dl" href="md/01_Product_Core_Concept.md" download>MD をダウンロード</a>
+                        <a href="01-product-core-concept.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--high">02</span>
-                <h2><a href="02-architecture-overview.html">Architecture Overview</a></h2>
-                <p>リクエストライフサイクル、インターセプター、アダプター、transform、AxiosError。</p>
-                <p class="context-md-filename"><code class="inline-code">02_Architecture_Overview.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/02_Architecture_Overview.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="02-architecture-overview.html" class="btn-context-view">全文を開く</a>
+                <pre id="axios-md-01" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <section id="doc-02" class="axios-md-block" data-md-block data-md-path="md/02_Architecture_Overview.md" aria-labelledby="axios-h-02">
+            <header class="sub-header sub-header--ruled axios-md-block__head">
+                <span class="context-tier context-tier--high">重要度：高</span>
+                <span class="tag">OSS Series · Axios</span>
+                <h2 id="axios-h-02"><a href="02-architecture-overview.html">Axios — 02_Architecture_Overview.md</a></h2>
+                <p class="axios-md-block__summary">リクエストライフサイクル、インターセプター、アダプター、transform、AxiosError。</p>
+                <p><code class="inline-code">02_Architecture_Overview.md</code> · 根拠: <a href="https://github.com/axios/axios" rel="noopener noreferrer">axios/axios</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="axios-md-02">Copy</button>
+                        <a class="btn-context-dl" href="md/02_Architecture_Overview.md" download>MD をダウンロード</a>
+                        <a href="02-architecture-overview.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--high">03</span>
-                <h2><a href="03-domain-dictionary.html">Domain Dictionary</a></h2>
-                <p>コア用語、ライフサイクル用語、エイリアス、AI 運用指示。</p>
-                <p class="context-md-filename"><code class="inline-code">03_Domain_Dictionary.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/03_Domain_Dictionary.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="03-domain-dictionary.html" class="btn-context-view">全文を開く</a>
+                <pre id="axios-md-02" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <section id="doc-03" class="axios-md-block" data-md-block data-md-path="md/03_Domain_Dictionary.md" aria-labelledby="axios-h-03">
+            <header class="sub-header sub-header--ruled axios-md-block__head">
+                <span class="context-tier context-tier--high">重要度：高</span>
+                <span class="tag">OSS Series · Axios</span>
+                <h2 id="axios-h-03"><a href="03-domain-dictionary.html">Axios — 03_Domain_Dictionary.md</a></h2>
+                <p class="axios-md-block__summary">コア用語、ライフサイクル用語、エイリアス、AI 運用指示。</p>
+                <p><code class="inline-code">03_Domain_Dictionary.md</code> · 根拠: <a href="https://github.com/axios/axios" rel="noopener noreferrer">axios/axios</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="axios-md-03">Copy</button>
+                        <a class="btn-context-dl" href="md/03_Domain_Dictionary.md" download>MD をダウンロード</a>
+                        <a href="03-domain-dictionary.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-        </div>
+                <pre id="axios-md-03" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
 
         <h2 id="axios-priority-mid" class="context-md-group-title">重要度：中 — 実務レベルの精度</h2>
-        <div class="card-list">
-            <article class="sub-card">
-                <span class="context-tier context-tier--mid">04</span>
-                <h2><a href="04-api-standards-and-models.html">API Standards &amp; Models</a></h2>
-                <p>AxiosRequestConfig / AxiosResponse、シグネチャ、transform、設定優先度、Hard Constraints。</p>
-                <p class="context-md-filename"><code class="inline-code">04_API_Standards_and_Models.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/04_API_Standards_and_Models.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="04-api-standards-and-models.html" class="btn-context-view">全文を開く</a>
+
+        <section id="doc-04" class="axios-md-block" data-md-block data-md-path="md/04_API_Standards_and_Models.md" aria-labelledby="axios-h-04">
+            <header class="sub-header sub-header--ruled axios-md-block__head">
+                <span class="context-tier context-tier--mid">重要度：中</span>
+                <span class="tag">OSS Series · Axios</span>
+                <h2 id="axios-h-04"><a href="04-api-standards-and-models.html">Axios — 04_API_Standards_and_Models.md</a></h2>
+                <p class="axios-md-block__summary">AxiosRequestConfig / AxiosResponse、シグネチャ、transform、設定優先度、Hard Constraints。</p>
+                <p><code class="inline-code">04_API_Standards_and_Models.md</code> · 根拠: <a href="https://github.com/axios/axios" rel="noopener noreferrer">axios/axios</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="axios-md-04">Copy</button>
+                        <a class="btn-context-dl" href="md/04_API_Standards_and_Models.md" download>MD をダウンロード</a>
+                        <a href="04-api-standards-and-models.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--mid">05</span>
-                <h2><a href="05-ui-ux-design-system.html">Extended Standards &amp; Ops</a></h2>
-                <p>Communication UX、コーディング規約、既知制限、シナリオ、AI 実装制約。</p>
-                <p class="context-md-filename"><code class="inline-code">05_Extended_Standards_and_Operational_Rules.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/05_Extended_Standards_and_Operational_Rules.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="05-ui-ux-design-system.html" class="btn-context-view">全文を開く</a>
+                <pre id="axios-md-04" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <section id="doc-05" class="axios-md-block" data-md-block data-md-path="md/05_Extended_Standards_and_Operational_Rules.md" aria-labelledby="axios-h-05">
+            <header class="sub-header sub-header--ruled axios-md-block__head">
+                <span class="context-tier context-tier--mid">重要度：中</span>
+                <span class="tag">OSS Series · Axios</span>
+                <h2 id="axios-h-05"><a href="05-ui-ux-design-system.html">Axios — 05_Extended_Standards_and_Operational_Rules.md</a></h2>
+                <p class="axios-md-block__summary">Communication UX、コーディング規約、既知制限、シナリオ、AI 実装制約。</p>
+                <p><code class="inline-code">05_Extended_Standards_and_Operational_Rules.md</code> · 根拠: <a href="https://github.com/axios/axios" rel="noopener noreferrer">axios/axios</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="axios-md-05">Copy</button>
+                        <a class="btn-context-dl" href="md/05_Extended_Standards_and_Operational_Rules.md" download>MD をダウンロード</a>
+                        <a href="05-ui-ux-design-system.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--mid">06</span>
-                <h2><a href="06-coding-and-git-rules.html">Workflow &amp; Testing</a></h2>
-                <p>環境セットアップ、デバッグ、モック／テスト必須ケース、CI/CD、AI 最終指示。</p>
-                <p class="context-md-filename"><code class="inline-code">06_Development_Workflow_and_Testing.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/06_Development_Workflow_and_Testing.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="06-coding-and-git-rules.html" class="btn-context-view">全文を開く</a>
+                <pre id="axios-md-05" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <section id="doc-06" class="axios-md-block" data-md-block data-md-path="md/06_Development_Workflow_and_Testing.md" aria-labelledby="axios-h-06">
+            <header class="sub-header sub-header--ruled axios-md-block__head">
+                <span class="context-tier context-tier--mid">重要度：中</span>
+                <span class="tag">OSS Series · Axios</span>
+                <h2 id="axios-h-06"><a href="06-coding-and-git-rules.html">Axios — 06_Development_Workflow_and_Testing.md</a></h2>
+                <p class="axios-md-block__summary">環境セットアップ、デバッグ、モック／テスト必須ケース、CI/CD、AI 最終指示。</p>
+                <p><code class="inline-code">06_Development_Workflow_and_Testing.md</code> · 根拠: <a href="https://github.com/axios/axios" rel="noopener noreferrer">axios/axios</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="axios-md-06">Copy</button>
+                        <a class="btn-context-dl" href="md/06_Development_Workflow_and_Testing.md" download>MD をダウンロード</a>
+                        <a href="06-coding-and-git-rules.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-        </div>
+                <pre id="axios-md-06" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
 
         <h2 id="axios-priority-low" class="context-md-group-title">重要度：低〜運用</h2>
-        <div class="card-list">
-            <article class="sub-card">
-                <span class="context-tier context-tier--low">07</span>
-                <h2><a href="07-known-issues-and-backlog.html">Maintenance &amp; Ecosystem</a></h2>
-                <p>移行パス、パフォーマンス、周辺OSS、セキュリティ、長期運用指示。</p>
-                <p class="context-md-filename"><code class="inline-code">07_Maintenance_Migration_and_Ecosystem.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/07_Maintenance_Migration_and_Ecosystem.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="07-known-issues-and-backlog.html" class="btn-context-view">全文を開く</a>
+
+        <section id="doc-07" class="axios-md-block" data-md-block data-md-path="md/07_Maintenance_Migration_and_Ecosystem.md" aria-labelledby="axios-h-07">
+            <header class="sub-header sub-header--ruled axios-md-block__head">
+                <span class="context-tier context-tier--low">重要度：低〜運用</span>
+                <span class="tag">OSS Series · Axios</span>
+                <h2 id="axios-h-07"><a href="07-known-issues-and-backlog.html">Axios — 07_Maintenance_Migration_and_Ecosystem.md</a></h2>
+                <p class="axios-md-block__summary">移行パス、パフォーマンス、周辺OSS、セキュリティ、長期運用指示。</p>
+                <p><code class="inline-code">07_Maintenance_Migration_and_Ecosystem.md</code> · 根拠: <a href="https://github.com/axios/axios" rel="noopener noreferrer">axios/axios</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="axios-md-07">Copy</button>
+                        <a class="btn-context-dl" href="md/07_Maintenance_Migration_and_Ecosystem.md" download>MD をダウンロード</a>
+                        <a href="07-known-issues-and-backlog.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-            <article class="sub-card">
-                <span class="context-tier context-tier--low">08</span>
-                <h2><a href="08-user-persona-and-user-journey.html">Persona &amp; Journey (Deep Dive)</a></h2>
-                <p>3 ペルソナ、4 フェーズのジャーニー、シナリオ表、エッジケース、AI 対話指示。</p>
-                <p class="context-md-filename"><code class="inline-code">08_User_Persona_and_User_Journey_Deep_Dive.md</code></p>
-                <div class="context-md-actions context-md-actions--bar">
-                    <a href="md/08_User_Persona_and_User_Journey_Deep_Dive.md" download class="btn-context-dl btn-context-dl--primary">ダウンロード</a>
-                    <a href="08-user-persona-and-user-journey.html" class="btn-context-view">全文を開く</a>
+                <pre id="axios-md-07" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
+
+        <section id="doc-08" class="axios-md-block" data-md-block data-md-path="md/08_User_Persona_and_User_Journey_Deep_Dive.md" aria-labelledby="axios-h-08">
+            <header class="sub-header sub-header--ruled axios-md-block__head">
+                <span class="context-tier context-tier--low">重要度：低〜運用</span>
+                <span class="tag">OSS Series · Axios</span>
+                <h2 id="axios-h-08"><a href="08-user-persona-and-user-journey.html">Axios — 08_User_Persona_and_User_Journey_Deep_Dive.md</a></h2>
+                <p class="axios-md-block__summary">3 ペルソナ、4 フェーズのジャーニー、シナリオ表、エッジケース、AI 対話指示。</p>
+                <p><code class="inline-code">08_User_Persona_and_User_Journey_Deep_Dive.md</code> · 根拠: <a href="https://github.com/axios/axios" rel="noopener noreferrer">axios/axios</a></p>
+            </header>
+            <div class="context-template-wrap">
+                <div class="context-template-head">
+                    <h2>本文（Markdown）</h2>
+                    <div class="context-md-toolbar-actions">
+                        <button type="button" class="copy-btn" data-copy-target="axios-md-08">Copy</button>
+                        <a class="btn-context-dl" href="md/08_User_Persona_and_User_Journey_Deep_Dive.md" download>MD をダウンロード</a>
+                        <a href="08-user-persona-and-user-journey.html" class="btn-context-view">全画面で開く</a>
+                    </div>
                 </div>
-            </article>
-        </div>
+                <pre id="axios-md-08" class="code-block">読み込み中…</pre>
+            </div>
+        </section>
 
         <p class="context-back-link"><a href="../index.html" class="link-arrow">OSS シリーズ一覧へ戻る →</a></p>
     </main>
@@ -147,6 +238,7 @@
     <footer class="site-footer">
         <p>© 2026 P&amp;C Engineering. All rights reserved.</p>
     </footer>
-    <script src="../../md-card-preview.js" defer></script>
+    <script src="../../copy-pre.js" defer></script>
+    <script src="../../md-multi-loader.js" defer></script>
 </body>
 </html>
