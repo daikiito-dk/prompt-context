@@ -1,5 +1,24 @@
 # https://www.robotstxt.org/
+# 人間・エージェント向けのサイト要約: /llms.txt
+# プロンプトの機械可読ソース: /prompts/prompts-data.json
+
 User-agent: *
+Allow: /
+
+# 以下は * と同じく全パス許可（明示のみ）。ポリシー変更時は個別に調整してください。
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
 Allow: /
 
 Sitemap: https://prompt-context-zeta.vercel.app/sitemap.xml
