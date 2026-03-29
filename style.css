@@ -567,9 +567,9 @@ a.card-glow--block-link .home-sample-pre--md {
     opacity: 0.92;
 }
 
-/* Home — principle quote under feature cards */
+/* Home — prompt vs. context principle (business presentation) */
 .home-principle {
-    padding: 0 5% 3.5rem;
+    padding: 0 5% 4rem;
 }
 
 .home-principle-inner {
@@ -577,19 +577,146 @@ a.card-glow--block-link .home-sample-pre--md {
     margin: 0 auto;
 }
 
-.home-principle-heading {
-    margin: 0 0 1rem;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
+.home-principle-header {
     text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 2.25rem;
 }
 
-.home-principle-quote {
+.home-principle-eyebrow {
+    margin: 0 0 0.55rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--neon-bright);
+}
+
+.home-principle-title {
+    margin: 0 0 1rem;
+    font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.35;
+    color: var(--text-primary);
+}
+
+.home-principle-lead {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.72;
+    color: var(--text-muted);
+}
+
+.home-principle-lead strong {
+    color: #c9d1d9;
+    font-weight: 600;
+}
+
+.home-principle-callout {
     margin: 0 auto;
-    max-width: 48rem;
+    max-width: 44rem;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(
+        165deg,
+        rgba(22, 27, 34, 0.94) 0%,
+        rgba(15, 18, 24, 0.98) 100%
+    );
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.35) inset,
+        0 24px 56px -32px rgba(0, 0, 0, 0.65);
+    overflow: hidden;
+}
+
+.home-principle-callout::before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--neon) 0%,
+        rgba(125, 211, 252, 0.4) 45%,
+        transparent 92%
+    );
+}
+
+.home-principle-blockquote {
+    margin: 0;
+    padding: 1.65rem 1.65rem 1.45rem;
+    border: 0;
+}
+
+.home-principle-text-ja {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.72;
+    color: #e6edf3;
+}
+
+.home-principle-text-ja strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.home-principle-text-en {
+    margin: 1.1rem 0 0;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(48, 54, 61, 0.75);
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.62;
+    color: #a8b3bd;
+}
+
+.home-principle-attrib {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem 0.65rem;
+    margin: 0;
+    padding: 0.95rem 1.65rem 1.25rem;
+    background: rgba(11, 14, 20, 0.48);
+    border-top: 1px solid rgba(48, 54, 61, 0.55);
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+}
+
+.home-principle-attrib-label {
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--neon-bright);
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.22);
+}
+
+.home-principle-attrib-name {
+    font-weight: 600;
+    color: #c9d1d9;
+}
+
+.home-principle-attrib-role {
+    flex: 1 1 220px;
+    min-width: min(100%, 12rem);
+    font-size: 0.78rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 520px) {
+    .home-principle-blockquote {
+        padding: 1.35rem 1.2rem 1.2rem;
+    }
+
+    .home-principle-attrib {
+        padding: 0.85rem 1.2rem 1.1rem;
+        align-items: flex-start;
+    }
 }
 
 .home-landmark-actions {
