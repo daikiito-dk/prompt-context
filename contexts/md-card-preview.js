@@ -6,6 +6,21 @@
   var MAX_LINES = 26;
   var MAX_CHARS = 1600;
 
+  function fetchPathFor(rel) {
+    if (!rel) return rel;
+    if (rel.charAt(0) === "/") return rel;
+    var p = window.location.pathname.replace(/\/+$/, "");
+    if (!p) p = "/";
+    var dir;
+    if (/\.html$/i.test(p)) {
+      dir = p.replace(/\/[^/]+$/, "");
+    } else {
+      var i = p.lastIndexOf("/");
+      dir = i > 0 ? p.slice(0, i) : "";
+    }
+    return dir + "/" + rel.replace(/^\//, "");
+  }
+
   function truncateMd(text) {
     var normalized = text.replace(/\r\n/g, "\n");
     var lines = normalized.split("\n");
@@ -57,7 +72,8 @@
 
     pre.textContent = "読み込み中…";
 
-    fetch(mdUrl, { credentials: "same-origin" })
+    var fetchUrl = fetchPathFor(mdUrl);
+    fetch(fetchUrl, { credentials: "same-origin" })
       .then(function (r) {
         if (!r.ok) throw new Error(r.statusText);
         return r.text();

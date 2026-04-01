@@ -422,11 +422,18 @@ a.card-glow--block-link .home-sample-pre--md {
 }
 
 .home-landmark-header h2 {
-    margin: 0;
+    margin: 0 0 0.65rem;
     font-size: clamp(1.35rem, 3vw, 1.75rem);
     font-weight: 800;
     letter-spacing: -0.02em;
     color: var(--text-primary);
+}
+
+.home-landmark-dek {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
 
 .home-landmark-grid {
@@ -452,6 +459,14 @@ a.card-glow--block-link .home-sample-pre--md {
         0 0 0 1px rgba(56, 189, 248, 0.12),
         0 0 48px -12px rgba(56, 189, 248, 0.45);
     background: #0b0e14;
+}
+
+.home-landmark-caption {
+    margin: 0.65rem 0 0;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.4;
 }
 
 .home-landmark-copy {
@@ -578,12 +593,24 @@ a.card-glow--block-link .home-sample-pre--md {
 }
 
 .home-principle-title {
-    margin: 0;
+    margin: 0 0 1rem;
     font-size: clamp(1.2rem, 2.4vw, 1.55rem);
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.35;
     color: var(--text-primary);
+}
+
+.home-principle-lead {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.72;
+    color: var(--text-muted);
+}
+
+.home-principle-lead strong {
+    color: #c9d1d9;
+    font-weight: 600;
 }
 
 .home-principle-callout {

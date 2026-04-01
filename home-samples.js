@@ -1,4 +1,19 @@
 (function () {
+  function fetchPathFor(rel) {
+    if (!rel) return rel;
+    if (rel.charAt(0) === "/") return rel;
+    var p = window.location.pathname.replace(/\/+$/, "");
+    if (!p) p = "/";
+    var dir;
+    if (/\.html$/i.test(p)) {
+      dir = p.replace(/\/[^/]+$/, "");
+    } else {
+      var i = p.lastIndexOf("/");
+      dir = i > 0 ? p.slice(0, i) : "";
+    }
+    return dir + "/" + rel.replace(/^\//, "");
+  }
+
   var SOURCES = {
     prompt: "prompts/sample.md",
     context: "contexts/md/01_Product_Core_Concept.md",
@@ -25,7 +40,8 @@
     if (!root || !pre) return;
     root.setAttribute("aria-busy", "true");
     pre.textContent = "読み込み中…";
-    fetch(url, { credentials: "same-origin" })
+    var fetchUrl = fetchPathFor(url);
+    fetch(fetchUrl, { credentials: "same-origin" })
       .then(function (res) {
         if (!res.ok) throw new Error(String(res.status));
         return res.text();
