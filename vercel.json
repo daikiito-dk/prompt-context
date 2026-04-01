@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.prompt-context.jp" }],
+      "destination": "https://prompt-context.jp/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "prompt-context-zeta.vercel.app" }],
+      "destination": "https://prompt-context.jp/:path*",
+      "permanent": true
+    }
+  ]
+}

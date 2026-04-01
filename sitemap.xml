@@ -1,187 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/</loc>
+    <loc>https://prompt-context.jp/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/llms.txt</loc>
+    <loc>https://prompt-context.jp/llms.txt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/prompts/sample.md</loc>
+    <loc>https://prompt-context.jp/prompts/sample.md</loc>
     <changefreq>monthly</changefreq>
     <priority>0.45</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/prompts/prompts-data.json</loc>
+    <loc>https://prompt-context.jp/prompts/prompts-data.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/prompts/</loc>
+    <loc>https://prompt-context.jp/prompts/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/</loc>
+    <loc>https://prompt-context.jp/contexts/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/</loc>
+    <loc>https://prompt-context.jp/contexts/series/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/</loc>
+    <loc>https://prompt-context.jp/contexts/series/axios/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/</loc>
+    <loc>https://prompt-context.jp/contexts/series/fastapi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.74</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/01-product-core-concept.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/fastapi/01-product-core-concept.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/02-architecture-overview.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/fastapi/02-architecture-overview.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/03-domain-dictionary.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/fastapi/03-domain-dictionary.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/04-api-standards-and-models.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/fastapi/04-api-standards-and-models.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/05-extended-standards-and-operational-rules.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/fastapi/05-extended-standards-and-operational-rules.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/06-development-workflow-and-testing.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/fastapi/06-development-workflow-and-testing.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/07-maintenance-migration-and-ecosystem.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/fastapi/07-maintenance-migration-and-ecosystem.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/fastapi/08-user-persona-and-user-journey-deep-dive.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/fastapi/08-user-persona-and-user-journey-deep-dive.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/01-product-core-concept.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/axios/01-product-core-concept.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/02-architecture-overview.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/axios/02-architecture-overview.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/03-domain-dictionary.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/axios/03-domain-dictionary.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/04-api-standards-and-models.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/axios/04-api-standards-and-models.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/05-ui-ux-design-system.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/axios/05-ui-ux-design-system.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/06-coding-and-git-rules.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/axios/06-coding-and-git-rules.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/07-known-issues-and-backlog.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/axios/07-known-issues-and-backlog.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/series/axios/08-user-persona-and-user-journey.html</loc>
+    <loc>https://prompt-context.jp/contexts/series/axios/08-user-persona-and-user-journey.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/session.html</loc>
+    <loc>https://prompt-context.jp/contexts/session.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/spec.html</loc>
+    <loc>https://prompt-context.jp/contexts/spec.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/learnings.html</loc>
+    <loc>https://prompt-context.jp/contexts/learnings.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/01-product-core-concept.html</loc>
+    <loc>https://prompt-context.jp/contexts/01-product-core-concept.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/02-architecture-overview.html</loc>
+    <loc>https://prompt-context.jp/contexts/02-architecture-overview.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/03-domain-dictionary.html</loc>
+    <loc>https://prompt-context.jp/contexts/03-domain-dictionary.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/04-api-standards-and-models.html</loc>
+    <loc>https://prompt-context.jp/contexts/04-api-standards-and-models.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/05-ui-ux-design-system.html</loc>
+    <loc>https://prompt-context.jp/contexts/05-ui-ux-design-system.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/06-coding-and-git-rules.html</loc>
+    <loc>https://prompt-context.jp/contexts/06-coding-and-git-rules.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/07-known-issues-and-backlog.html</loc>
+    <loc>https://prompt-context.jp/contexts/07-known-issues-and-backlog.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/contexts/08-user-persona-and-user-journey.html</loc>
+    <loc>https://prompt-context.jp/contexts/08-user-persona-and-user-journey.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://prompt-context-zeta.vercel.app/tools/</loc>
+    <loc>https://prompt-context.jp/tools/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -6,7 +6,7 @@
 
 - ブラウザは GitHub Pages などの静的ホスト上に置いたまま。
 - **API だけ** [Vercel](https://vercel.com) にデプロイし、[Upstash Redis](https://upstash.com) にカウンタを保存します（`HINCRBY` で原子集計）。
-- プロンプト一覧の `<body data-prompt-score-api="…">` に、API 用 Vercel のオリジンを書きます（末尾スラッシュ不要）。本リポジトリでは例として `https://prompt-context-zeta.vercel.app` を設定しています。
+- プロンプト一覧の `<body data-prompt-score-api="…">` に、API 用 Vercel のオリジンを書きます（末尾スラッシュ不要）。本リポジトリでは例として `https://prompt-context.jp` を設定しています。
 
 ## API のデプロイ手順（例）
 
@@ -15,7 +15,7 @@
 3. プロジェクトの **Environment Variables** に次を設定する:
    - `UPSTASH_REDIS_REST_URL`
    - `UPSTASH_REDIS_REST_TOKEN`
-4. デプロイ後、`GET https://prompt-context-zeta.vercel.app/api/scores`（実際のプロジェクト URL に読み替え）が `{"scores":{...}}` を返せば OK。
+4. デプロイ後、`GET https://prompt-context.jp/api/scores`（実際のプロジェクト URL に読み替え）が `{"scores":{...}}` を返せば OK。
 5. `prompts/index.html` の `data-prompt-score-api` にそのオリジンを設定し、サイトを再デプロイまたは更新する。
 
 ### エンドポイント

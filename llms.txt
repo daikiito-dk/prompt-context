@@ -8,24 +8,24 @@
 - **コンテキスト**（MD）テンプレートと OSS 根拠付きシリーズ（Axios / FastAPI）
 - **開発向けツール・ワークフロー**の参照一覧（推奨ではないサービス紹介）
 
-ベース URL: https://prompt-context-zeta.vercel.app/
+ベース URL: https://prompt-context.jp/
 
 ## 主要ページ（人間向け HTML）
 
-- トップ: https://prompt-context-zeta.vercel.app/
-- プロンプトライブラリ: https://prompt-context-zeta.vercel.app/prompts/
-- コンテキストハブ: https://prompt-context-zeta.vercel.app/contexts/
-- OSS シリーズ一覧: https://prompt-context-zeta.vercel.app/contexts/series/
-- Axios シリーズ: https://prompt-context-zeta.vercel.app/contexts/series/axios/
-- FastAPI シリーズ: https://prompt-context-zeta.vercel.app/contexts/series/fastapi/
-- Tools & Workflow: https://prompt-context-zeta.vercel.app/tools/
+- トップ: https://prompt-context.jp/
+- プロンプトライブラリ: https://prompt-context.jp/prompts/
+- コンテキストハブ: https://prompt-context.jp/contexts/
+- OSS シリーズ一覧: https://prompt-context.jp/contexts/series/
+- Axios シリーズ: https://prompt-context.jp/contexts/series/axios/
+- FastAPI シリーズ: https://prompt-context.jp/contexts/series/fastapi/
+- Tools & Workflow: https://prompt-context.jp/tools/
 
 ## 機械可読な一次ソース（優先して取得する場合）
 
-- プロンプトカタログ全文（JSON）: https://prompt-context-zeta.vercel.app/prompts/prompts-data.json  
+- プロンプトカタログ全文（JSON）: https://prompt-context.jp/prompts/prompts-data.json  
   - ページ上の一覧はこのファイルから生成される。**プロンプト本文の正本はこちら**。
-- トップのプロンプト抜粋用 Markdown: https://prompt-context-zeta.vercel.app/prompts/sample.md（`standard-reasoning` の要約・README 用）
-- サイトマップ（URL 列挙）: https://prompt-context-zeta.vercel.app/sitemap.xml
+- トップのプロンプト抜粋用 Markdown: https://prompt-context.jp/prompts/sample.md（`standard-reasoning` の要約・README 用）
+- サイトマップ（URL 列挙）: https://prompt-context.jp/sitemap.xml
 
 ## 正本（canonical）と重複表現
 

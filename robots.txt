@@ -21,4 +21,4 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
-Sitemap: https://prompt-context-zeta.vercel.app/sitemap.xml
+Sitemap: https://prompt-context.jp/sitemap.xml
